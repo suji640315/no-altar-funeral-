@@ -223,3 +223,4 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
   );
 }
  
+ 
