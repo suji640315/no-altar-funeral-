@@ -1,10 +1,8 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { updateInquiryStatus } from '@/app/actions/inquiry';
 import { RefreshCw, Search, Phone, MapPin, User, Check, Clock } from 'lucide-react';
-
 type Inquiry = {
   id: string;
   created_at: string;
@@ -18,12 +16,10 @@ type Inquiry = {
   assigned_director: string;
   alimtalk_sent: boolean;
 };
-
 export default function AdminDashboard({ initialInquiries }: { initialInquiries: Inquiry[] }) {
   const [inquiries, setInquiries] = useState<Inquiry[]>(initialInquiries);
   const [searchTerm, setSearchTerm] = useState('');
   const [isUpdating, setIsUpdating] = useState<string | null>(null);
-
   useEffect(() => {
     const channel = supabase
       .channel('schema-db-changes')
@@ -42,22 +38,18 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
         }
       )
       .subscribe();
-
     return () => {
       supabase.removeChannel(channel);
     };
   }, []);
-
   const handleStatusChange = async (id: string, newStatus: string) => {
     setIsUpdating(id);
     await updateInquiryStatus({ id, status: newStatus as any });
     setIsUpdating(null);
   };
-
   const filtered = inquiries.filter((i) => 
     i.name.includes(searchTerm) || i.phone.includes(searchTerm) || i.region.includes(searchTerm)
   );
-
   function getStatusColor(status: string) {
     if (status === 'RECEIVED') return 'bg-yellow-100 text-yellow-800 border-yellow-200';
     if (status === 'CONTACTED') return 'bg-blue-100 text-blue-800 border-blue-200';
@@ -66,7 +58,6 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
     if (status === 'CANCELLED') return 'bg-red-100 text-red-800 border-red-200';
     return 'bg-gray-100 text-gray-800';
   }
-
   return (
     <div className='max-w-7xl mx-auto p-4 sm:p-6 space-y-6'>
       <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4'>
@@ -85,7 +76,6 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
           />
         </div>
       </div>
-
       <div className='bg-white rounded-xl shadow-sm border border-brand-200 overflow-hidden'>
         <div className='overflow-x-auto'>
           <table className='w-full text-left border-collapse'>
