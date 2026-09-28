@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-form-hook';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { InquirySchema, InquiryFormValues } from '@/lib/schema';
 import { submitInquiry } from '@/app/actions/inquiry';
