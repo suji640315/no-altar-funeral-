@@ -213,7 +213,7 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
                       </div>
                     </div>
                   </td>
-                </tr >
+                </tr>
               ))}
             </tbody>
           </table>
