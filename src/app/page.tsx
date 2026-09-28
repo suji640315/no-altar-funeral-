@@ -1,4 +1,7 @@
 import InquiryForm from '@/components/InquiryForm';
+import WhyUsSection from '@/components/WhyUsSection';
+import PricingSection from '@/components/PricingSection';
+import ProcessSection from '@/components/ProcessSection';
 import { Phone, Shield, Clock, HeartHandshake } from 'lucide-react';
 
 export default function Home() {
@@ -44,6 +47,11 @@ export default function Home() {
           <InquiryForm />
         </div>
       </section>
+
+      {/* New Sections */}
+      <WhyUsSection />
+      <PricingSection />
+      <ProcessSection />
 
       {/* Footer Contact */}
       <footer className="bg-brand-900 text-brand-300 py-12 text-center">
