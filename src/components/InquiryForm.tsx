@@ -147,6 +147,18 @@ export default function InquiryForm() {
               </div>
             </div>
 
+            <div className="space-y-2">
+              <label className="block text-sm font-bold text-brand-900 dark:text-brand-100">요청사항 (선택)</label>
+              <div className="relative">
+                <textarea
+                  {...register('memo')}
+                  rows={3}
+                  placeholder="추가로 전달하실 내용을 자유롭게 적어주세요."
+                  className="w-full px-4 py-3 text-base rounded-xl border border-brand-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-900 dark:bg-brand-900 dark:border-brand-700 dark:text-white transition-shadow resize-none"
+                />
+              </div>
+            </div>
+
             <button
               type="submit"
               disabled={isSubmitting}
