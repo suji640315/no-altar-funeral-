@@ -1,3 +1,4 @@
+'use client';
 import { MapPin, Navigation, Ambulance } from 'lucide-react';
 
 export default function NetworkSection() {

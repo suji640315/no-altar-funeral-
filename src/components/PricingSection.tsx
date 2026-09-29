@@ -1,3 +1,4 @@
+'use client';
 import { Check, Info } from 'lucide-react';
 
 export default function PricingSection() {
