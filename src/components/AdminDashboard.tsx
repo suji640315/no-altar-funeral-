@@ -1,25 +1,27 @@
 'use client';
-import { useEffect, useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { updateInquiryStatus } from '@/app/actions/inquiry';
 import { RefreshCw, Search, Phone, MapPin, User, Check, Clock } from 'lucide-react';
+
 type Inquiry = {
   id: string;
-  created_at: string;
-  name: string;
-  phone: string;
-  urgency_status: string;
   region: string;
-  preferred_parlor: string;
+  phone: string;
+  location_type: string;
   memo: string;
   dispatch_status: string;
   assigned_director: string;
+  created_at: string;
   alimtalk_sent: boolean;
 };
+
 export default function AdminDashboard({ initialInquiries }: { initialInquiries: Inquiry[] }) {
   const [inquiries, setInquiries] = useState<Inquiry[]>(initialInquiries);
   const [searchTerm, setSearchTerm] = useState('');
   const [isUpdating, setIsUpdating] = useState<string | null>(null);
+
   useEffect(() => {
     const channel = supabase
       .channel('schema-db-changes')
@@ -42,14 +44,17 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
       supabase.removeChannel(channel);
     };
   }, []);
+
   const handleStatusChange = async (id: string, newStatus: string) => {
     setIsUpdating(id);
     await updateInquiryStatus({ id, status: newStatus as any });
     setIsUpdating(null);
   };
+
   const filtered = inquiries.filter((i) => 
-    i.name.includes(searchTerm) || i.phone.includes(searchTerm) || i.region.includes(searchTerm)
+    i.phone?.includes(searchTerm) || i.region?.includes(searchTerm)
   );
+
   function getStatusColor(status: string) {
     if (status === 'RECEIVED') return 'bg-yellow-100 text-yellow-800 border-yellow-200';
     if (status === 'CONTACTED') return 'bg-blue-100 text-blue-800 border-blue-200';
@@ -58,18 +63,26 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
     if (status === 'CANCELLED') return 'bg-red-100 text-red-800 border-red-200';
     return 'bg-gray-100 text-gray-800';
   }
+
+  const locationMap: Record<string, string> = {
+    'HOSPITAL': '병원',
+    'NURSING_HOME': '요양원/요양병원',
+    'HOME': '자택',
+    'OTHER': '기타'
+  };
+
   return (
     <div className='max-w-7xl mx-auto p-4 sm:p-6 space-y-6'>
       <div className='flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4'>
         <div>
           <h1 className='text-2xl font-bold text-brand-900'>상담 및 출동 관리</h1>
-          <p className='text-sm text-brand-500'>실시간으로 접수된 장례 요청을 관리합니다.</p>
+          <p className='text-sm text-brand-500'>실시간으로 접수된 섭외 요청을 관리합니다.</p>
         </div>
         <div className='relative w-full sm:w-72'>
           <Search className='absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-brand-400' />
           <input 
             type='text'
-            placeholder='이름, 전화번호, 지역 검색...'
+            placeholder='전화번호, 지역 검색...'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className='w-full pl-10 pr-4 py-2 bg-white border border-brand-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500'
@@ -83,7 +96,7 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
               <tr className='bg-brand-50 border-b border-brand-200 text-sm font-semibold text-brand-700'>
                 <th className='p-4 whitespace-nowrap'>접수시간</th>
                 <th className='p-4 whitespace-nowrap'>고객정보</th>
-                <th className='p-4 whitespace-nowrap'>유형/지역</th>
+                <th className='p-4 whitespace-nowrap'>현재 위치/지역</th>
                 <th className='p-4'>요청사항</th>
                 <th className='p-4 whitespace-nowrap'>알림톡</th>
                 <th className='p-4 whitespace-nowrap'>진행상태</th>
@@ -108,7 +121,7 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
                   <td className='p-4 whitespace-nowrap'>
                     <div className='font-semibold text-brand-900 flex items-center gap-1.5'>
                       <User className='w-4 h-4 text-brand-400' />
-                      {inquiry.name}
+                      비회원
                     </div>
                     <div className='text-sm text-brand-500 flex items-center gap-1.5 mt-1'>
                       <Phone className='w-3.5 h-3.5' />
@@ -117,15 +130,9 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
                   </td>
                   <td className='p-4 whitespace-nowrap'>
                     <div className='mb-1'>
-                      {inquiry.urgency_status === 'EMERGENCY_DECEASED' ? (
-                        <span className='inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800'>
-                          긴급출동(임종)
-                        </span>
-                      ) : (
-                        <span className='inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-brand-100 text-brand-800'>
-                          사전상담
-                        </span>
-                      )}
+                      <span className='inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800'>
+                        {locationMap[inquiry.location_type] || inquiry.location_type}
+                      </span>
                     </div>
                     <div className='text-sm text-brand-700 flex items-center gap-1.5'>
                       <MapPin className='w-3.5 h-3.5 text-brand-400' />
@@ -133,10 +140,6 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
                     </div>
                   </td>
                   <td className='p-4 max-w-xs'>
-                    <div className='text-sm text-brand-800 truncate'>
-                      <span className='text-brand-400 mr-1'>장례식장:</span>
-                      {inquiry.preferred_parlor || '-'}
-                    </div>
                     <div className='text-sm text-brand-600 line-clamp-2 mt-1'>
                       {inquiry.memo || '-'}
                     </div>
@@ -161,7 +164,7 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
                         <option value='RECEIVED'>접수됨</option>
                         <option value='CONTACTED'>연락완료</option>
                         <option value='DISPATCHED'>출동중</option>
-                        <option value='COMPLETED'>장례종료</option>
+                        <option value='COMPLETED'>섭외종료</option>
                         <option value='CANCELLED'>취소/보류</option>
                       </select>
                     </div>
