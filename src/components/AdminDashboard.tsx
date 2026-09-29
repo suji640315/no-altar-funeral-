@@ -33,7 +33,9 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
             setInquiries((prev) => [payload.new as Inquiry, ...prev]);
             try {
               new Audio('https://assets.mixkit.co/sfx/preview/mixkit-software-interface-start-2574.mp3').play();
-            } catch (e) {}
+            } catch (e) {
+              console.error(e);
+            }
           } else if (payload.eventType === 'UPDATE') {
             setInquiries((prev) => prev.map((inq) => (inq.id === payload.new.id ? (payload.new as Inquiry) : inq)));
           }
@@ -47,7 +49,7 @@ export default function AdminDashboard({ initialInquiries }: { initialInquiries:
 
   const handleStatusChange = async (id: string, newStatus: string) => {
     setIsUpdating(id);
-    await updateInquiryStatus({ id, status: newStatus as any });
+    await updateInquiryStatus({ id, status: newStatus as "RECEIVED" | "CONTACTED" | "DISPATCHED" | "COMPLETED" | "CANCELLED" });
     setIsUpdating(null);
   };
 
