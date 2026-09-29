@@ -1,5 +1,6 @@
 import { Phone } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
@@ -7,15 +8,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
         {/* Left: Logo & Brand */}
-        <div className="flex flex-col">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl md:text-2xl font-extrabold text-brand-900 dark:text-white tracking-tight">
-              (주)공무원라이프
-            </span>
+        <div className="flex flex-col justify-center">
+          <Link href="/">
+            <Image src="/logo.png" alt="(주)공무원라이프" width={220} height={60} className="h-10 md:h-12 w-auto object-contain" priority />
           </Link>
-          <span className="text-xs md:text-sm text-gold-600 font-medium">
-            전국 무빈소장례 지원센터
-          </span>
         </div>
 
         {/* Right: Emergency Dial & Desktop Menu */}
