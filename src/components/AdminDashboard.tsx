@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { updateInquiryStatus } from '@/app/actions/inquiry';
-import { RefreshCw, Search, Phone, MapPin, User, Check, Clock } from 'lucide-react';
+import { Search, Phone, MapPin, User, Check, Clock } from 'lucide-react';
 
 type Inquiry = {
   id: string;
