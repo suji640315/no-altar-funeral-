@@ -29,14 +29,23 @@ export async function submitInquiry(data: InquiryFormValues) {
     // 3. Send Notification to Admin / On-call Director
     const adminPhone = process.env.ADMIN_NOTIFICATION_PHONE || '01012345678';
     const templateCode = process.env.ALIMTALK_TEMPLATE_ADMIN_ALERT || 'TMPL_ADMIN_ALERT_01';
+    
+    // Map location_type to readable text
+    const locationMap = {
+      'HOSPITAL': '병원',
+      'NURSING_HOME': '요양원/요양병원',
+      'HOME': '자택',
+      'OTHER': '기타'
+    };
+    
     const notificationResult = await sendAlimtalk({
       inquiryId: inquiry.id,
       recipientPhone: adminPhone,
       templateCode: templateCode,
       variables: {
-        name: inquiry.name,
+        name: '비회원', // Removed from schema, placeholder for template if required
         phone: inquiry.phone,
-        urgency: inquiry.urgency_status === 'EMERGENCY_DECEASED' ? '긴급(임종)' : '사전상담',
+        urgency: locationMap[inquiry.location_type as keyof typeof locationMap] || '알수없음',
         region: inquiry.region,
       },
     });
