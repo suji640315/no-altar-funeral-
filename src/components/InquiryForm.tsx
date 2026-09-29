@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { InquirySchema, InquiryFormValues } from '@/lib/schema';
 import { submitInquiry } from '@/app/actions/inquiry';
 import { motion, AnimatePresence } from 'framer-motion';
-import { PhoneCall, MapPin, Building2, CheckCircle, Loader2, MessageCircle, Phone, ArrowRight } from 'lucide-react';
+import { PhoneCall, MapPin, CheckCircle, Loader2, MessageCircle, Phone, ArrowRight } from 'lucide-react';
 
 export default function InquiryForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -173,3 +173,5 @@ export default function InquiryForm() {
     </div>
   );
 }
+
+// Force Vercel rebuild trigger
