@@ -3,28 +3,31 @@
 import Image from 'next/image';
 
 const mouItems = [
-  { title: '협력기관', imgSrc: '/mou/mou_0.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_1.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_2.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_3.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_4.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_5.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_6.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_7.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_8.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_9.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_10.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_11.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_12.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_13.jpg' },
-  { title: '협력기관', imgSrc: '/mou/mou_14.jpg' }
+  { title: '협력기관', imgSrc: '/banner_01.jpg' },
+  { title: '협력기관', imgSrc: '/banner_02.jpg' },
+  { title: '협력기관', imgSrc: '/banner_03.jpg' },
+  { title: '협력기관', imgSrc: '/banner_04.jpg' },
+  { title: '협력기관', imgSrc: '/banner_05.jpg' },
+  { title: '협력기관', imgSrc: '/banner_06.jpg' },
+  { title: '협력기관', imgSrc: '/banner_07.jpg' },
+  { title: '협력기관', imgSrc: '/banner_08.jpg' },
+  { title: '협력기관', imgSrc: '/banner_09.jpg' },
+  { title: '협력기관', imgSrc: '/banner_10.jpg' },
+  { title: '협력기관', imgSrc: '/banner_11.jpg' },
+  { title: '협력기관', imgSrc: '/banner_12.jpg' },
+  { title: '협력기관', imgSrc: '/banner_13.jpg' },
+  { title: '협력기관', imgSrc: '/banner_14.jpg' },
+  { title: '협력기관', imgSrc: '/banner_15.jpg' },
+  { title: '협력기관', imgSrc: '/banner_16.jpg' },
+  { title: '협력기관', imgSrc: '/banner_17.jpg' },
+  { title: '협력기관', imgSrc: '/banner_18.jpg' }
 ];
 
 const duplicatedItems = [...mouItems, ...mouItems, ...mouItems];
 
 export default function MouSection() {
   return (
-    <section id="mou" className="w-full py-10 bg-white overflow-hidden mb-10">
+    <section id="mou" className="w-full py-10 bg-white overflow-hidden mb-10 border-t border-gray-100">
       <div className="container mx-auto max-w-6xl px-4 flex items-center gap-4 mb-4">
         <div className="w-3 h-3 bg-gray-400"></div>
         <h2 className="text-[16px] font-bold text-gray-700">협력기관 및 단체</h2>
@@ -36,7 +39,7 @@ export default function MouSection() {
             100% { transform: translateX(-33.333333%); }
           }
           .animate-custom-marquee {
-            animation: custom-marquee 30s linear infinite;
+            animation: custom-marquee 40s linear infinite;
             width: fit-content;
           }
           .animate-custom-marquee:hover {
@@ -50,7 +53,7 @@ export default function MouSection() {
               className="flex-shrink-0 border border-gray-200 w-[140px] md:w-[200px] h-[70px] md:h-[80px] bg-white flex items-center justify-center p-2 mx-1 md:mx-2"
             >
               <div className="relative w-full h-full flex items-center justify-center text-xs text-gray-400">
-                <span className="absolute text-center px-1 opacity-20 whitespace-normal leading-tight">{item.title}</span>
+                <span className="absolute text-center px-1 opacity-10 whitespace-normal leading-tight">{item.title}</span>
                 <Image
                   src={item.imgSrc}
                   alt={item.title}
