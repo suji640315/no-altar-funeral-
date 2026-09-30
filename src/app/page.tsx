@@ -3,7 +3,7 @@ import MouSection from "@/components/MouSection";
 import Image from "next/image";
 import Link from "next/link";
 import RecentCounselsTicker from "@/components/RecentCounselsTicker";
-import { Handshake, PhoneCall, BookOpen, Gift, MessageCircle } from "lucide-react";
+import { Handshake, PhoneCall, BookOpen, Gift, MessageCircle, Building2 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -53,14 +53,15 @@ export default function Home() {
           </Link>
 
 {/* Menu 4 */}
-          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+          <Link href="/sub/coalition" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
             <div>
-              <p className="text-xs text-gray-500 mb-1">위로금 신청안내</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-yellow-600 transition-colors"><span className="text-blue-600">장례위로금</span><br/>이란?</h3>
+              <p className="text-xs text-gray-500 mb-1">대한민국 공무원 장례서비스</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-yellow-600 transition-colors">
+                <span className="text-blue-600">제휴협약사</span>
+              </h3>
             </div>
-            <Gift className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-yellow-500 transition-all group-hover:scale-110" />
-          </div>
-
+            <Building2 className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-yellow-500 transition-all group-hover:scale-110" />
+          </Link>
         </div>
       </section>
 
