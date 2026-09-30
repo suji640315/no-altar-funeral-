@@ -16,15 +16,15 @@ export default function CounselPage() {
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleLocationClick = (location) => {
+  const handleLocationClick = (location: string) => {
     setFormData({ ...formData, patientLocation: location });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
     setErrorMsg('');
