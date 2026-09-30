@@ -1,0 +1,156 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { Download, Users, RefreshCw } from 'lucide-react';
+
+interface Counsel {
+  id: number;
+  name: string;
+  phone: string;
+  region: string;
+  funeralHome: string;
+  notes: string;
+  createdAt: string;
+}
+
+export default function AdminCounselPage() {
+  const [data, setData] = useState<Counsel[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/counsel');
+      const json = await res.json();
+      if (json.success) {
+        setData(json.data);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const downloadExcel = () => {
+    // Add BOM for UTF-8 Excel compatibility
+    const BOM = "\uFEFF";
+    let csv = "접수일시,고객성함,연락처,희망지역,희망장례식장,기타참고사항\n";
+    
+    data.forEach(item => {
+      const date = new Date(item.createdAt).toLocaleString('ko-KR');
+      const row = [
+        `"${date}"`,
+        `"${item.name}"`,
+        `"${item.phone}"`,
+        `"${item.region}"`,
+        `"${item.funeralHome || ''}"`,
+        `"${(item.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`
+      ].join(',');
+      csv += row + "\n";
+    });
+
+    const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `상담신청목록_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <div className="w-full min-h-screen bg-gray-50 pt-[100px] pb-20 font-sans text-gray-800">
+      <div className="max-w-6xl mx-auto px-4">
+        
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
+              <Users className="w-6 h-6 text-[#00387f]" />
+              상담 신청 관리
+            </h1>
+            <p className="text-sm text-gray-500 mt-1">고객들이 신청한 무빈소 130 상담 내역입니다.</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={fetchData}
+              className="flex items-center gap-1.5 px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors shadow-sm"
+            >
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
+              새로고침
+            </button>
+            <button 
+              onClick={downloadExcel}
+              disabled={data.length === 0}
+              className="flex items-center gap-1.5 px-4 py-2.5 bg-[#00387f] text-white rounded-lg text-sm font-bold hover:bg-[#002f6c] transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Download className="w-4 h-4" />
+              엑셀 다운로드
+            </button>
+          </div>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-gray-50 text-gray-700 border-b border-gray-200 uppercase text-xs">
+                <tr>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap">접수 일시</th>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap">고객 성함</th>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap">연락처</th>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap">희망 지역</th>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap">희망 장례식장</th>
+                  <th className="px-6 py-4 font-bold min-w-[200px]">기타 참고사항</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {loading ? (
+                  <tr>
+                    <td colSpan={6} className="px-6 py-10 text-center text-gray-500">
+                      데이터를 불러오는 중입니다...
+                    </td>
+                  </tr>
+                ) : data.length === 0 ? (
+                  <tr>
+                    <td colSpan={6} className="px-6 py-10 text-center text-gray-500">
+                      접수된 상담 신청 내역이 없습니다.
+                    </td>
+                  </tr>
+                ) : (
+                  data.map((item) => (
+                    <tr key={item.id} className="hover:bg-blue-50/50 transition-colors">
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-500">
+                        {new Date(item.createdAt).toLocaleString('ko-KR')}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                        {item.name}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap font-medium text-[#00387f]">
+                        {item.phone}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        {item.region}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                        {item.funeralHome || '-'}
+                      </td>
+                      <td className="px-6 py-4 text-gray-600">
+                        {item.notes || '-'}
+                      </td>
+                    </tr>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+}
