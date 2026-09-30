@@ -1,6 +1,7 @@
 import HeroCarousel from "@/components/HeroCarousel";
 import MouSection from "@/components/MouSection";
 import Image from "next/image";
+import Link from "next/link";
 import { Handshake, PhoneCall, BookOpen, Gift, MessageCircle } from "lucide-react";
 
 export default function Home() {
@@ -24,13 +25,13 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           
           {/* Menu 1 */}
-          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+          <Link href="/sub/goods" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
             <div>
               <p className="text-xs text-gray-500 mb-1">장례상품 안내</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">공무원가족<br/>전용상품</h3>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">공무원가족 전용<br/>무빈소 상품</h3>
             </div>
             <Handshake className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-blue-500 transition-all group-hover:scale-110" />
-          </div>
+          </Link>
 
           {/* Menu 2 */}
           <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
