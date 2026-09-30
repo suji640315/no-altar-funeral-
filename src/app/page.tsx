@@ -2,6 +2,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import MouSection from "@/components/MouSection";
 import Image from "next/image";
 import Link from "next/link";
+import RecentCounselsTicker from "@/components/RecentCounselsTicker";
 import { Handshake, PhoneCall, BookOpen, Gift, MessageCircle } from "lucide-react";
 
 export default function Home() {
@@ -62,6 +63,8 @@ export default function Home() {
 
         </div>
       </section>
+
+      <RecentCounselsTicker />
 
       {/* SNS Section */}
       <section className="text-center mb-24 px-4">
