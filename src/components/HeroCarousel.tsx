@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/slide-img-01.png',
-  '/slide-img-02.png',
-  '/slide-img-03.png'
+  '/slide-img-01.jpg',
+  '/slide-img-02.jpg',
+  '/slide-img-03.jpg'
 ];
 
 export default function HeroCarousel() {
@@ -33,7 +33,8 @@ export default function HeroCarousel() {
             className="object-cover object-center"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Subtle gradient overlay to ensure text is readable even on white backgrounds */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </div>
       ))}
     </div>
