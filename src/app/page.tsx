@@ -34,13 +34,13 @@ export default function Home() {
           </Link>
 
           {/* Menu 2 */}
-          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+          <Link href="/sub/counsel" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
             <div>
               <p className="text-xs text-gray-500 mb-1">24시간</p>
               <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-red-500 transition-colors"><span className="text-red-500">무료상담</span><br/>서비스</h3>
             </div>
             <PhoneCall className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-red-400 transition-all group-hover:scale-110" />
-          </div>
+          </Link>
 
           {/* Menu 3 */}
           <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
