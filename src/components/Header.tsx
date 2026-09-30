@@ -9,10 +9,11 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: '#trust', label: '회사소개' },
-    { href: '#pricing', label: '무빈소 상품안내' },
-    { href: '#network', label: '전국 장례식장 안내' },
-    { href: '#mou', label: 'MOU 제휴 현황' }
+    { href: '#', label: '회사소개' },
+    { href: '#', label: '상품소개' },
+    { href: '#', label: '장례위로금상품권' },
+    { href: '#', label: '부가서비스' },
+    { href: '#', label: '고객센터' }
   ];
 
   return (
@@ -29,9 +30,9 @@ export default function Header() {
         {/* Right: Desktop Menu & Mobile Toggle */}
         <div className="flex items-center gap-6 relative z-20">
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex gap-6 text-sm font-medium text-brand-700 dark:text-brand-300">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-gold-500 transition-colors">
+          <nav className="hidden lg:flex gap-8 text-sm font-bold text-gray-800">
+            {navLinks.map((link, idx) => (
+              <Link key={idx} href={link.href} className="hover:text-blue-600 transition-colors">
                 {link.label}
               </Link>
             ))}
@@ -51,11 +52,11 @@ export default function Header() {
       {/* Mobile Dropdown Menu */}
       <div className={`lg:hidden absolute top-20 left-0 right-0 bg-white dark:bg-brand-950 border-b border-brand-100 dark:border-brand-800 shadow-xl transition-all duration-300 ease-in-out origin-top ${isOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-0 pointer-events-none'}`}>
         <div className="flex flex-col py-2 px-4">
-          {navLinks.map((link) => (
+          {navLinks.map((link, idx) => (
             <Link 
-              key={link.href} 
+              key={idx} 
               href={link.href} 
-              className="block text-base font-bold text-brand-800 dark:text-brand-200 hover:text-gold-600 hover:bg-brand-50 dark:hover:bg-brand-900/50 p-4 border-b border-gray-100 dark:border-brand-800 last:border-0 rounded-md transition-colors"
+              className="block text-base font-bold text-gray-800 p-4 border-b border-gray-100 last:border-0 rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.label}

@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/hero/hero_1.jpg',
-  '/hero/hero_2.jpg',
-  '/hero/hero_3.jpg'
+  '/slide-img-01.jpg',
+  '/slide-img-02.jpg',
+  '/slide-img-03.jpg'
 ];
 
 export default function HeroCarousel() {
@@ -29,7 +29,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden bg-gray-100">
       {/* Background Images */}
       {images.map((img, index) => (
         <div
