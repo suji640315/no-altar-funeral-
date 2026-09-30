@@ -9,11 +9,10 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { href: '#', label: '회사소개' },
-    { href: '#', label: '상품소개' },
-    { href: '#', label: '장례위로금상품권' },
-    { href: '#', label: '부가서비스' },
-    { href: '#', label: '고객센터' }
+    { href: '/sub/company', label: '회사소개' },
+    { href: '/sub/goods', label: '상품소개' },
+    { href: '/sub/counsel', label: '무료상담서비스' },
+    { href: '/sub/procedure', label: '장례절차' }
   ];
 
   return (
