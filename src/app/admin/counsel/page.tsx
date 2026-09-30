@@ -8,9 +8,9 @@ interface Counsel {
   name: string;
   phone: string;
   region: string;
-  funeralHome: string;
+  funeral_home: string;
   notes: string;
-  createdAt: string;
+  created_at: string;
 }
 
 export default function AdminCounselPage() {
@@ -42,13 +42,13 @@ export default function AdminCounselPage() {
     let csv = "접수일시,고객성함,연락처,희망지역,희망장례식장,기타참고사항\n";
     
     data.forEach(item => {
-      const date = new Date(item.createdAt).toLocaleString('ko-KR');
+      const date = new Date(item.created_at).toLocaleString('ko-KR');
       const row = [
         `"${date}"`,
         `"${item.name}"`,
         `"${item.phone}"`,
         `"${item.region}"`,
-        `"${item.funeralHome || ''}"`,
+        `"${item.funeral_home || ''}"`,
         `"${(item.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`
       ].join(',');
       csv += row + "\n";
@@ -125,7 +125,7 @@ export default function AdminCounselPage() {
                   data.map((item) => (
                     <tr key={item.id} className="hover:bg-blue-50/50 transition-colors">
                       <td className="px-6 py-4 whitespace-nowrap text-gray-500">
-                        {new Date(item.createdAt).toLocaleString('ko-KR')}
+                        {new Date(item.created_at).toLocaleString('ko-KR')}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
                         {item.name}
@@ -137,7 +137,7 @@ export default function AdminCounselPage() {
                         {item.region}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                        {item.funeralHome || '-'}
+                        {item.funeral_home || '-'}
                       </td>
                       <td className="px-6 py-4 text-gray-600">
                         {item.notes || '-'}
