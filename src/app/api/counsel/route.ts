@@ -9,7 +9,7 @@ const pool = createPool({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, phone, region, funeralHome, notes } = body;
+    const { name, phone, region, funeralHome, patientLocation, notes } = body;
     
     // Ensure table exists
     await pool.sql`
@@ -23,10 +23,15 @@ export async function POST(request: Request) {
         created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
       );
     `;
+    
+    // Safely add the new column if it doesn't exist
+    await pool.sql`
+      ALTER TABLE counsels ADD COLUMN IF NOT EXISTS patient_location VARCHAR(255);
+    `;
 
     await pool.sql`
-      INSERT INTO counsels (name, phone, region, funeral_home, notes)
-      VALUES (${name}, ${phone}, ${region}, ${funeralHome}, ${notes});
+      INSERT INTO counsels (name, phone, region, funeral_home, patient_location, notes)
+      VALUES (${name}, ${phone}, ${region}, ${funeralHome}, ${patientLocation}, ${notes});
     `;
 
     return NextResponse.json({ success: true });

@@ -9,6 +9,7 @@ export default function CounselPage() {
     phone: '',
     region: '',
     funeralHome: '',
+    patientLocation: '',
     notes: ''
   });
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,10 @@ export default function CounselPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleLocationClick = (location: string) => {
+    setFormData({ ...formData, patientLocation: location });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -35,7 +40,7 @@ export default function CounselPage() {
       
       if (data.success) {
         setSuccess(true);
-        setFormData({ name: '', phone: '', region: '', funeralHome: '', notes: '' });
+        setFormData({ name: '', phone: '', region: '', funeralHome: '', patientLocation: '', notes: '' });
       } else {
         setErrorMsg(data.error || '접수 중 오류가 발생했습니다. 나중에 다시 시도해주세요.');
       }
@@ -45,6 +50,8 @@ export default function CounselPage() {
       setLoading(false);
     }
   };
+
+  const locationOptions = ["요양병원", "요양원", "병원", "자택", "기타"];
 
   return (
     <div className="w-full bg-gray-50 min-h-screen pt-[100px] pb-20 font-sans text-gray-800">
@@ -93,6 +100,26 @@ export default function CounselPage() {
                 <div>
                   <label className="block text-sm font-bold text-gray-700 mb-2">희망 장례식장</label>
                   <input type="text" name="funeralHome" value={formData.funeralHome} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#00387f] focus:border-[#00387f] transition-colors outline-none" placeholder="원하시는 장례식장이 있다면 적어주세요 (선택사항)" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-2">현재 환자분 계신 곳</label>
+                  <div className="grid grid-cols-5 gap-2">
+                    {locationOptions.map((loc) => (
+                      <button
+                        key={loc}
+                        type="button"
+                        onClick={() => handleLocationClick(loc)}
+                        className={`py-3 px-1 text-xs md:text-sm font-bold rounded-lg border transition-all ${
+                          formData.patientLocation === loc 
+                            ? 'border-[#00387f] text-[#00387f] bg-blue-50' 
+                            : 'border-gray-200 text-gray-600 bg-white hover:border-gray-300 hover:bg-gray-50'
+                        }`}
+                      >
+                        {loc}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
                 <div>
