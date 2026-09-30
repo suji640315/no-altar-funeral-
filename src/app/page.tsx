@@ -43,16 +43,16 @@ export default function Home() {
             <PhoneCall className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-red-400 transition-all group-hover:scale-110" />
           </Link>
 
-          {/* Menu 3 */}
-          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+                    {/* Menu 3 */}
+          <Link href="/sub/procedure" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
             <div>
-              <p className="text-xs text-gray-500 mb-1">생생한 장례후기</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">장례후기</h3>
+              <p className="text-xs text-gray-500 mb-1">무빈소 장례안내</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">장례절차</h3>
             </div>
             <BookOpen className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-green-500 transition-all group-hover:scale-110" />
-          </div>
+          </Link>
 
-          {/* Menu 4 */}
+{/* Menu 4 */}
           <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
             <div>
               <p className="text-xs text-gray-500 mb-1">위로금 신청안내</p>
