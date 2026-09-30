@@ -1,91 +1,109 @@
-import InquiryForm from '@/components/InquiryForm';
-import TrustSection from '@/components/TrustSection';
-import PricingSection from '@/components/PricingSection';
-import ProcessSection from '@/components/ProcessSection';
-import NetworkSection from '@/components/NetworkSection';
-import MouSection from '@/components/MouSection';
-import { Phone, Shield, Clock, HeartHandshake } from 'lucide-react';
-import HeroCarousel from '@/components/HeroCarousel';
+import HeroCarousel from "@/components/HeroCarousel";
+import MouSection from "@/components/MouSection";
+import Image from "next/image";
+import { Handshake, PhoneCall, BookOpen, Gift, MessageCircle } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-brand-50 dark:bg-brand-900 selection:bg-gold-200 selection:text-gold-900">
-      {/* Hero Section */}
-      <section className="relative pt-8 pb-16 md:pt-20 lg:pt-28 lg:pb-36 overflow-hidden">
-        <HeroCarousel />
+    <main className="flex min-h-screen flex-col bg-white">
+      <HeroCarousel />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-2 md:mt-4">
+      {/* Spacer for floating buttons from Hero */}
+      <div className="h-32 md:h-24"></div>
+
+      {/* Subtitle Section */}
+      <section className="py-12 md:py-16 text-center px-4">
+        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
+          공무원노동조합 및 기업 단체와의 MOU업무협약으로<br className="hidden md:block"/>
+          믿음과 신뢰가 검증된 100% 후불제 장례상품을 제공합니다.
+        </p>
+      </section>
+
+      {/* 4 Square Menus */}
+      <section className="max-w-5xl mx-auto px-4 w-full mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           
-          <div className="inline-block p-1 sm:p-4 w-full max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-red-600/90 text-white font-bold text-xs mb-2 md:mb-4 shadow-lg">
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-              공식 MOU 체결
+          {/* Menu 1 */}
+          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+            <div>
+              <p className="text-xs text-gray-500 mb-1">장례상품 안내</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">공무원가족<br/>전용상품</h3>
             </div>
-            
-            <h1 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-2 md:mb-4 leading-tight drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] break-keep">
-              대한민국 공무원가족을 위한<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-500 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">무빈소장례 지원</span>
-            </h1>
-            
-            <p className="text-xs sm:text-sm md:text-lg lg:text-xl text-white/95 max-w-3xl mx-auto mb-4 md:mb-6 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] leading-relaxed font-bold break-keep">
-              공무원노동조합 및 기업 단체와의 MOU업무협약으로<br className="hidden md:block"/>
-              믿음과 신뢰가 검증된 100% 후불제 무빈소장례 상품을 제공합니다.
-            </p>
-            
-            <div className="flex flex-wrap justify-center gap-1.5 md:gap-3 lg:gap-5">
-              <div className="flex items-center gap-1 px-2.5 py-1 md:px-4 md:py-2 bg-black/40 backdrop-blur-sm rounded-full border border-white/20">
-                <Shield className="w-3 h-3 text-gold-400" />
-                <span className="font-bold text-white text-[10px] md:text-sm">MOU 체결 검증</span>
-              </div>
-              <div className="flex items-center gap-1 px-2.5 py-1 md:px-4 md:py-2 bg-black/40 backdrop-blur-sm rounded-full border border-white/20">
-                <HeartHandshake className="w-3 h-3 text-gold-400" />
-                <span className="font-bold text-white text-[10px] md:text-sm">100% 후불제</span>
-              </div>
-              <div className="flex items-center gap-1 px-2.5 py-1 md:px-4 md:py-2 bg-black/40 backdrop-blur-sm rounded-full border border-white/20">
-                <Clock className="w-3 h-3 text-gold-400" />
-                <span className="font-bold text-white text-[10px] md:text-sm">24시간 긴급출동</span>
-              </div>
+            <Handshake className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-blue-500 transition-all group-hover:scale-110" />
+          </div>
+
+          {/* Menu 2 */}
+          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+            <div>
+              <p className="text-xs text-gray-500 mb-1">24시간</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-red-500 transition-colors"><span className="text-red-500">무료상담</span><br/>서비스</h3>
             </div>
+            <PhoneCall className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-red-400 transition-all group-hover:scale-110" />
+          </div>
+
+          {/* Menu 3 */}
+          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+            <div>
+              <p className="text-xs text-gray-500 mb-1">생생한 장례후기</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">장례후기</h3>
+            </div>
+            <BookOpen className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-green-500 transition-all group-hover:scale-110" />
+          </div>
+
+          {/* Menu 4 */}
+          <div className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
+            <div>
+              <p className="text-xs text-gray-500 mb-1">위로금 신청안내</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-yellow-600 transition-colors"><span className="text-blue-600">장례위로금</span><br/>이란?</h3>
+            </div>
+            <Gift className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-yellow-500 transition-all group-hover:scale-110" />
           </div>
 
         </div>
       </section>
 
-      {/* Form Section */}
-      <section className="relative z-20 -mt-10 md:-mt-16 lg:-mt-24 pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <InquiryForm />
+      {/* SNS Section */}
+      <section className="text-center mb-24 px-4">
+        <h3 className="text-xl text-gray-600 mb-8">공무원상조 공무원라이프 SNS 장례정보</h3>
+        <div className="flex items-center justify-center gap-4">
+          <div className="w-14 h-14 bg-[#03c75a] text-white rounded-2xl flex items-center justify-center font-bold text-xl cursor-pointer hover:-translate-y-1 transition-transform">
+            blog
+          </div>
+          <div className="w-14 h-14 bg-[#fae100] text-black rounded-2xl flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-transform">
+            <MessageCircle className="w-8 h-8 fill-black" />
+          </div>
+          <div className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white rounded-2xl flex items-center justify-center cursor-pointer hover:-translate-y-1 transition-transform">
+            <div className="w-8 h-8 border-2 border-white rounded-lg relative flex items-center justify-center">
+              <div className="w-3 h-3 border-2 border-white rounded-full"></div>
+              <div className="w-1 h-1 bg-white rounded-full absolute top-1 right-1"></div>
+            </div>
+          </div>
+          <div className="w-14 h-14 bg-[#1877f2] text-white rounded-2xl flex items-center justify-center font-bold text-3xl cursor-pointer hover:-translate-y-1 transition-transform pb-1 pr-1">
+            f
+          </div>
         </div>
       </section>
 
-      {/* New Sections */}
-      <TrustSection />
-      <PricingSection />
-      <ProcessSection />
-      <NetworkSection />
-      
-      {/* MOU Section added here */}
+      {/* Partners / Logos Crawler block */}
+      <section className="max-w-7xl mx-auto px-4 w-full mb-12">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-3 h-3 bg-gray-400"></div>
+          <h4 className="font-bold text-gray-700">협력기관 및 단체</h4>
+        </div>
+        <div className="border-t border-b border-gray-200 py-6 overflow-hidden relative">
+          {/* Simple static grid for now to match exactly */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 opacity-70">
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">보건복지부</span></div>
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">인천광역시<br/>통합공무원노조</span></div>
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">보성삼베섬유(주)</span></div>
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">사회적협동조합<br/>멋진인생웰다잉</span></div>
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">국립연명<br/>의료관리기관</span></div>
+            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">공공운수노조</span></div>
+          </div>
+        </div>
+      </section>
+
       <MouSection />
-
-      {/* Footer Contact */}
-      <footer className="bg-brand-900 text-brand-300 py-16 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <span className="text-xl font-bold text-white">(주)공무원라이프</span>
-          </div>
-          <h2 className="text-xl font-bold text-brand-200 mb-6">24시간 긴급 접수</h2>
-          <div className="flex items-center justify-center gap-3 text-4xl md:text-5xl font-extrabold text-gold-400 mb-10">
-            <Phone className="w-10 h-10 md:w-12 md:h-12" />
-            <span>1599-8379</span>
-          </div>
-          <p className="text-sm leading-relaxed max-w-2xl mx-auto">
-            상호: (주)공무원라이프 | 대표: 홍길동 | 사업자등록번호: 123-45-67890<br/>
-            이메일: help@gongmuwon-life.com | 주소: 서울시 강남구<br/>
-            통신판매업신고번호: 제2026-서울강남-0000호<br/>
-            Copyright &copy; (주)공무원라이프 All rights reserved.
-          </p>
-        </div>
-      </footer>
     </main>
   );
 }
