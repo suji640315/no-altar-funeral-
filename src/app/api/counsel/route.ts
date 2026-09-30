@@ -1,56 +1,47 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
+import { createPool } from '@vercel/postgres';
 
-const getFilePath = () => {
-  // Use /tmp for serverless environment like Vercel
-  if (process.env.VERCEL) {
-    return '/tmp/counsels.json';
-  }
-  return path.join(process.cwd(), 'counsels.json');
-};
+// Use connectionString from either POSTGRES_URL or DATABASE_URL (Neon compatibility)
+const pool = createPool({
+  connectionString: process.env.POSTGRES_URL || process.env.DATABASE_URL
+});
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const filePath = getFilePath();
+    const { name, phone, region, funeralHome, notes } = body;
     
-    let data = [];
-    try {
-      const fileContent = await fs.readFile(filePath, 'utf8');
-      data = JSON.parse(fileContent);
-    } catch (e) {
-      // File doesn't exist yet, which is fine
-    }
+    // Ensure table exists
+    await pool.sql`
+      CREATE TABLE IF NOT EXISTS counsels (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        phone VARCHAR(255) NOT NULL,
+        region VARCHAR(255) NOT NULL,
+        funeral_home VARCHAR(255),
+        notes TEXT,
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+      );
+    `;
 
-    const newEntry = {
-      id: Date.now(),
-      ...body,
-      createdAt: new Date().toISOString()
-    };
-
-    data.push(newEntry);
-    
-    await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf8');
+    await pool.sql`
+      INSERT INTO counsels (name, phone, region, funeral_home, notes)
+      VALUES (${name}, ${phone}, ${region}, ${funeralHome}, ${notes});
+    `;
 
     return NextResponse.json({ success: true });
   } catch (error: any) {
-    console.error("File DB Error:", error.message);
-    return NextResponse.json({ success: false, error: "서버 오류가 발생했습니다." }, { status: 500 });
+    console.error("DB Error:", error.message);
+    return NextResponse.json({ success: false, error: "데이터베이스 연결이 필요합니다." }, { status: 500 });
   }
 }
 
 export async function GET() {
   try {
-    const filePath = getFilePath();
-    const fileContent = await fs.readFile(filePath, 'utf8');
-    const data = JSON.parse(fileContent);
-    
-    // Sort descending by ID (newest first)
-    data.sort((a: any, b: any) => b.id - a.id);
-    
-    return NextResponse.json({ success: true, data });
+    const { rows } = await pool.sql`SELECT * FROM counsels ORDER BY created_at DESC`;
+    return NextResponse.json({ success: true, data: rows });
   } catch (error: any) {
+    console.error("DB Error:", error.message);
     return NextResponse.json({ success: true, data: [] });
   }
 }
