@@ -135,9 +135,12 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
               <div className="flex justify-between items-end">
                 
                 {/* Contact Section */}
-                <div className="text-left">
-                  <div className="text-[10px] md:text-xs font-bold text-red-600 mb-0.5">24시간 긴급콜센터</div>
-                  <div className="text-sm md:text-base font-black text-red-600 tracking-tighter">1599-8379</div>
+                <div className="text-left bg-red-50 px-3 py-2 rounded-lg border border-red-200 shadow-sm animate-pulse">
+                  <div className="text-xs md:text-sm font-bold text-red-600 mb-0.5 flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-red-500"></span>
+                    24시간 긴급콜센터
+                  </div>
+                  <div className="text-xl md:text-2xl font-black text-red-600 tracking-tighter">1599-8379</div>
                 </div>
                 
                 <div className="flex flex-col items-center ml-20">
