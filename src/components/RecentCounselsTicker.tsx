@@ -63,7 +63,7 @@ export default function RecentCounselsTicker() {
                     {item.region}
                   </span>
                   <span className="font-bold text-gray-800 w-[80px]">{item.name} <span className="font-normal text-sm text-gray-500">님</span></span>
-                  <span className="text-sm text-gray-600 font-medium block">{item.location}</span>
+                  <span className="text-sm text-gray-600 font-medium hidden sm:block">{item.location}</span>
                 </div>
                 <div className="text-sm text-gray-400">
                   {item.date}
