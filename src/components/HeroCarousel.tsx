@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import VipCardModal from './VipCardModal';
 
 const images = [
   '/slide-img-01.jpg',
@@ -12,6 +13,7 @@ const images = [
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVipModalOpen, setIsVipModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -83,15 +85,15 @@ export default function HeroCarousel() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           
           {/* Button 1: Blue */}
-          <div className="bg-[#1a5eff] text-white rounded-2xl shadow-xl flex items-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
+          <div onClick={() => setIsVipModalOpen(true)} className="bg-[#1a5eff] text-white rounded-2xl shadow-xl flex items-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
             <div className="w-12 h-12 mr-4 bg-white/20 rounded-full flex items-center justify-center shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
               </svg>
             </div>
             <div>
-              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">일반인도 장례위로금 신청가능!</p>
-              <h3 className="text-lg md:text-xl font-bold">장례위로금 신청하기</h3>
+              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">일반인도 특별할인카드 신청가능!</p>
+              <h3 className="text-lg md:text-xl font-bold">특별할인카드 신청하기</h3>
             </div>
           </div>
 
@@ -114,6 +116,7 @@ export default function HeroCarousel() {
 
         </div>
       </div>
+      <VipCardModal isOpen={isVipModalOpen} onClose={() => setIsVipModalOpen(false)} />
     </section>
   );
 }
