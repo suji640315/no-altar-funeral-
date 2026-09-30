@@ -98,13 +98,13 @@ export default function HeroCarousel() {
           </div>
 
           {/* Button 2: White/Red */}
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
+          <a href="tel:1599-8379" className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
               <p className="text-xs md:text-sm font-medium text-gray-600">24시간 긴급 장례접수</p>
             </div>
             <h3 className="text-2xl md:text-3xl font-black text-[#e3000f] tracking-tight">1599-8379</h3>
-          </div>
+            </a>
 
           {/* Button 3: White/Yellow */}
           <a href="https://pf.kakao.com/_NpBqxb" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
