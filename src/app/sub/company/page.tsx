@@ -93,32 +93,101 @@ export default function CompanyPage() {
               <MapPin className="w-8 h-8 text-[#00387f]" /> 오시는 길
             </h2>
             <div className="w-10 h-[2px] bg-gray-400 mx-auto mt-4 mb-4"></div>
-            <p className="text-gray-500 text-sm">(주)공무원라이프 오시는 길을 안내해 드립니다.</p>
           </div>
           
-          <div className="w-full aspect-[16/9] md:aspect-[21/9] bg-gray-200 rounded-2xl overflow-hidden relative flex items-center justify-center shadow-inner">
-            {/* Placeholder for map */}
-            <div className="text-center flex flex-col items-center">
-              <MapPin className="w-12 h-12 text-gray-400 mb-2" />
-              <p className="text-gray-500 font-medium">지도 준비 중입니다</p>
-            </div>
+          {/* Map Embed */}
+          <div className="w-full aspect-[4/3] md:aspect-[21/9] bg-gray-200 rounded-2xl overflow-hidden relative shadow-md mb-12">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.6661918341695!2d127.20235311531065!3d37.53935297980309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb077c5c065f1%3A0xc0fb10fa4d17b8f9!2z6rK96riw64-EIO2VmOuCqOyLnCDtZZjrgqjrjIDroZwgOTQ3!5e0!3m2!1sko!2skr!4v1684305844431!5m2!1sko!2skr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0"
+            ></iframe>
           </div>
           
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-red-500" /> 본사 주소
-              </h4>
-              <p className="text-gray-600 text-sm">서울특별시 영등포구 선유로 146, 508호(양평동3가, 이앤씨드림타워)</p>
+          {/* Detailed Info */}
+          <div className="flex flex-col gap-10">
+            {/* 본사 오시는 길 */}
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-[#00387f] mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full border-2 border-blue-500 inline-block"></span> 본사 오시는 길
+              </h3>
+              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-3 text-sm md:text-base border-t border-b border-gray-200 py-4">
+                <div className="font-bold text-gray-700">주 소 :</div>
+                <div className="text-gray-600">경기도 하남시 하남대로 947 하남테크노벨리U1센터 A동 401호</div>
+                
+                <div className="font-bold text-gray-700">통합콜센터 :</div>
+                <div className="text-blue-600 font-bold font-sans">1599-8379</div>
+                
+                <div className="font-bold text-gray-700">전 화 :</div>
+                <div className="text-gray-600">031-966-8379</div>
+                
+                <div className="font-bold text-gray-700">팩 스 :</div>
+                <div className="text-gray-600">031-969-3522</div>
+              </div>
             </div>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
-              <h4 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
-                <Users className="w-4 h-4 text-blue-500" /> 고객 센터
-              </h4>
-              <p className="text-gray-600 text-sm">
-                24시간 긴급 장례접수: <strong>1599-8379</strong>
-              </p>
+
+            {/* 교통편 */}
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-[#00387f] mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full border-2 border-blue-500 inline-block"></span> 교통편(지하철)
+              </h3>
+              <div className="flex flex-col gap-5 border-b border-gray-200 pb-5">
+                
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-[#8b50a4] text-white text-[11px] font-bold px-2 py-0.5 rounded">5호선</span>
+                    <strong className="text-gray-800 text-sm md:text-base">하남풍산역 1번 출구 <span className="font-normal text-gray-500">(도보 약 10~12분, 800m)</span></strong>
+                  </div>
+                  <p className="text-[13px] md:text-sm text-gray-500 ml-[52px]">
+                    * 하남풍산역 1번 출구 앞 버스정류장에서 마을버스 3-1, 3-2 또는 시내버스 30-3, 30-5 환승 시 1정거장('하남테크노벨리U1센터' 정류장) 하차
+                  </p>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-[#8b50a4] text-white text-[11px] font-bold px-2 py-0.5 rounded">5호선</span>
+                    <strong className="text-gray-800 text-sm md:text-base">하남시청역 4번 출구 <span className="font-normal text-gray-500">(시내버스 환승 약 7분)</span></strong>
+                  </div>
+                  <p className="text-[13px] md:text-sm text-gray-500 ml-[52px]">
+                    * 30-3, 30-5, 87, 89번 버스 탑승 후 '하남테크노벨리U1센터' 하차
+                  </p>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-blue-500 text-white text-[11px] font-bold px-2 py-0.5 rounded">버스</span>
+                    <strong className="text-gray-800 text-sm md:text-base">'하남테크노벨리U1센터' 정류장 하차 바로 앞</strong>
+                  </div>
+                  <p className="text-[13px] md:text-sm text-gray-500 ml-[46px]">
+                    일반버스: 30-3, 30-5, 87, 89 | 마을버스: 3-1, 3-2
+                  </p>
+                </div>
+                
+              </div>
             </div>
+
+            {/* 업무시간 */}
+            <div>
+              <h3 className="text-lg md:text-xl font-bold text-[#00387f] mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full border-2 border-blue-500 inline-block"></span> 업무시간
+              </h3>
+              <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-3 text-sm md:text-base border-b border-gray-200 pb-5">
+                <div className="font-bold text-gray-700">평 일 :</div>
+                <div className="text-gray-600">09:00~18:00 (031-966-8379)</div>
+                
+                <div className="font-bold text-gray-700">휴 무 :</div>
+                <div className="text-gray-600">주말 및 공휴일 휴무</div>
+                
+                <div className="font-bold text-gray-700 mt-2 whitespace-nowrap">장례접수 및 상담문의 <span className="font-normal text-gray-500">(24시간 운영)</span> :</div>
+                <div className="text-[#e3000f] font-bold text-lg mt-2 font-sans md:ml-20">1599-8379</div>
+              </div>
+            </div>
+            
           </div>
         </section>
 
