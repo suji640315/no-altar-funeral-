@@ -1,4 +1,3 @@
-import { Phone } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -22,13 +21,6 @@ export default function Header() {
             <Link href="#network" className="hover:text-gold-500 transition-colors">전국 장례식장 안내</Link>
             <Link href="#mou" className="hover:text-gold-500 transition-colors">MOU 제휴 현황</Link>
           </nav>
-
-          <a href="tel:1599-8379" className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-4 md:px-6 py-2.5 rounded-full font-bold shadow-lg shadow-red-600/20 transition-transform active:scale-95">
-            <Phone className="w-4 h-4 md:w-5 md:h-5" />
-            <span className="hidden md:inline">24시 긴급 장례접수</span>
-            <span className="md:hidden">긴급접수</span>
-            <span className="ml-1 md:text-lg">1599-8379</span>
-          </a>
         </div>
 
       </div>
