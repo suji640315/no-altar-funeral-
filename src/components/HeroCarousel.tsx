@@ -24,11 +24,11 @@ export default function HeroCarousel() {
       {images.map((src, index) => (
         <div
           key={src}
-          className={bsolute inset-0 transition-opacity duration-1000 ease-in-out }
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current ? 'opacity-100' : 'opacity-0'}`}
         >
           <Image
             src={src}
-            alt={Slide }
+            alt={`Slide ${index + 1}`}
             fill
             className="object-cover object-center"
             priority={index === 0}
