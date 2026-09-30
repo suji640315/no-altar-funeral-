@@ -3,18 +3,8 @@
 import { useState, useEffect } from 'react';
 import { Download, Users, RefreshCw } from 'lucide-react';
 
-interface Counsel {
-  id: number;
-  name: string;
-  phone: string;
-  region: string;
-  funeral_home: string;
-  notes: string;
-  created_at: string;
-}
-
 export default function AdminCounselPage() {
-  const [data, setData] = useState<Counsel[]>([]);
+  const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
@@ -37,18 +27,21 @@ export default function AdminCounselPage() {
   }, []);
 
   const downloadExcel = () => {
-    // Add BOM for UTF-8 Excel compatibility
     const BOM = "\uFEFF";
     let csv = "접수일시,고객성함,연락처,희망지역,희망장례식장,기타참고사항\n";
     
     data.forEach(item => {
-      const date = new Date(item.created_at).toLocaleString('ko-KR');
+      // Handle both camelCase and snake_case safely
+      const dateStr = item.created_at || item.createdAt; 
+      const date = dateStr ? new Date(dateStr).toLocaleString('ko-KR') : '-';
+      const funeralHome = item.funeral_home || item.funeralHome || '';
+      
       const row = [
         `"${date}"`,
-        `"${item.name}"`,
-        `"${item.phone}"`,
-        `"${item.region}"`,
-        `"${item.funeral_home || ''}"`,
+        `"${item.name || ''}"`,
+        `"${item.phone || ''}"`,
+        `"${item.region || ''}"`,
+        `"${funeralHome}"`,
         `"${(item.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`
       ].join(',');
       csv += row + "\n";
@@ -122,28 +115,33 @@ export default function AdminCounselPage() {
                     </td>
                   </tr>
                 ) : (
-                  data.map((item) => (
-                    <tr key={item.id} className="hover:bg-blue-50/50 transition-colors">
-                      <td className="px-6 py-4 whitespace-nowrap text-gray-500">
-                        {new Date(item.created_at).toLocaleString('ko-KR')}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
-                        {item.name}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap font-medium text-[#00387f]">
-                        {item.phone}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        {item.region}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-gray-600">
-                        {item.funeral_home || '-'}
-                      </td>
-                      <td className="px-6 py-4 text-gray-600">
-                        {item.notes || '-'}
-                      </td>
-                    </tr>
-                  ))
+                  data.map((item) => {
+                    const dateStr = item.created_at || item.createdAt;
+                    const date = dateStr ? new Date(dateStr).toLocaleString('ko-KR') : '-';
+                    const funeralHome = item.funeral_home || item.funeralHome || '-';
+                    return (
+                      <tr key={item.id} className="hover:bg-blue-50/50 transition-colors">
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-500">
+                          {date}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium text-gray-900">
+                          {item.name}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap font-medium text-[#00387f]">
+                          {item.phone}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {item.region}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-gray-600">
+                          {funeralHome}
+                        </td>
+                        <td className="px-6 py-4 text-gray-600">
+                          {item.notes || '-'}
+                        </td>
+                      </tr>
+                    )
+                  })
                 )}
               </tbody>
             </table>
