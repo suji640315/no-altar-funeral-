@@ -1,66 +1,21 @@
 import Image from 'next/image';
 
 const mouItems = [
-  {
-    title: '인천개인택시조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2022-07/1f1e72ba523932d5829a969d635bcc0f_thumb.jpg'
-  },
-  {
-    title: '부산광역시교육청공무원노동조합 업무협약 체결',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-03/8f13e61e49d4d3b29f2e089d74df5ab1_thumb.jpg'
-  },
-  {
-    title: '연제구청공무원노동조합 상조서비스 업무협약',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-03/09c302bcce7f827c41e07ea8d238b512_thumb.jpg'
-  },
-  {
-    title: '고창군공무원노동조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/9749e1f5eddebdc7498e1bf4ad66198c_thumb.jpg'
-  },
-  {
-    title: '익산공무원노동조합(한마음화합큰잔치)',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/ae0a83e7c8cb87b3aec7da8f2c410481_thumb.jpg'
-  },
-  {
-    title: '익산시공무원노동조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/c56958ef13786a7c9b8cff01208f26dc_thumb.jpg'
-  },
-  {
-    title: '구리시공무원노동조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/7df73011ac8ad1f424457bb9971cfaa1_thumb.jpg'
-  },
-  {
-    title: '보성삼베섬유(주) 공동협력계약',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/c758faccad3be786c8281f953114d2cc_thumb.jpg'
-  },
-  {
-    title: '순복음이레라이프 MOU업무 협약',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/b30c9a438df2d0ad7cbe7d6ce42ce3a0_thumb.jpg'
-  },
-  {
-    title: '사회적협동조합 멋진인생웰다잉 MOU업무협약',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/b03093b5e6f8e14ae6bcde4b6e57b40b_thumb.jpg'
-  },
-  {
-    title: '전국공무원노동조합양천구지부',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2019-07/2dec97ed7faa230568cc5822ce241384_thumb.jpg'
-  },
-  {
-    title: '대한민국퇴직공무원노동조합 업무협약',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2020-02/04794e29dafcdd8c2c6d0c1d7d8dfd5f_thumb.jpg'
-  },
-  {
-    title: '공공운수노조 인천지역공공기관지부',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2017-11/0747507812a556e51cee5bf36a205197_thumb.jpg'
-  },
-  {
-    title: '인천환경공단人노동조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2017-11/054109aaf314c404f6f2595eaac3f84a_thumb.jpg'
-  },
-  {
-    title: '인천광역시통합공무원노동조합',
-    imgSrc: 'http://www.xn--ob0br3ru1cxypqxah90d.com/application/uploads/bbs/coalition/2017-11/df25c327710c9fb38fc30653bd916cef_thumb.jpg'
-  }
+  { title: '인천개인택시조합', imgSrc: '/mou/mou_0.jpg' },
+  { title: '부산광역시교육청공무원노동조합 업무협약 체결', imgSrc: '/mou/mou_1.jpg' },
+  { title: '연제구청공무원노동조합 상조서비스 업무협약', imgSrc: '/mou/mou_2.jpg' },
+  { title: '고창군공무원노동조합', imgSrc: '/mou/mou_3.jpg' },
+  { title: '익산공무원노동조합(한마음화합큰잔치)', imgSrc: '/mou/mou_4.jpg' },
+  { title: '익산시공무원노동조합', imgSrc: '/mou/mou_5.jpg' },
+  { title: '구리시공무원노동조합', imgSrc: '/mou/mou_6.jpg' },
+  { title: '보성삼베섬유(주) 공동협력계약', imgSrc: '/mou/mou_7.jpg' },
+  { title: '순복음이레라이프 MOU업무 협약', imgSrc: '/mou/mou_8.jpg' },
+  { title: '사회적협동조합 멋진인생웰다잉 MOU업무협약', imgSrc: '/mou/mou_9.jpg' },
+  { title: '전국공무원노동조합양천구지부', imgSrc: '/mou/mou_10.jpg' },
+  { title: '대한민국퇴직공무원노동조합 업무협약', imgSrc: '/mou/mou_11.jpg' },
+  { title: '공공운수노조 인천지역공공기관지부', imgSrc: '/mou/mou_12.jpg' },
+  { title: '인천환경공단人노동조합', imgSrc: '/mou/mou_13.jpg' },
+  { title: '인천광역시통합공무원노동조합', imgSrc: '/mou/mou_14.jpg' }
 ];
 
 export default function MouSection() {
