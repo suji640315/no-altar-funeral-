@@ -52,10 +52,15 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none"></div>
 
       {/* Main Huge Text Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none pb-12 md:pb-20">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white text-center leading-tight drop-shadow-2xl px-4 tracking-tight" style={{ textShadow: '0 4px 10px rgba(0,0,0,0.6)' }}>
-          대한민국 공무원가족을 위한<br />무빈소장례 지원
-        </h1>
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none pb-12 md:pb-24 px-4">
+        <div className="border-2 border-white/80 px-8 py-6 md:px-16 md:py-10 flex flex-col items-center justify-center bg-black/10 backdrop-blur-[1px]">
+          <h2 className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-4 tracking-tight" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+            대한민국 공무원가족을 위한
+          </h2>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter" style={{ textShadow: '2px 2px 6px rgba(0,0,0,0.8)' }}>
+            무빈소장례
+          </h1>
+        </div>
       </div>
 
       {/* Navigation Arrows */}
