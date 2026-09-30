@@ -101,7 +101,7 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
               
               {/* Header */}
               <div className="flex justify-between items-start">
-                <div className="font-serif text-lg md:text-2xl tracking-tight text-gray-900">
+                <div className="font-serif text-base sm:text-lg md:text-2xl tracking-tight text-gray-900 whitespace-nowrap">
                   Membership <span className="font-black text-2xl md:text-3xl">VIP</span> Card
                 </div>
                 <div className="bg-gray-100 px-3 py-1 rounded text-sm md:text-base font-bold text-gray-700">
@@ -135,19 +135,19 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
               <div className="flex justify-between items-end">
                 
                 {/* Contact Section */}
-                <div className="text-left bg-red-50 px-2 sm:px-3 py-1 sm:py-2 rounded-lg border border-red-200 shadow-sm animate-pulse shrink-0">
+                <div className="text-left bg-red-50 px-2 sm:px-3 py-1 sm:py-2 rounded-lg border border-red-200 shadow-sm animate-pulse shrink-0 w-max">
                   <div className="text-xs md:text-sm font-bold text-red-600 mb-0.5 flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                    24시간 긴급콜센터
+                    긴급콜센터
                   </div>
                   <div className="text-sm sm:text-lg md:text-2xl font-black text-red-600 tracking-tighter">1599-8379</div>
                 </div>
                 
                 <div className="flex flex-col items-center ml-2 sm:ml-10 md:ml-20">
-                  <div className="text-[10px] md:text-sm font-bold text-gray-800 tracking-tighter mb-0.5">
+                  <div className="text-[9px] sm:text-[10px] md:text-sm font-bold text-gray-800 tracking-tighter mb-0.5 whitespace-nowrap">
                     대한민국 공무원 장례서비스
                   </div>
-                  <div className="text-sm md:text-2xl font-black text-gray-900 tracking-tighter">
+                  <div className="text-sm md:text-2xl font-black text-gray-900 tracking-tighter whitespace-nowrap">
                     (주)공무원라이프
                   </div>
                 </div>
