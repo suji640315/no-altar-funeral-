@@ -107,13 +107,13 @@ export default function HeroCarousel() {
           </div>
 
           {/* Button 3: White/Yellow */}
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
+          <a href="https://pf.kakao.com/_NpBqxb" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
+
             <h3 className="text-xl md:text-2xl font-bold text-gray-800">카카오톡 채널추가</h3>
             <div className="w-12 h-12 bg-[#fae100] rounded-full flex items-center justify-center text-black font-black text-xl shrink-0">
               Ch
             </div>
-          </div>
-
+          </a>
         </div>
       </div>
       <VipCardModal isOpen={isVipModalOpen} onClose={() => setIsVipModalOpen(false)} />
