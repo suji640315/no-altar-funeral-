@@ -29,7 +29,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden bg-gray-100">
+    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] bg-gray-100">
       {/* Background Images */}
       {images.map((img, index) => (
         <div
@@ -75,8 +75,8 @@ export default function HeroCarousel() {
               </svg>
             </div>
             <div>
-              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">일반인도 장례위로금 신청가능!</p>
-              <h3 className="text-lg md:text-xl font-bold">장례위로금 신청하기</h3>
+              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">?쇰컲?몃룄 ?λ??꾨줈湲??좎껌媛??</p>
+              <h3 className="text-lg md:text-xl font-bold">?λ??꾨줈湲??좎껌?섍린</h3>
             </div>
           </div>
 
@@ -84,14 +84,14 @@ export default function HeroCarousel() {
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              <p className="text-xs md:text-sm font-medium text-gray-600">24시간 긴급 장례접수</p>
+              <p className="text-xs md:text-sm font-medium text-gray-600">24?쒓컙 湲닿툒 ?λ??묒닔</p>
             </div>
             <h3 className="text-2xl md:text-3xl font-black text-[#e3000f] tracking-tight">1599-8379</h3>
           </div>
 
           {/* Button 3: White/Yellow */}
           <div className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-800">카카오톡 채널추가</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800">移댁뭅?ㅽ넚 梨꾨꼸異붽?</h3>
             <div className="w-12 h-12 bg-[#fae100] rounded-full flex items-center justify-center text-black font-black text-xl shrink-0">
               Ch
             </div>
