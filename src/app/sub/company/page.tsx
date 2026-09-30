@@ -96,7 +96,7 @@ export default function CompanyPage() {
           </div>
           
           {/* Map Embed */}
-          <div className="w-full aspect-[4/3] md:aspect-[21/9] bg-gray-200 rounded-2xl overflow-hidden relative shadow-md mb-12">
+          <div className="w-full aspect-[4/3] md:aspect-[21/9] bg-gray-200 rounded-2xl overflow-hidden relative shadow-md mb-2">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.6661918341695!2d127.20235311531065!3d37.53935297980309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb077c5c065f1%3A0xc0fb10fa4d17b8f9!2z6rK96riw64-EIO2VmOuCqOyLnCDtZZjrgqjrjIDroZwgOTQ3!5e0!3m2!1sko!2skr!4v1684305844431!5m2!1sko!2skr" 
               width="100%" 
@@ -107,6 +107,15 @@ export default function CompanyPage() {
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
             ></iframe>
+          </div>
+          
+          <div className="flex justify-end gap-2 mb-10 mt-3">
+            <a href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%95%98%EB%82%A8%EC%8B%9C%20%ED%95%98%EB%82%A8%EB%8C%80%EB%A1%9C%20947" target="_blank" rel="noopener noreferrer" className="bg-[#00c73c] text-white text-sm font-bold py-2 px-4 rounded shadow-sm hover:opacity-90 flex items-center gap-1">
+              네이버 지도 <span className="text-[10px]">↗</span>
+            </a>
+            <a href="https://map.kakao.com/link/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%95%98%EB%82%A8%EC%8B%9C%20%ED%95%98%EB%82%A8%EB%8C%80%EB%A1%9C%20947" target="_blank" rel="noopener noreferrer" className="bg-[#fee500] text-[#191919] text-sm font-bold py-2 px-4 rounded shadow-sm hover:opacity-90 flex items-center gap-1">
+              카카오맵 <span className="text-[10px]">↗</span>
+            </a>
           </div>
           
           {/* Detailed Info */}
@@ -183,8 +192,10 @@ export default function CompanyPage() {
                 <div className="font-bold text-gray-700">휴 무 :</div>
                 <div className="text-gray-600">주말 및 공휴일 휴무</div>
                 
-                <div className="font-bold text-gray-700 mt-2 whitespace-nowrap">장례접수 및 상담문의 <span className="font-normal text-gray-500">(24시간 운영)</span> :</div>
-                <div className="text-[#e3000f] font-bold text-lg mt-2 font-sans md:ml-20">1599-8379</div>
+                <div className="col-span-2 flex flex-col md:flex-row md:items-center gap-1 md:gap-4 mt-2">
+                  <div className="font-bold text-gray-700">장례접수 및 상담문의 <span className="font-normal text-gray-500">(24시간 운영)</span> :</div>
+                  <div className="text-[#e3000f] font-bold text-lg font-sans">1599-8379</div>
+                </div>
               </div>
             </div>
             
