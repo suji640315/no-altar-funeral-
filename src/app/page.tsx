@@ -84,25 +84,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners / Logos Crawler block */}
-      <section className="max-w-7xl mx-auto px-4 w-full mb-12">
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-3 h-3 bg-gray-400"></div>
-          <h4 className="font-bold text-gray-700">협력기관 및 단체</h4>
-        </div>
-        <div className="border-t border-b border-gray-200 py-6 overflow-hidden relative">
-          {/* Simple static grid for now to match exactly */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-4 opacity-70">
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">보건복지부</span></div>
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">인천광역시<br/>통합공무원노조</span></div>
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">보성삼베섬유(주)</span></div>
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">사회적협동조합<br/>멋진인생웰다잉</span></div>
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800 text-center leading-tight">국립연명<br/>의료관리기관</span></div>
-            <div className="h-12 border border-gray-200 flex items-center justify-center p-2"><span className="font-bold text-sm text-gray-800">공공운수노조</span></div>
-          </div>
-        </div>
-      </section>
-
       <MouSection />
     </main>
   );
