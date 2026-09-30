@@ -3,6 +3,7 @@ import TrustSection from '@/components/TrustSection';
 import PricingSection from '@/components/PricingSection';
 import ProcessSection from '@/components/ProcessSection';
 import NetworkSection from '@/components/NetworkSection';
+import MouSection from '@/components/MouSection';
 import { Phone, Shield, Clock, HeartHandshake } from 'lucide-react';
 import HeroCarousel from '@/components/HeroCarousel';
 
@@ -62,6 +63,9 @@ export default function Home() {
       <PricingSection />
       <ProcessSection />
       <NetworkSection />
+      
+      {/* MOU Section added here */}
+      <MouSection />
 
       {/* Footer Contact */}
       <footer className="bg-brand-900 text-brand-300 py-16 text-center">
