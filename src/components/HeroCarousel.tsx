@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
@@ -34,11 +34,13 @@ export default function HeroCarousel() {
       {images.map((img, index) => (
         <div
           key={img}
-          className={bsolute inset-0 transition-opacity duration-1000 ease-in-out }
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <Image
             src={img}
-            alt={Slide }
+            alt={`Slide ${index + 1}`}
             fill
             className="object-cover md:object-fill"
             priority={index === 0}
