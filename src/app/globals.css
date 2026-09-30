@@ -7,13 +7,6 @@
   --foreground: #1f2933;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1f2933;
-    --foreground: #f5f7fa;
-  }
-}
-
 body {
   color: var(--foreground);
   background: var(--background);
@@ -28,11 +21,4 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  .glass-panel {
-    background: rgba(31, 41, 51, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
 }
