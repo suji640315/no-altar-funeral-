@@ -13,12 +13,15 @@ export default function Home() {
       {/* Spacer for floating buttons from Hero */}
       <div className="h-32 md:h-24"></div>
 
-      {/* Subtitle Section */}
-      <section className="py-12 md:py-16 text-center px-4">
-        <p className="text-xl md:text-2xl text-gray-600 font-medium leading-relaxed">
-          공무원노동조합 및 기업 단체와의 MOU업무협약으로<br className="hidden md:block"/>
-          믿음과 신뢰가 검증된 100% 후불제 장례상품을 제공합니다.
-        </p>
+      {/* Subtitle Section (Replaced with Logo) */}
+      <section className="py-12 md:py-16 flex justify-center px-4">
+        <Image 
+          src="/logo.png" 
+          alt="대한민국공무원 장례서비스 (주)공무원라이프" 
+          width={400} 
+          height={120} 
+          className="object-contain h-16 md:h-24 w-auto" 
+        />
       </section>
 
       {/* 4 Square Menus */}
