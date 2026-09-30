@@ -101,7 +101,7 @@ export default function GoodsPage() {
             </div>
             
             <div className="p-5 pt-0 mt-4">
-              <Link href="#" className="w-full py-3 px-4 rounded-xl text-white font-bold text-center block text-sm transition-all shadow-md bg-gray-800 hover:bg-gray-900">
+              <Link href="/sub/counsel" className="w-full py-3 px-4 rounded-xl text-white font-bold text-center block text-sm transition-all shadow-md bg-gray-800 hover:bg-gray-900">
                 무빈소 130 신청 및 상담
               </Link>
               <div className="mt-2 text-center">
