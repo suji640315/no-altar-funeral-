@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/slide-img-01.jpg',
-  '/slide-img-02.jpg',
-  '/slide-img-03.jpg'
+  '/slide-img-01.png',
+  '/slide-img-02.png',
+  '/slide-img-03.png'
 ];
 
 export default function HeroCarousel() {
@@ -29,13 +29,13 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] bg-gray-100">
+    <section className="relative w-full h-[300px] md:h-[500px] lg:h-[600px] bg-gray-100 group">
       {/* Background Images */}
       {images.map((img, index) => (
         <div
           key={img}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
+            index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
           }`}
         >
           <Image
@@ -51,16 +51,16 @@ export default function HeroCarousel() {
       {/* Navigation Arrows */}
       <button 
         onClick={goToPrev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-colors z-10"
+        className="absolute left-2 md:left-4 top-[40%] md:top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 bg-black/40 hover:bg-black/60 text-white rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-50"
       >
-        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+        <ChevronLeft className="w-8 h-8 md:w-6 md:h-6" />
       </button>
       
       <button 
         onClick={goToNext}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/30 hover:bg-black/50 text-white rounded-full flex items-center justify-center transition-colors z-10"
+        className="absolute right-2 md:right-4 top-[40%] md:top-1/2 -translate-y-1/2 w-12 h-12 md:w-10 md:h-10 bg-black/40 hover:bg-black/60 text-white rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-50"
       >
-        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+        <ChevronRight className="w-8 h-8 md:w-6 md:h-6" />
       </button>
 
       {/* Floating 3 Buttons (Quick Actions) */}
