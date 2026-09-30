@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/slide-img-01.png',
-  '/slide-img-02.png',
-  '/slide-img-03.png'
+  '/slide-img-01.jpg',
+  '/slide-img-02.jpg',
+  '/slide-img-03.jpg'
 ];
 
 export default function HeroCarousel() {
@@ -47,6 +47,16 @@ export default function HeroCarousel() {
           />
         </div>
       ))}
+      
+      {/* Overlay to make text pop */}
+      <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none"></div>
+
+      {/* Main Huge Text Overlay */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none pb-12 md:pb-20">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white text-center leading-tight drop-shadow-2xl px-4 tracking-tight" style={{ textShadow: '0 4px 10px rgba(0,0,0,0.6)' }}>
+          대한민국 공무원가족을 위한<br />무빈소장례 지원
+        </h1>
+      </div>
 
       {/* Navigation Arrows */}
       <button 
