@@ -49,7 +49,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <div className={lg:hidden absolute top-20 left-0 right-0 bg-white dark:bg-brand-950 border-b border-brand-100 dark:border-brand-800 shadow-xl transition-all duration-300 ease-in-out origin-top }>
+      <div className={`lg:hidden absolute top-20 left-0 right-0 bg-white dark:bg-brand-950 border-b border-brand-100 dark:border-brand-800 shadow-xl transition-all duration-300 ease-in-out origin-top ${isOpen ? 'opacity-100 scale-y-100 pointer-events-auto' : 'opacity-0 scale-y-0 pointer-events-none'}`}>
         <div className="flex flex-col py-2 px-4">
           {navLinks.map((link) => (
             <Link 
