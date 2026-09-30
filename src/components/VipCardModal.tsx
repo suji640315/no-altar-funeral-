@@ -133,7 +133,12 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
 
               {/* Footer */}
               <div className="flex justify-between items-end">
-                <div></div> {/* spacer */}
+                
+                {/* Contact Section */}
+                <div className="text-left">
+                  <div className="text-[10px] md:text-xs font-bold text-red-600 mb-0.5">24시간 긴급콜센터</div>
+                  <div className="text-sm md:text-base font-black text-red-600 tracking-tighter">1599-8379</div>
+                </div>
                 
                 <div className="flex flex-col items-center ml-20">
                   <div className="text-xs md:text-sm font-bold text-gray-800 tracking-tighter mb-1">
@@ -145,12 +150,8 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
                 </div>
 
                 {/* Stamp */}
-                <div className="w-16 h-16 md:w-20 md:h-20 border-4 border-red-600 p-1">
-                  <div className="w-full h-full border border-red-600 flex flex-wrap content-center justify-center text-red-600 font-black text-[10px] md:text-xs leading-none text-center" style={{fontFamily: 'Batang, serif'}}>
-                    <div className="w-full">공무원</div>
-                    <div className="w-full mt-1">라이프</div>
-                    <div className="w-full mt-1">대표인</div>
-                  </div>
+                <div className="w-16 h-16 md:w-20 md:h-20 relative -mr-2">
+                  <Image src="/stamp.png" alt="대표인" fill className="object-contain" />
                 </div>
               </div>
 
