@@ -97,7 +97,7 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
             </div>
             
             {/* VIP Card Design */}
-            <div className="w-full aspect-[1.6/1] max-w-[600px] bg-white border border-gray-200 rounded-lg shadow-xl relative overflow-hidden flex flex-col pt-8 pb-4 px-6 md:px-12 justify-between">
+            <div className="w-full aspect-[1.2/1] sm:aspect-[1.4/1] md:aspect-[1.6/1] max-w-[600px] bg-white border border-gray-200 rounded-lg shadow-xl relative overflow-hidden flex flex-col pt-6 pb-4 px-3 sm:px-6 md:px-12 justify-between">
               
               {/* Header */}
               <div className="flex justify-between items-start">
@@ -111,7 +111,7 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
 
               {/* Title */}
               <div className="text-center mt-2">
-                <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-[#005b9f] tracking-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-[#005b9f] tracking-tighter break-keep">
                   대한민국 공무원 전용 특별 할인카드
                 </h3>
               </div>
@@ -119,7 +119,7 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
               {/* Price */}
               <div className="text-center flex justify-center items-end gap-1 mt-2 mb-4">
                 <div 
-                  className="font-serif font-black text-6xl md:text-[100px] leading-none"
+                  className="font-serif font-black text-5xl sm:text-6xl md:text-[100px] leading-none"
                   style={{
                     background: 'linear-gradient(to bottom, #e3000f 50%, #005b9f 50%)',
                     WebkitBackgroundClip: 'text',
@@ -128,32 +128,32 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
                 >
                   100,000
                 </div>
-                <span className="font-serif font-black text-3xl md:text-5xl text-black mb-1 md:mb-3">원</span>
+                <span className="font-serif font-black text-2xl sm:text-3xl md:text-5xl text-black mb-1 md:mb-3">원</span>
               </div>
 
               {/* Footer */}
               <div className="flex justify-between items-end">
                 
                 {/* Contact Section */}
-                <div className="text-left bg-red-50 px-3 py-2 rounded-lg border border-red-200 shadow-sm animate-pulse">
+                <div className="text-left bg-red-50 px-2 sm:px-3 py-1 sm:py-2 rounded-lg border border-red-200 shadow-sm animate-pulse shrink-0">
                   <div className="text-xs md:text-sm font-bold text-red-600 mb-0.5 flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-red-500"></span>
                     24시간 긴급콜센터
                   </div>
-                  <div className="text-xl md:text-2xl font-black text-red-600 tracking-tighter">1599-8379</div>
+                  <div className="text-base sm:text-xl md:text-2xl font-black text-red-600 tracking-tighter">1599-8379</div>
                 </div>
                 
-                <div className="flex flex-col items-center ml-20">
-                  <div className="text-xs md:text-sm font-bold text-gray-800 tracking-tighter mb-1">
+                <div className="flex flex-col items-center ml-2 sm:ml-10 md:ml-20">
+                  <div className="text-[10px] md:text-sm font-bold text-gray-800 tracking-tighter mb-0.5">
                     대한민국 공무원 장례서비스
                   </div>
-                  <div className="text-xl md:text-2xl font-black text-gray-900 tracking-tighter">
+                  <div className="text-base md:text-2xl font-black text-gray-900 tracking-tighter">
                     (주)공무원라이프
                   </div>
                 </div>
 
                 {/* Stamp */}
-                <div className="w-16 h-16 md:w-20 md:h-20 relative -mr-2">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 relative -mr-1 md:-mr-2 shrink-0">
                   <Image src="/stamp.png" alt="대표인" fill className="object-contain" />
                 </div>
               </div>
