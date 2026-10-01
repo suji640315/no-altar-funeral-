@@ -89,8 +89,11 @@ export default function Home() {
           <a href="https://blog.naver.com/officialslife" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#03c75a] text-white rounded-2xl flex items-center justify-center font-bold text-xl hover:-translate-y-1 transition-transform hover:shadow-lg">
             blog
           </a>
-          <a href="https://pf.kakao.com/_NpBqxb" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#fae100] text-black rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg">
-            <MessageCircle className="w-8 h-8 fill-black" />
+          <a href="https://pf.kakao.com/_NpBqxb" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-[#fae100] rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg">
+            <svg viewBox="0 0 100 100" className="w-9 h-9">
+              <path d="M50 15C25.147 15 5 31.701 5 52.308c0 13.385 8.528 25.107 21.684 31.966-.549 2.052-1.895 7.37-2.186 8.527-.372 1.487.525 1.47 1.134 1.06 4.795-3.238 13.435-9.155 18.57-12.753 1.896.549 3.822.662 5.792.662 24.853 0 45-16.701 45-37.308C95 31.701 74.853 15 50 15z" fill="#3a1d1d"/>
+              <text x="50" y="61" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="27" fill="#fae100" textAnchor="middle" letterSpacing="-1">TALK</text>
+            </svg>
           </a>
           <a href="https://www.instagram.com/officialslife" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg">
             <div className="w-8 h-8 border-2 border-white rounded-lg relative flex items-center justify-center">
