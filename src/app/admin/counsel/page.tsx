@@ -28,8 +28,7 @@ export default function AdminCounselPage() {
 
   const downloadExcel = () => {
     const BOM = "\uFEFF";
-    let csv = "신청구분,접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항
-";
+    let csv = "신청구분,접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항\n";
     
     data.forEach((item: any) => {
       // Handle both camelCase and snake_case safely
@@ -45,11 +44,9 @@ export default function AdminCounselPage() {
         `"${item.region || ''}"`,
         `"${funeralHome}"`,
         `"${item.patient_location || ''}"`,
-        `"${(item.notes || '').replace(/"/g, '""').replace(/
-/g, ' ')}"`
+        `"${(item.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`
       ].join(',');
-      csv += row + "
-";
+      csv += row + "\n";
     });
 
     const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
@@ -117,7 +114,7 @@ export default function AdminCounselPage() {
                   </tr>
                 ) : data.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-6 py-10 text-center text-gray-500">
+                    <td colSpan={8} className="px-6 py-10 text-center text-gray-500">
                       접수된 상담 신청 내역이 없습니다.
                     </td>
                   </tr>
