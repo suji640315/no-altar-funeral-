@@ -59,7 +59,7 @@ export async function POST(request: Request) {
     // DB 저장 로직 (Supabase)
     try {
       const { error: dbError } = await supabase.from('counsel_requests').insert({
-        type: typeStr,
+        type: body.type === 'VIP' ? 'VIP카드 신청' : '무빈소장례 상담',
         name: body.name || '',
         phone: body.phone || '',
         region: body.region || '',
