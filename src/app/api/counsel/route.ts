@@ -4,28 +4,42 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     
-    // Aligo SMS 전송 로직
+    // 카카오 알림톡 전송 로직 (Aligo)
     try {
-      // 폼 데이터 구성 (상담신청 및 VIP카드 발급 공통 처리)
-      const typeStr = body.type === 'VIP' ? '[VIP카드 특별발급 신청]' : '[무빈소장례.net 신규상담]';
+      const typeStr = body.type === 'VIP' ? 'VIP카드 신청' : '무빈소장례 상담';
+      const name = body.name || '미입력';
+      const phone = body.phone || '미입력';
+      const region = body.region || '미입력';
+      const location = body.patientLocation ? `${region} / ${body.patientLocation}` : region;
+      const details = body.funeralHome ? `장례식장: ${body.funeralHome} / ${body.notes || ''}` : (body.notes || '없음');
+      
+      const now = new Date();
+      const kstTime = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+      const dateStr = kstTime.toISOString().replace('T', ' ').substring(0, 19);
+
+      // 승인된 템플릿과 정확히 일치해야 함
       const msgText = 
-`${typeStr}
-이름: ${body.name || '미입력'}
-연락처: ${body.phone || '미입력'}
-지역: ${body.region || '미입력'}
-환자계신곳: ${body.patientLocation || '미입력'}
-원하는장례식장: ${body.funeralHome || '미입력'}
-요청사항: ${body.notes || '없음'}`;
+`[공무원라이프 새 상담접수]
+• 구분: ${typeStr}
+• 고객명: ${name}
+• 연락처: ${phone}
+• 위치/지역: ${location}
+• 상세: ${details}
+• 일시: ${dateStr}
+※ 관리자 페이지에서 확인 후 신속히 연락 바랍니다.`;
       
       const aligoParams = new URLSearchParams();
-      aligoParams.append('key', '0v3j2ixm9hua4mt8mm9ascfmori9tfp4'); // 제공해주신 API Key
-      aligoParams.append('userid', 'naeun1103'); // 제공해주신 ID
-      aligoParams.append('sender', '01055172715'); // 발신번호 (대표번호)
-      aligoParams.append('receiver', '01055172715'); // 수신번호 (김오신 담당자)
-      aligoParams.append('msg', msgText);
-      aligoParams.append('title', '신규 장례 접수알림');
+      aligoParams.append('apikey', '0v3j2ixm9hua4mt8mm9ascfmori9tfp4'); // API Key
+      aligoParams.append('userid', 'naeun1103'); // ID
+      aligoParams.append('senderkey', 'e01732d5b41eef91b97d9e912c2bcb64f40ef6b0'); // 발신프로필 키
+      aligoParams.append('tpl_code', 'UL_6756'); // 템플릿 코드
+      aligoParams.append('sender', '01055172715'); // 발신번호 (대체문자용)
       
-      const aligoRes = await fetch('https://apis.aligo.in/send/', {
+      aligoParams.append('receiver_1', '01055172715'); // 수신번호 (김오신 담당자)
+      aligoParams.append('subject_1', '상담접수알림');
+      aligoParams.append('message_1', msgText);
+      
+      const aligoRes = await fetch('https://kakaoapi.aligo.in/akv10/alimtalk/send/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
@@ -34,10 +48,10 @@ export async function POST(request: Request) {
       });
       
       const aligoData = await aligoRes.json();
-      console.log('Aligo Send Result:', aligoData);
+      console.log('Alimtalk Send Result:', aligoData);
       
     } catch (smsError) {
-      console.error('Aligo SMS Failed:', smsError);
+      console.error('Aligo Alimtalk Failed:', smsError);
     }
     
     return NextResponse.json({ success: true });
