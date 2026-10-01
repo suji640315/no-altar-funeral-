@@ -21,7 +21,14 @@ export default function CounselPage() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
 
   const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    let value = e.target.value;
+    if (e.target.name === 'phone') {
+      const p = value.replace(/[^0-9]/g, '');
+      if (p.length < 4) value = p;
+      else if (p.length < 8) value = p.slice(0, 3) + '-' + p.slice(3);
+      else value = p.slice(0, 3) + '-' + p.slice(3, 7) + '-' + p.slice(7, 11);
+    }
+    setFormData({ ...formData, [e.target.name]: value });
   };
 
   const handleLocationClick = (location: string) => {

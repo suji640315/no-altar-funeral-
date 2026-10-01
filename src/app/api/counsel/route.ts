@@ -54,7 +54,7 @@ export async function POST(request: Request) {
       console.error('Aligo Alimtalk Failed:', smsError);
     }
     
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, debug: typeof smsError !== 'undefined' ? smsError.toString() : null });
   } catch (error: any) {
     console.error(error);
     return NextResponse.json({ success: false, error: '서버 오류가 발생했습니다.' }, { status: 500 });
