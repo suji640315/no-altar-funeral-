@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
 export async function POST(request: Request) {
   try {
@@ -54,6 +55,23 @@ export async function POST(request: Request) {
       console.error('Aligo Alimtalk Failed:', smsError);
     }
     
+    
+    // DB 저장 로직 (Supabase)
+    try {
+      const { error: dbError } = await supabase.from('counsel_requests').insert({
+        type: typeStr,
+        name: body.name || '',
+        phone: body.phone || '',
+        region: body.region || '',
+        funeral_home: body.funeralHome || '',
+        patient_location: body.patientLocation || '',
+        notes: body.notes || ''
+      });
+      if (dbError) console.error('Supabase Insert Error:', dbError);
+    } catch (err) {
+      console.error('Supabase Exception:', err);
+    }
+
     return NextResponse.json({ success: true, debug: typeof smsError !== 'undefined' ? smsError.toString() : null });
   } catch (error: any) {
     console.error(error);
@@ -62,5 +80,17 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  return NextResponse.json({ success: true, data: [] });
+  try {
+    const { data, error } = await supabase
+      .from('counsel_requests')
+      .select('*')
+      .order('created_at', { ascending: false });
+      
+    if (error) throw error;
+    
+    return NextResponse.json({ success: true, data: data || [] });
+  } catch (error) {
+    console.error('Supabase Fetch Error:', error);
+    return NextResponse.json({ success: false, data: [] });
+  }
 }

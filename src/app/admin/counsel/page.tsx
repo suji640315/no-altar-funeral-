@@ -28,7 +28,7 @@ export default function AdminCounselPage() {
 
   const downloadExcel = () => {
     const BOM = "\uFEFF";
-    let csv = "접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항\n";
+    let csv = "신청구분,접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항\n";
     
     data.forEach((item: any) => {
       // Handle both camelCase and snake_case safely
@@ -37,6 +37,7 @@ export default function AdminCounselPage() {
       const funeralHome = item.funeral_home || item.funeralHome || '';
       
       const row = [
+        `"${item.type || ''}"`,
         `"${date}"`,
         `"${item.name || ''}"`,
         `"${item.phone || ''}"`,
