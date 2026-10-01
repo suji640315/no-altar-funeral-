@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import StickyBottomBar from "@/components/StickyBottomBar";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className="pt-20 pb-16 md:pb-0">
         <Header />
         {children}
+        <Footer />
         <StickyBottomBar />
       </body>
     </html>
