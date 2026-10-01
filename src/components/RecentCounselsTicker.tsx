@@ -49,7 +49,7 @@ export default function RecentCounselsTicker() {
           <h2 className="text-xl font-bold text-gray-900">
             실시간 무빈소 상담 현황
           </h2>
-          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">현재 {2458 + Math.floor(Math.random() * 10)}분께서 고민을 해결하셨습니다.</span>
+          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">현재 {2458 + new Date().getDate() * 2}분께서 고민을 해결하셨습니다.</span>
         </div>
         
         <div className="h-[180px] overflow-hidden relative w-full">
