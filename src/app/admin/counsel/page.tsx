@@ -28,7 +28,8 @@ export default function AdminCounselPage() {
 
   const downloadExcel = () => {
     const BOM = "\uFEFF";
-    let csv = "신청구분,접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항\n";
+    let csv = "신청구분,접수일시,고객성함,연락처,희망지역,희망장례식장,현재계신곳,기타참고사항
+";
     
     data.forEach((item: any) => {
       // Handle both camelCase and snake_case safely
@@ -44,9 +45,11 @@ export default function AdminCounselPage() {
         `"${item.region || ''}"`,
         `"${funeralHome}"`,
         `"${item.patient_location || ''}"`,
-        `"${(item.notes || '').replace(/"/g, '""').replace(/\n/g, ' ')}"`
+        `"${(item.notes || '').replace(/"/g, '""').replace(/
+/g, ' ')}"`
       ].join(',');
-      csv += row + "\n";
+      csv += row + "
+";
     });
 
     const blob = new Blob([BOM + csv], { type: 'text/csv;charset=utf-8;' });
@@ -95,6 +98,7 @@ export default function AdminCounselPage() {
             <table className="w-full text-sm text-left">
               <thead className="bg-gray-50 text-gray-700 border-b border-gray-200 uppercase text-xs">
                 <tr>
+                  <th className="px-6 py-4 font-bold whitespace-nowrap text-[#00387f]">신청 구분</th>
                   <th className="px-6 py-4 font-bold whitespace-nowrap">접수 일시</th>
                   <th className="px-6 py-4 font-bold whitespace-nowrap">고객 성함</th>
                   <th className="px-6 py-4 font-bold whitespace-nowrap">연락처</th>
@@ -107,7 +111,7 @@ export default function AdminCounselPage() {
               <tbody className="divide-y divide-gray-100">
                 {loading ? (
                   <tr>
-                    <td colSpan={7} className="px-6 py-10 text-center text-gray-500">
+                    <td colSpan={8} className="px-6 py-10 text-center text-gray-500">
                       데이터를 불러오는 중입니다...
                     </td>
                   </tr>
@@ -119,11 +123,18 @@ export default function AdminCounselPage() {
                   </tr>
                 ) : (
                   data.map((item: any) => {
+                    const typeLabel = item.type || '무빈소장례 상담';
+                    const typeColor = typeLabel.includes('VIP') ? 'text-purple-600 bg-purple-50 border-purple-200' : 'text-blue-600 bg-blue-50 border-blue-200';
                     const dateStr = item.created_at || item.createdAt;
                     const date = dateStr ? new Date(dateStr).toLocaleString('ko-KR') : '-';
                     const funeralHome = item.funeral_home || item.funeralHome || '-';
                     return (
                       <tr key={item.id} className="hover:bg-blue-50/50 transition-colors">
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          <span className={`px-2.5 py-1 text-xs font-bold rounded-full border ${typeColor}`}>
+                            {typeLabel}
+                          </span>
+                        </td>
                         <td className="px-6 py-4 whitespace-nowrap text-gray-500">
                           {date}
                         </td>
