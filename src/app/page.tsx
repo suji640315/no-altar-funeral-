@@ -23,45 +23,60 @@ export default function Home() {
 
       {/* 4 Square Menus */}
       <section className="max-w-5xl mx-auto px-4 w-full mb-20">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
           
-          {/* Menu 1 */}
-          <Link href="/sub/goods" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
-            <div>
-              <p className="text-xs text-gray-500 mb-1">장례상품 안내</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">공무원가족 전용<br/>무빈소 상품</h3>
+          {/* Menu 1: 상품 안내 */}
+          <Link href="/sub/goods" className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group">
+            <div className="relative z-10">
+              <p className="text-[11px] md:text-xs text-gray-400 font-bold mb-1 uppercase tracking-wider">Smart Service</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 leading-snug">공무원가족 전용<br/><span className="text-blue-600">무빈소 상품</span></h3>
             </div>
-            <Handshake className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-blue-500 transition-all group-hover:scale-110" />
+            {/* Illustration-like Icon */}
+            <div className="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 bg-blue-100 rounded-full opacity-50 blur-2xl"></div>
+              <Handshake className="w-16 h-16 md:w-20 md:h-20 text-blue-500 fill-blue-50 relative z-10 drop-shadow-md" />
+            </div>
           </Link>
 
-          {/* Menu 2 */}
-          <Link href="/sub/counsel" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
-            <div>
-              <p className="text-xs text-gray-500 mb-1">24시간</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-red-500 transition-colors"><span className="text-red-500">무료상담</span><br/>서비스</h3>
+          {/* Menu 2: 무료 상담 */}
+          <Link href="/sub/counsel" className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group">
+            <div className="relative z-10">
+              <p className="text-[11px] md:text-xs text-gray-400 font-bold mb-1 uppercase tracking-wider">Smart Service</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 leading-snug">24시간<br/><span className="text-red-500">무료상담</span> 서비스</h3>
             </div>
-            <PhoneCall className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-red-400 transition-all group-hover:scale-110" />
+            {/* Illustration-like Icon */}
+            <div className="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 bg-red-100 rounded-full opacity-50 blur-2xl"></div>
+              <PhoneCall className="w-16 h-16 md:w-20 md:h-20 text-red-500 fill-red-50 relative z-10 drop-shadow-md" />
+            </div>
           </Link>
 
-                    {/* Menu 3 */}
-          <Link href="/sub/procedure" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
-            <div>
-              <p className="text-xs text-gray-500 mb-1">무빈소 장례안내</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">장례절차</h3>
+          {/* Menu 3: 장례 절차 */}
+          <Link href="/sub/procedure" className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group">
+            <div className="relative z-10">
+              <p className="text-[11px] md:text-xs text-gray-400 font-bold mb-1 uppercase tracking-wider">Smart Service</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 leading-snug">무빈소 장례안내<br/><span className="text-green-600">장례절차</span></h3>
             </div>
-            <BookOpen className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-green-500 transition-all group-hover:scale-110" />
+            {/* Illustration-like Icon */}
+            <div className="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 bg-green-100 rounded-full opacity-50 blur-2xl"></div>
+              <BookOpen className="w-16 h-16 md:w-20 md:h-20 text-green-500 fill-green-50 relative z-10 drop-shadow-md" />
+            </div>
           </Link>
 
-{/* Menu 4 */}
-          <Link href="/sub/coalition" className="bg-[#f5f7f9] rounded-xl p-6 aspect-square flex flex-col justify-between hover:shadow-lg transition-shadow cursor-pointer relative overflow-hidden group">
-            <div>
-              <p className="text-xs text-gray-500 mb-1">대한민국 공무원 장례서비스</p>
-              <h3 className="text-lg md:text-xl font-bold text-gray-800 group-hover:text-yellow-600 transition-colors">
-                <span className="text-blue-600">제휴협약사</span>
-              </h3>
+          {/* Menu 4: 제휴협약사 */}
+          <Link href="/sub/coalition" className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group">
+            <div className="relative z-10">
+              <p className="text-[11px] md:text-xs text-gray-400 font-bold mb-1 uppercase tracking-wider">Smart Service</p>
+              <h3 className="text-lg md:text-xl font-bold text-gray-800 leading-snug">공무원라이프<br/><span className="text-[#00387f]">제휴협약사</span></h3>
             </div>
-            <Building2 className="w-16 h-16 text-gray-300 self-end opacity-50 group-hover:opacity-100 group-hover:text-yellow-500 transition-all group-hover:scale-110" />
+            {/* Illustration-like Icon */}
+            <div className="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute inset-0 bg-indigo-100 rounded-full opacity-50 blur-2xl"></div>
+              <Building2 className="w-16 h-16 md:w-20 md:h-20 text-[#00387f] fill-indigo-50 relative z-10 drop-shadow-md" />
+            </div>
           </Link>
+          
         </div>
       </section>
 
