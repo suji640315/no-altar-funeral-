@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       const aligoParams = new URLSearchParams();
       aligoParams.append('key', '0v3j2ixm9hua4mt8mm9ascfmori9tfp4'); // 제공해주신 API Key
       aligoParams.append('userid', 'naeun1103'); // 제공해주신 ID
-      aligoParams.append('sender', '15998379'); // 발신번호 (대표번호)
+      aligoParams.append('sender', '01055172715'); // 발신번호 (대표번호)
       aligoParams.append('receiver', '01055172715'); // 수신번호 (김오신 담당자)
       aligoParams.append('msg', msgText);
       aligoParams.append('title', '신규 장례 접수알림');
