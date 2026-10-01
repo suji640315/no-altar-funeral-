@@ -143,13 +143,8 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
                   <div className="text-sm sm:text-lg md:text-2xl font-black text-red-600 tracking-tighter">1599-8379</div>
                 </div>
                 
-                <div className="flex flex-col items-center ml-2 sm:ml-10 md:ml-20">
-                  <div className="text-[9px] sm:text-[10px] md:text-sm font-bold text-gray-800 tracking-tighter mb-0.5 whitespace-nowrap">
-                    대한민국 공무원 장례서비스
-                  </div>
-                  <div className="text-sm md:text-2xl font-black text-gray-900 tracking-tighter whitespace-nowrap">
-                    (주)공무원라이프
-                  </div>
+                <div className="flex flex-col items-center justify-center ml-2 sm:ml-8 md:ml-16 relative w-[100px] h-[30px] sm:w-[130px] sm:h-[40px] md:w-[220px] md:h-[60px]">
+                  <Image src="/logo.png" alt="(주)공무원라이프" fill className="object-contain" />
                 </div>
 
                 {/* Stamp */}
