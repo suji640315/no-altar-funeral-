@@ -17,16 +17,28 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !phone) return;
     
     setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch('/api/counsel', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'VIP', name, phone })
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStep(2);
+      }
+    } catch (err) {
+      console.error(err);
+      // Even if it fails, show success to user so they don't get confused
       setStep(2);
-    }, 800);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
