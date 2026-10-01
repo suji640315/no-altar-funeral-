@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       aligoParams.append('subject_1', '상담접수알림');
       aligoParams.append('message_1', msgText);
       
-      const aligoRes = await fetch('https://kakaoapi.aligo.in/akv10/alimtalk/send/', {
+      const aligoRes = await fetch('http://officials.cafe24.com/alimtalk_proxy.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
