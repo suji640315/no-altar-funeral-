@@ -14,7 +14,7 @@ export default function Footer() {
               <span>FAX : 031-969-3522</span>
             </div>
             <div className="flex flex-wrap gap-x-4 mt-1">
-              <span>사업자등록번호 : 458-81-00682</span>
+              <span>사업자등록번호 : 236-87-00779</span>
               <span>통신판매업 : 제2017-서울종로-1130호</span>
             </div>
             <div className="mt-4 flex gap-4 text-gray-400">
@@ -24,8 +24,8 @@ export default function Footer() {
           </div>
           
           <div className="text-right hidden md:block">
-            <p className="text-2xl font-bold text-gray-800 tracking-tighter">1599-8379</p>
-            <p className="text-xs text-gray-500">장례접수·상담 (24시간 운영)</p>
+            <p className="text-2xl font-bold text-red-600 tracking-tighter">1599-8379</p>
+            <p className="text-xs text-red-600 font-bold">장례접수·상담 (24시간 운영)</p>
           </div>
 
         </div>
