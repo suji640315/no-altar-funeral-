@@ -22,7 +22,14 @@ export default function Header() {
         {/* Left: Logo & Brand */}
         <div className="flex flex-col justify-center relative z-20">
           <Link href="/" onClick={() => setIsOpen(false)}>
-            <Image src="/logo.png" alt="(주)공무원라이프" width={220} height={60} className="h-10 md:h-12 w-auto object-contain" priority />
+            <Image 
+              src="/logo.png" 
+              alt="공무원라이프 무빈소장례" 
+              width={220} 
+              height={60} 
+              className="h-10 md:h-12 w-auto object-contain" 
+              priority 
+            />
           </Link>
         </div>
 

@@ -150,28 +150,35 @@ export default function CoalitionPage() {
           {mouData.map((item, index) => (
             <div 
               key={index} 
-              className="w-full bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group"
+              className="w-full bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group"
             >
-              {/* Photo section */}
-              <div className="w-full aspect-[4/3] relative bg-gray-100 border-b border-gray-100 overflow-hidden">
+              {/* Photo section: Strict 4:3 Aspect Ratio Container */}
+              <div 
+                className="w-full relative bg-gray-100 border-b border-gray-100 overflow-hidden"
+                style={{ aspectRatio: '4 / 3' }}
+              >
                 <Image 
                   src={item.imgSrc} 
                   alt={item.alt}
                   fill 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{ objectFit: 'cover' }}
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                  priority={index === 0}
                 />
               </div>
               
               {/* Title & Caption section */}
-              <div className="p-4 flex-1 flex flex-col justify-between">
-                <h3 className="text-xs md:text-sm font-bold text-gray-800 leading-snug break-keep mb-3">
+              <div className="p-4 md:p-5 flex-1 flex flex-col justify-between">
+                {/* 기관명: 모바일 14px, 데스크톱 15px 고대비 텍스트 */}
+                <h3 className="text-[14px] md:text-[15px] font-bold text-gray-900 leading-snug break-keep mb-3">
                   {item.title}
                 </h3>
                 
-                {/* 사진 하단 텍스트 캡션: [공무원 협약 기준 의전 적용] */}
-                <div className="pt-2 border-t border-gray-100 flex items-center gap-1.5 text-[11px] font-semibold text-blue-700">
-                  <ShieldCheck className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                {/* 사진 하단 텍스트 캡션: 모바일 13px 이상, 진한 파랑 및 고명도 대비 */}
+                <div className="pt-2.5 border-t border-gray-100 flex items-center gap-1.5 text-[13px] font-bold text-[#004bb5]">
+                  <ShieldCheck className="w-4 h-4 text-[#004bb5] shrink-0" />
                   <span>[공무원 협약 기준 의전 적용]</span>
                 </div>
               </div>
