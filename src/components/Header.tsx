@@ -19,17 +19,23 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 bg-white/95 dark:bg-brand-950/95 backdrop-blur-md z-50 border-b border-brand-100 dark:border-brand-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Left: Logo & Brand */}
+        {/* Left: Logo & Brand Separation for SEO */}
         <div className="flex flex-col justify-center relative z-20">
-          <Link href="/" onClick={() => setIsOpen(false)}>
+          <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group">
             <Image 
               src="/logo.png" 
               alt="공무원라이프 무빈소장례" 
               width={220} 
               height={60} 
-              className="h-10 md:h-12 w-auto object-contain" 
+              className="h-9 md:h-11 w-auto object-contain" 
               priority 
             />
+            <div className="flex items-center">
+              <span className="hidden sm:inline-block h-5 w-[1px] bg-gray-300 mx-1"></span>
+              <span className="text-xs md:text-sm font-black text-blue-700 tracking-tight bg-blue-50 px-2 py-0.5 rounded border border-blue-200/80 shadow-xs">
+                무빈소장례
+              </span>
+            </div>
           </Link>
         </div>
 

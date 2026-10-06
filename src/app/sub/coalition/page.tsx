@@ -146,15 +146,15 @@ export default function CoalitionPage() {
           Grid layout matching the established design: 
           1 column on mobile, 3 columns on desktop.
         */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           {mouData.map((item, index) => (
             <div 
               key={index} 
-              className="w-full bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col justify-between h-full hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group"
+              className="w-full bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group"
             >
-              {/* Photo section: Strict 4:3 Aspect Ratio Container */}
+              {/* Photo section: Strict 4:3 Aspect Ratio Container with Guaranteed Containment */}
               <div 
-                className="w-full relative bg-gray-100 border-b border-gray-100 overflow-hidden"
+                className="w-full relative bg-gray-100 border-b border-gray-100 overflow-hidden shrink-0"
                 style={{ aspectRatio: '4 / 3' }}
               >
                 <Image 
@@ -163,16 +163,22 @@ export default function CoalitionPage() {
                   fill 
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  style={{ objectFit: 'cover' }}
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    objectFit: 'cover',
+                    position: 'absolute',
+                    inset: 0
+                  }}
                   loading={index < 3 ? 'eager' : 'lazy'}
                   priority={index === 0}
                 />
               </div>
               
               {/* Title & Caption section */}
-              <div className="p-4 md:p-5 flex-1 flex flex-col justify-between">
-                {/* 기관명: 모바일 14px, 데스크톱 15px 고대비 텍스트 */}
-                <h3 className="text-[14px] md:text-[15px] font-bold text-gray-900 leading-snug break-keep mb-3">
+              <div className="p-4 md:p-5 flex-1 flex flex-col justify-between bg-white">
+                {/* 기관명: 모바일 14px, 데스크톱 15px 고대비 텍스트, 균일한 행 높이(min-h) 확보 */}
+                <h3 className="text-[14px] md:text-[15px] font-bold text-gray-900 leading-snug break-keep mb-3 min-h-[2.75rem] flex items-center">
                   {item.title}
                 </h3>
                 
