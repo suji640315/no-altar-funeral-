@@ -2,7 +2,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import MouSection from "@/components/MouSection";
 import Link from "next/link";
 import RecentCounselsTicker from "@/components/RecentCounselsTicker";
-import { Handshake, PhoneCall, BookOpen, Building2 } from "lucide-react";
+import { Handshake, Headset, BookOpen, Building2 } from "lucide-react";
 
 export default function Home() {
   return (
@@ -21,10 +21,10 @@ export default function Home() {
         </p>
       </section>
 
-      {/* 3. 4단 스마트 서비스 카드 (기존 그리드 디자인 유지) */}
+      {/* 3. 4대 테마별 서비스 카드 (기존 그리드 디자인 유지) */}
       <section className="max-w-5xl mx-auto px-4 w-full mb-20">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
-          {/* 카드 1 */}
+          {/* 카드 1: 무빈소 정찰가 */}
           <Link
             href="/sub/goods"
             className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group"
@@ -44,27 +44,27 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* 카드 2 */}
+          {/* 카드 2: 무료상담 신청서비스 (상담신청 로고 적용) */}
           <Link
             href="/sub/counsel"
             className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group"
           >
             <div className="relative z-10">
               <p className="text-[11px] md:text-xs text-red-500 font-bold mb-1 tracking-tight">
-                임종 즉시 관내 최적 장례식장 연계
+                24시간 실시간 맞춤 안내
               </p>
               <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-800 leading-snug">
-                24시간 긴급접수<br />
-                <span className="text-red-500">& 안치실 배정</span>
+                무료상담<br />
+                <span className="text-red-500">신청서비스</span>
               </h3>
             </div>
             <div className="absolute -bottom-2 -right-2 md:bottom-2 md:right-2 w-24 h-24 md:w-32 md:h-32 flex items-center justify-center group-hover:scale-110 transition-transform">
               <div className="absolute inset-0 bg-red-100 rounded-full opacity-50 blur-2xl"></div>
-              <PhoneCall className="w-16 h-16 md:w-20 md:h-20 text-red-500 fill-red-50 relative z-10 drop-shadow-md" />
+              <Headset className="w-16 h-16 md:w-20 md:h-20 text-red-500 fill-red-50 relative z-10 drop-shadow-md" />
             </div>
           </Link>
 
-          {/* 카드 3 */}
+          {/* 카드 3: 맞춤 장례절차 */}
           <Link
             href="/sub/procedure"
             className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group"
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* 카드 4 */}
+          {/* 카드 4: 협약 현장 사진 */}
           <Link
             href="/sub/coalition"
             className="bg-white border border-gray-200 rounded-xl p-5 md:p-6 aspect-square flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer relative overflow-hidden group"
@@ -110,7 +110,7 @@ export default function Home() {
 
       {/* SNS Section */}
       <section className="text-center mb-24 px-4">
-        <h3 className="text-xl text-gray-600 mb-8 font-medium">공무원라이프 SNS 장례정보</h3>
+        <h3 className="text-xl text-gray-600 mb-8 font-medium">공무원라이프 SNS 바로가기</h3>
         <div className="flex items-center justify-center gap-4">
           <a
             href="https://blog.naver.com/officialslife"
