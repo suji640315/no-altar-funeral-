@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
-import { ChevronLeft, ChevronRight, PhoneCall, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import VipCardModal from './VipCardModal';
 
 interface SlideItem {
@@ -14,8 +13,6 @@ interface SlideItem {
   title: string;
   badge?: string;
   subtext?: string;
-  button1: { text: string; href: string };
-  button2: { text: string; href: string };
 }
 
 const SLIDES: SlideItem[] = [
@@ -26,8 +23,6 @@ const SLIDES: SlideItem[] = [
     subtitle: '대한민국 공직사회가 검증한 의전 기준 그대로',
     title: '100% 후불제 무빈소장례',
     badge: '공무원 노조 공식 협약 의전팀 직접 진행 | 일반 시민 동일 혜택 적용',
-    button1: { text: '24시 긴급 장례접수 1599-8379', href: 'tel:1599-8379' },
-    button2: { text: '무빈소 정찰제 비용 확인', href: '/sub/goods' },
   },
   {
     id: 2,
@@ -36,8 +31,6 @@ const SLIDES: SlideItem[] = [
     subtitle: '빈소 비용 거품은 덜고, 마지막 배웅의 정성은 온전히',
     title: '품격 있는 무빈소 가족장·직장',
     subtext: '1급 장례지도사의 궁중대렴 정식 입관식 거행',
-    button1: { text: '24시 긴급 장례접수 1599-8379', href: 'tel:1599-8379' },
-    button2: { text: '무빈소 장례절차 확인', href: '/sub/procedure' },
   },
   {
     id: 3,
@@ -46,8 +39,6 @@ const SLIDES: SlideItem[] = [
     subtitle: '사전 확정 견적 외 현장 바가지 0원 약속',
     title: '단 1원의 부당 추가금 없는 정찰제',
     subtext: '사전 확정 정찰 견적 외 현장 추가 비용 0원 보증',
-    button1: { text: '24시 긴급 장례접수 1599-8379', href: 'tel:1599-8379' },
-    button2: { text: '무료 맞춤견적 상담', href: '/sub/counsel' },
   },
 ];
 
@@ -76,7 +67,7 @@ export default function HeroCarousel() {
 
   return (
     <section className="relative w-full h-[450px] md:h-[530px] lg:h-[600px] bg-gray-900 group select-none">
-      {/* Background Slides Container (overflow-hidden ONLY on slides to prevent clipping of floating buttons) */}
+      {/* Background Slides Container */}
       <div className="absolute inset-0 overflow-hidden">
         {SLIDES.map((slide, index) => (
           <div
@@ -98,24 +89,24 @@ export default function HeroCarousel() {
             {/* Dark Overlay for readability */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35" />
 
-            {/* Slide Text & Action Buttons */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pb-24 md:pb-20 px-4 z-20">
+            {/* Slide Text - Centered vertically and horizontally */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pb-12 md:pb-14 px-4 z-20">
               {slide.badge && (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-blue-600/90 text-white font-semibold text-[11px] md:text-sm mb-2.5 shadow-lg backdrop-blur-sm border border-blue-400/30">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-blue-600/90 text-white font-semibold text-[11px] md:text-sm mb-3 shadow-lg backdrop-blur-sm border border-blue-400/30">
                   <ShieldCheck className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-200" />
                   <span>{slide.badge}</span>
                 </div>
               )}
 
               <p
-                className="text-sm md:text-xl lg:text-2xl font-medium text-blue-100 mb-1 md:mb-2 tracking-tight"
+                className="text-base md:text-xl lg:text-2xl font-medium text-blue-100 mb-2 md:mb-3 tracking-tight"
                 style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
               >
                 {slide.subtitle}
               </p>
 
               <h1
-                className="text-2xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
+                className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
                 style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
               >
                 {slide.title}
@@ -123,30 +114,13 @@ export default function HeroCarousel() {
 
               {slide.subtext && (
                 <p
-                  className="text-xs md:text-base lg:text-lg text-gray-200 font-normal mb-3 md:mb-4 flex items-center justify-center gap-1.5"
+                  className="text-xs md:text-base lg:text-lg text-gray-200 font-normal flex items-center justify-center gap-1.5"
                   style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
                 >
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   <span>{slide.subtext}</span>
                 </p>
               )}
-
-              {/* Slide Action Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3 mt-1.5 pointer-events-auto">
-                <a
-                  href={slide.button1.href}
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm shadow-xl transition-transform hover:scale-105 active:scale-95"
-                >
-                  <PhoneCall className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                  <span>{slide.button1.text}</span>
-                </a>
-                <Link
-                  href={slide.button2.href}
-                  className="inline-flex items-center justify-center px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold text-xs md:text-sm backdrop-blur-md border border-white/40 shadow-xl transition-transform hover:scale-105 active:scale-95"
-                >
-                  {slide.button2.text}
-                </Link>
-              </div>
             </div>
           </div>
         ))}
@@ -172,7 +146,7 @@ export default function HeroCarousel() {
       </button>
 
       {/* Slide Indicators (Dots) */}
-      <div className="absolute bottom-20 md:bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
+      <div className="absolute bottom-16 md:bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
         {SLIDES.map((_, index) => (
           <button
             key={index}
@@ -188,7 +162,7 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Floating 3 Buttons (Quick Actions) - NOT clipped by overflow */}
+      {/* Floating 3 Buttons (Quick Actions) */}
       <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {/* Button 1: 특별할인카드 신청하기 */}
