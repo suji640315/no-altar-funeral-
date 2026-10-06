@@ -75,80 +75,82 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative w-full h-[460px] md:h-[540px] lg:h-[620px] bg-gray-900 group select-none overflow-hidden">
-      {/* Background Slides */}
-      {SLIDES.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out transform-gpu ${
-            index === currentIndex
-              ? 'opacity-100 z-10 pointer-events-auto'
-              : 'opacity-0 z-0 pointer-events-none'
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            className="object-cover"
-            priority={index === 0}
-            sizes="100vw"
-          />
-          {/* Dark Overlay for readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35" />
+    <section className="relative w-full h-[450px] md:h-[530px] lg:h-[600px] bg-gray-900 group select-none">
+      {/* Background Slides Container (overflow-hidden ONLY on slides to prevent clipping of floating buttons) */}
+      <div className="absolute inset-0 overflow-hidden">
+        {SLIDES.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out transform-gpu ${
+              index === currentIndex
+                ? 'opacity-100 z-10 pointer-events-auto'
+                : 'opacity-0 z-0 pointer-events-none'
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              className="object-cover"
+              priority={index === 0}
+              sizes="100vw"
+            />
+            {/* Dark Overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/35" />
 
-          {/* Slide Text & Action Buttons */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center pb-28 md:pb-24 px-4 z-20">
-            {slide.badge && (
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-blue-600/90 text-white font-semibold text-[11px] md:text-sm mb-3 shadow-lg backdrop-blur-sm border border-blue-400/30">
-                <ShieldCheck className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-200" />
-                <span>{slide.badge}</span>
-              </div>
-            )}
+            {/* Slide Text & Action Buttons */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pb-24 md:pb-20 px-4 z-20">
+              {slide.badge && (
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-blue-600/90 text-white font-semibold text-[11px] md:text-sm mb-2.5 shadow-lg backdrop-blur-sm border border-blue-400/30">
+                  <ShieldCheck className="w-3.5 h-3.5 md:w-4 md:h-4 text-blue-200" />
+                  <span>{slide.badge}</span>
+                </div>
+              )}
 
-            <p
-              className="text-sm md:text-xl lg:text-2xl font-medium text-blue-100 mb-1 md:mb-2 tracking-tight"
-              style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
-            >
-              {slide.subtitle}
-            </p>
-
-            <h1
-              className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
-              style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-            >
-              {slide.title}
-            </h1>
-
-            {slide.subtext && (
               <p
-                className="text-xs md:text-base lg:text-lg text-gray-200 font-normal mb-3 md:mb-4 flex items-center justify-center gap-1.5"
+                className="text-sm md:text-xl lg:text-2xl font-medium text-blue-100 mb-1 md:mb-2 tracking-tight"
                 style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
               >
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{slide.subtext}</span>
+                {slide.subtitle}
               </p>
-            )}
 
-            {/* Slide Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3 mt-2 pointer-events-auto">
-              <a
-                href={slide.button1.href}
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm shadow-xl transition-transform hover:scale-105 active:scale-95"
+              <h1
+                className="text-2xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
+                style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
               >
-                <PhoneCall className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                <span>{slide.button1.text}</span>
-              </a>
-              <Link
-                href={slide.button2.href}
-                className="inline-flex items-center justify-center px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold text-xs md:text-sm backdrop-blur-md border border-white/40 shadow-xl transition-transform hover:scale-105 active:scale-95"
-              >
-                {slide.button2.text}
-              </Link>
+                {slide.title}
+              </h1>
+
+              {slide.subtext && (
+                <p
+                  className="text-xs md:text-base lg:text-lg text-gray-200 font-normal mb-3 md:mb-4 flex items-center justify-center gap-1.5"
+                  style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.9)' }}
+                >
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                  <span>{slide.subtext}</span>
+                </p>
+              )}
+
+              {/* Slide Action Buttons */}
+              <div className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3 mt-1.5 pointer-events-auto">
+                <a
+                  href={slide.button1.href}
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs md:text-sm shadow-xl transition-transform hover:scale-105 active:scale-95"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                  <span>{slide.button1.text}</span>
+                </a>
+                <Link
+                  href={slide.button2.href}
+                  className="inline-flex items-center justify-center px-4 py-2 md:px-5 md:py-2.5 rounded-lg bg-white/20 hover:bg-white/30 text-white font-bold text-xs md:text-sm backdrop-blur-md border border-white/40 shadow-xl transition-transform hover:scale-105 active:scale-95"
+                >
+                  {slide.button2.text}
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {/* Navigation Arrows */}
       <button
@@ -170,7 +172,7 @@ export default function HeroCarousel() {
       </button>
 
       {/* Slide Indicators (Dots) */}
-      <div className="absolute bottom-28 md:bottom-24 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
+      <div className="absolute bottom-20 md:bottom-20 left-1/2 -translate-x-1/2 flex items-center gap-2.5 z-30">
         {SLIDES.map((_, index) => (
           <button
             key={index}
@@ -186,31 +188,31 @@ export default function HeroCarousel() {
         ))}
       </div>
 
-      {/* Floating 3 Buttons (Quick Actions) */}
+      {/* Floating 3 Buttons (Quick Actions) - NOT clipped by overflow */}
       <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {/* Button 1: 특별할인카드 신청하기 */}
           <div
             onClick={() => setIsVipModalOpen(true)}
-            className="bg-[#1a5eff] text-white rounded-2xl shadow-xl flex items-center p-4 md:p-5 hover:-translate-y-1 transition-transform cursor-pointer group"
+            className="bg-[#1a5eff] text-white rounded-2xl shadow-xl flex items-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
           >
-            <div className="w-12 h-12 mr-3.5 bg-white/20 rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-12 h-12 mr-4 bg-white/20 rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
               </svg>
             </div>
             <div>
-              <p className="text-[11px] md:text-xs font-medium text-blue-100 mb-0.5">일반 시민도 공무원 협약 할인 혜택 동일 적용</p>
-              <h3 className="text-base md:text-lg font-bold">특별할인카드 신청하기</h3>
+              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">일반 시민도 공무원 협약 할인 혜택 동일 적용</p>
+              <h3 className="text-lg md:text-xl font-bold">특별할인카드 신청하기</h3>
             </div>
           </div>
 
           {/* Button 2: 24시간 긴급 장례접수 1599-8379 */}
           <a
             href="tel:1599-8379"
-            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-5 hover:-translate-y-1 transition-transform cursor-pointer group"
+            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
           >
-            <div className="flex items-center gap-1.5 mb-0.5">
+            <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
               <p className="text-xs md:text-sm font-medium text-gray-600">24시간 긴급 장례접수</p>
             </div>
@@ -224,13 +226,13 @@ export default function HeroCarousel() {
             href="https://pf.kakao.com/_NpBqxb"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-between p-4 md:p-5 hover:-translate-y-1 transition-transform cursor-pointer group"
+            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
           >
-            <div>
-              <p className="text-[11px] md:text-xs font-medium text-gray-500 mb-0.5">실시간 1:1 채팅 문의</p>
-              <h3 className="text-base md:text-lg font-bold text-gray-800">카카오톡 1:1 상담</h3>
+            <div className="text-left">
+              <p className="text-xs md:text-sm font-medium text-gray-500 mb-0.5">실시간 1:1 채팅 문의</p>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-800">카카오톡 1:1 상담</h3>
             </div>
-            <div className="w-11 h-11 bg-[#fae100] rounded-full flex items-center justify-center text-black font-black text-lg shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+            <div className="w-12 h-12 bg-[#fae100] rounded-full flex items-center justify-center text-black font-black text-xl shrink-0 group-hover:scale-105 transition-transform">
               Ch
             </div>
           </a>
