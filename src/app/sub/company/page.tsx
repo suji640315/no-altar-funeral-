@@ -52,13 +52,13 @@ export default function CompanyPage() {
         </section>
 
         {/* Section 2: 조직도 */}
-        <section className="mb-24 scroll-mt-24" id="organization">
+        <section className="mb-24 scroll-mt-24" id="organization" aria-label="공무원라이프 무빈소장례사업부 조직도">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold text-gray-900 flex items-center justify-center gap-2">
               <Users className="w-8 h-8 text-[#00387f]" /> 조직도
             </h2>
             <div className="w-10 h-[2px] bg-gray-400 mx-auto mt-4 mb-4"></div>
-            <p className="text-gray-500 text-sm">공무원라이프 조직도를 안내해 드립니다.</p>
+            <p className="text-gray-500 text-sm">공무원 협약 기준 의전 프로토콜을 수행하는 무빈소 전담 조직도입니다.</p>
           </div>
           
           <div className="flex flex-col items-center">
@@ -79,55 +79,58 @@ export default function CompanyPage() {
             {/* Departments container */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 w-full max-w-4xl relative">
               
-              {/* Dept 1 */}
+              {/* Dept 1: 경영기획부 */}
               <div className="flex flex-col items-center">
                 <div className="w-[2px] h-8 bg-gray-300 mb-2"></div>
                 <div className="w-full bg-white border-2 border-[#00387f] text-[#00387f] font-bold py-2.5 rounded-lg text-center shadow-sm">
                   경영기획부
                 </div>
-                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1 text-center">
+                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1.5 text-center">
                   <div>경영기획팀</div>
-                  <div>인사총무팀</div>
-                  <div>재경팀</div>
+                  <div>정찰제관리팀</div>
+                  <div>행정지원팀</div>
                 </div>
               </div>
 
-              {/* Dept 2 */}
+              {/* Dept 2: 의전사업부 */}
               <div className="flex flex-col items-center">
                 <div className="w-[2px] h-8 bg-gray-300 mb-2"></div>
                 <div className="w-full bg-white border-2 border-[#00387f] text-[#00387f] font-bold py-2.5 rounded-lg text-center shadow-sm">
                   의전사업부
                 </div>
-                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1 text-center">
-                  <div>의전1팀</div>
-                  <div>의전2팀</div>
-                  <div>차량물류팀</div>
+                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1.5 text-center">
+                  <div className="font-semibold text-gray-800">무빈소 전담의전1팀</div>
+                  <div className="font-semibold text-gray-800">무빈소 전담의전2팀</div>
+                  <div className="font-semibold text-gray-800">전용운구·물류팀</div>
                 </div>
               </div>
 
-              {/* Dept 3 */}
+              {/* Dept 3: 대외협력부 */}
               <div className="flex flex-col items-center">
                 <div className="w-[2px] h-8 bg-gray-300 mb-2"></div>
                 <div className="w-full bg-white border-2 border-[#00387f] text-[#00387f] font-bold py-2.5 rounded-lg text-center shadow-sm">
                   대외협력부
                 </div>
-                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1 text-center">
-                  <div>공공기관협력팀</div>
-                  <div>기업법인제휴팀</div>
-                  <div>홍보팀</div>
+                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1.5 text-center">
+                  <div className="font-semibold text-gray-800">공공기관·노조협력팀</div>
+                  <div className="font-semibold text-gray-800">지자체 화장시설협력팀</div>
+                  <div>브랜드홍보팀</div>
                 </div>
               </div>
 
-              {/* Dept 4 */}
+              {/* Dept 4: 고객지원부 */}
               <div className="flex flex-col items-center">
                 <div className="w-[2px] h-8 bg-gray-300 mb-2"></div>
                 <div className="w-full bg-white border-2 border-[#00387f] text-[#00387f] font-bold py-2.5 rounded-lg text-center shadow-sm">
                   고객지원부
                 </div>
-                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1 text-center">
-                  <div>24시간상황실</div>
-                  <div>상담관리팀</div>
-                  <div>사후지원팀</div>
+                <div className="w-full bg-gray-50 border border-gray-200 mt-2 p-3 rounded-lg text-xs md:text-sm text-gray-600 space-y-1.5 text-center">
+                  <div className="font-semibold text-gray-800">
+                    24시간 긴급상황실<br className="sm:hidden" />
+                    <span className="text-[11px] md:text-xs text-blue-700 font-bold block sm:inline sm:ml-1">(02-477-8379)</span>
+                  </div>
+                  <div className="font-semibold text-gray-800">안치실 신속배정팀</div>
+                  <div>유가족케어팀</div>
                 </div>
               </div>
 
