@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
   },
+  openGraph: {
+    title: '무빈소 장례 진행절차 (2일·3일 가족장 안내) | 공무원라이프 무빈소장례',
+    description: '임종 즉시 안치실 배정부터 1급 지도사의 정식 입관식, 화장장 예약 및 동행까지. 무빈소 장례의 투명한 진행 절차를 확인하세요.',
+    url: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
+    siteName: '무빈소장례',
+    type: 'website',
+  },
 };
 
 export default function ProcedurePage() {

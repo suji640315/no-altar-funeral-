@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/company',
   },
+  openGraph: {
+    title: '브랜드 및 조직 소개 | 공무원라이프 무빈소장례',
+    description: '공무원 노조 협약 기준의 무빈소 전담 의전팀과 신속 배정 시스템을 갖춘 공무원라이프 무빈소장례사업부 소개입니다.',
+    url: 'https://xn--9n2b17ct9ctte97j.net/sub/company',
+    siteName: '무빈소장례',
+    type: 'website',
+  },
 };
 
 export default function CompanyPage() {

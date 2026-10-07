@@ -1,3 +1,20 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '공무원 협약 무빈소장례 전문센터 | 100% 후불제 안심 정찰제',
+  description: '공직사회가 검증한 품격 그대로, 거품 없는 무빈소 130 안심 정찰 패키지. 10만원 할인카드 즉시발급, 직통상담전화 02-477-8379.',
+  alternates: {
+    canonical: 'https://xn--9n2b17ct9ctte97j.net',
+  },
+  openGraph: {
+    title: '공무원 협약 무빈소장례 전문센터',
+    description: '거품 없는 100% 후불제 무빈소 130 패키지. 10만원 즉시 할인 혜택.',
+    url: 'https://xn--9n2b17ct9ctte97j.net',
+    siteName: '무빈소장례',
+    type: 'website',
+  },
+};
+
 import HeroCarousel from "@/components/HeroCarousel";
 import MouSection from "@/components/MouSection";
 import Link from "next/link";

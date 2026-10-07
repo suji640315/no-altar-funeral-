@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/goods',
   },
+  openGraph: {
+    title: '무빈소 130 안심 패키지 | 공무원라이프 무빈소장례',
+    description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 부당 추가금 0원 보증, 1급 장례지도사 정식 입관식 및 화장장 동행.',
+    url: 'https://xn--9n2b17ct9ctte97j.net/sub/goods',
+    siteName: '무빈소장례',
+    type: 'website',
+  },
 };
 
 export default function GoodsPage() {
