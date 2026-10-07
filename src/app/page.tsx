@@ -122,7 +122,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             title="공무원라이프 공식 네이버 블로그 새창열림"
-            aria-label="공무원라이프 공식 네이버 블로그 새창열림"
+            aria-label="공무원라이프 공식 네이버 블로그 바로가기"
             className="w-14 h-14 bg-[#03c75a] text-white rounded-2xl flex items-center justify-center font-bold text-xl hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
             blog
@@ -131,8 +131,8 @@ export default function Home() {
             href="https://pf.kakao.com/_NpBqxb"
             target="_blank"
             rel="noopener noreferrer"
-            title="공무원라이프 무빈소장례 카카오톡 상담 새창열림"
-            aria-label="공무원라이프 무빈소장례 카카오톡 상담 새창열림"
+            title="공무원라이프 카카오톡 상담 새창열림"
+            aria-label="공무원라이프 카카오톡 1:1 상담 바로가기"
             className="w-14 h-14 bg-[#fae100] rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
             <svg viewBox="0 0 100 100" className="w-9 h-9" aria-hidden="true">
@@ -150,7 +150,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             title="공무원라이프 공식 인스타그램 새창열림"
-            aria-label="공무원라이프 공식 인스타그램 새창열림"
+            aria-label="공무원라이프 공식 인스타그램 바로가기"
             className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
             <div className="w-8 h-8 border-2 border-white rounded-lg relative flex items-center justify-center" aria-hidden="true">
@@ -163,7 +163,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             title="공무원라이프 공식 페이스북 새창열림"
-            aria-label="공무원라이프 공식 페이스북 새창열림"
+            aria-label="공무원라이프 공식 페이스북 바로가기"
             className="w-14 h-14 bg-[#1877f2] text-white rounded-2xl flex items-center justify-center font-bold text-3xl hover:-translate-y-1 transition-transform pb-1 pr-1 hover:shadow-lg"
           >
             f
