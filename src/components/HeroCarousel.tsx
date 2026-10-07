@@ -175,10 +175,17 @@ export default function HeroCarousel() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
               </svg>
             </div>
-            <div>
-              <p className="text-xs md:text-sm font-semibold text-blue-100 mb-1">[130만 → 120만] 즉시 차감 혜택</p>
-              <h3 className="text-lg md:text-xl font-bold">
-                <span className="text-[#ffe600] font-black mr-1">10만원</span> 특별할인카드 받기
+            <div className="min-w-0">
+              <p className="text-xs md:text-sm font-semibold text-blue-100 mb-0.5 tracking-tight">
+                [130만 → 120만] 즉시 차감 혜택
+              </p>
+              <h3 className="flex items-baseline gap-1.5 flex-wrap">
+                <span className="text-2xl md:text-[26px] lg:text-3xl font-black text-[#ffe600] tracking-tight drop-shadow-sm">
+                  10만원
+                </span>
+                <span className="text-base md:text-lg lg:text-xl font-bold text-white tracking-tight">
+                  특별할인카드 받기
+                </span>
               </h3>
             </div>
           </div>
