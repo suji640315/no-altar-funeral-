@@ -114,7 +114,7 @@ export default function GoodsPage() {
                   </div>
                   <div>
                     <span className="font-bold text-gray-900 block mb-0.5 text-sm">이송/운구</span>
-                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">관내 고인 전용 운구 차량 지원 및 화장장 이동 동행 케어</p>
+                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">관내 고인 전용 운구 차량 지원 및 관내 화장장까지 운구전용 리무진 또는 유족버스 중 택1 지원</p>
                   </div>
                 </div>
 
