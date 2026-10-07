@@ -210,7 +210,7 @@ export default function CounselPage() {
   return (
     <div className="w-full bg-gray-50 min-h-screen pt-[100px] pb-20 font-sans text-gray-800">
       <div className="w-full bg-[#00387f] py-12 text-center text-white mb-10">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white">무빈소 130 신청 및 상담</h1>
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2 text-white">무빈소 130 안심 정찰 패키지 신청 및 상담</h1>
         <div className="w-9 h-[2px] bg-white/80 mx-auto my-3"></div>
         <p className="text-blue-100 text-sm mt-3">전문 장례지도사가 신속하고 친절하게 상담해 드립니다.</p>
       </div>
@@ -221,7 +221,7 @@ export default function CounselPage() {
           <div className="flex items-center gap-2 mb-2">
             <span className="px-2.5 py-0.5 bg-blue-700 text-white text-xs font-bold rounded-full">특별혜택</span>
             <h2 className="text-base md:text-lg font-bold text-gray-900 tracking-tight">
-              10만원 특별할인 적용! [무빈소 130] 1:1 맞춤 상담 신청
+              10만원 특별할인 적용! [무빈소 130 안심 정찰 패키지] 1:1 맞춤 상담
             </h2>
           </div>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed font-medium mb-3">
