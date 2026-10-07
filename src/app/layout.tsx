@@ -29,15 +29,23 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     type: 'website',
   },
+  verification: {
+    other: {
+      'naver-site-verification': process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION || '',
+    },
+  },
 };
 
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "공무원라이프 무빈소장례센터",
+  "@type": ["FuneralHome", "LocalBusiness"],
+  "name": "공무원라이프 무빈소장례",
+  "alternateName": "공무원라이프 무빈소장례사업부",
+  "description": "공무원 노조 공식 협약 기준 100% 후불제 무빈소 장례 및 가족장 전문 상조 브랜드",
   "image": "https://xn--9n2b17ct9ctte97j.net/images/og-mubinso.jpg",
   "telephone": "02-477-8379",
   "url": "https://xn--9n2b17ct9ctte97j.net/",
+  "priceRange": "₩1,200,000 - ₩1,300,000",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "하남대로 947, A동 401호(풍산동, 하남테크노밸리U1센터)",
@@ -46,7 +54,25 @@ const localBusinessJsonLd = {
     "postalCode": "12918",
     "addressCountry": "KR",
   },
-  "priceRange": "₩1,200,000 - ₩1,300,000",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "37.5458",
+    "longitude": "127.2037"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    }
+  ],
+  "sameAs": [
+    "https://blog.naver.com/officialslife",
+    "https://pf.kakao.com/_NpBqxb",
+    "https://www.instagram.com/officialslife",
+    "https://www.facebook.com/officialslife"
+  ]
 };
 
 export default function RootLayout({
