@@ -31,6 +31,24 @@ export const metadata: Metadata = {
   },
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "공무원라이프 무빈소장례센터",
+  "image": "https://xn--9n2b17ct9ctte97j.net/images/og-mubinso.jpg",
+  "telephone": "02-477-8379",
+  "url": "https://xn--9n2b17ct9ctte97j.net/",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "하남대로 947, A동 401호(풍산동, 하남테크노밸리U1센터)",
+    "addressLocality": "하남시",
+    "addressRegion": "경기도",
+    "postalCode": "12918",
+    "addressCountry": "KR",
+  },
+  "priceRange": "₩1,200,000 - ₩1,300,000",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,6 +56,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+      </head>
       <body className="pt-20 pb-16 md:pb-0">
         <Header />
         {children}

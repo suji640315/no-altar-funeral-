@@ -126,14 +126,18 @@ export default function CompanyPage() {
                 <span className="w-2 h-2 rounded-full border-2 border-blue-500 inline-block"></span> 본사 오시는 길
               </h3>
               <div className="grid grid-cols-[100px_1fr] md:grid-cols-[120px_1fr] gap-y-3 text-sm md:text-base border-t border-b border-gray-200 py-4">
-                <div className="font-bold text-gray-700">주 소 :</div>
-                <div className="text-gray-600">경기도 하남시 하남대로 947 하남테크노벨리U1센터 A동 401호</div>
+                <div className="font-bold text-gray-700">사업장 주소 :</div>
+                <div className="text-gray-600">경기도 하남시 하남대로 947, A동 401호(풍산동, 하남테크노밸리U1센터)</div>
                 
-                <div className="font-bold text-gray-700">통합콜센터 :</div>
-                <div className="text-blue-600 font-bold font-sans">1599-8379</div>
+                <div className="font-bold text-gray-700">직통 상담전화 :</div>
+                <div className="text-blue-600 font-bold font-sans">
+                  <a href="tel:02-477-8379" className="hover:underline">02-477-8379</a>
+                </div>
                 
-                <div className="font-bold text-gray-700">전 화 :</div>
-                <div className="text-gray-600">031-966-8379</div>
+                <div className="font-bold text-gray-700">24시 상황실 :</div>
+                <div className="text-red-600 font-bold font-sans">
+                  <a href="tel:1599-8379" className="hover:underline">1599-8379</a>
+                </div>
                 
                 <div className="font-bold text-gray-700">팩 스 :</div>
                 <div className="text-gray-600">031-969-3522</div>

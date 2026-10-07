@@ -190,18 +190,22 @@ export default function HeroCarousel() {
             </div>
           </div>
 
-          {/* Button 2: 24시간 긴급 장례접수 1599-8379 */}
+          {/* Button 2: 무빈소 장례 전담 직통상담 02-477-8379 */}
           <a
-            href="tel:1599-8379"
+            href="tel:02-477-8379"
+            title="무빈소 장례 전담 직통상담 전화 연결"
             className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
           >
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              <p className="text-xs md:text-sm font-medium text-gray-600">24시간 긴급 장례접수</p>
+              <p className="text-xs md:text-sm font-semibold text-gray-700">무빈소 장례 전담 직통상담</p>
             </div>
             <h3 className="text-2xl md:text-3xl font-black text-[#e3000f] tracking-tight group-hover:scale-105 transition-transform">
-              1599-8379
+              02-477-8379
             </h3>
+            <p className="text-[11px] md:text-xs text-gray-500 mt-1 font-medium">
+              (24시간 상황실: 1599-8379)
+            </p>
           </a>
 
           {/* Button 3: 카카오톡 1:1 상담 */}
