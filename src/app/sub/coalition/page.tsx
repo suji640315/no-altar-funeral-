@@ -74,18 +74,18 @@ const mouData: MouItem[] = [
     alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 공동협력 및 후불제 장례 의전 공식 업무협약식'
   },
   {
-    orgName: '사회적협동조합 멋진인생웰다잉',
-    desc: '사전연명의료의향서 연계 후불제 장례 의전 공식 업무협약',
-    badge: '[공무원 협약 기준 의전 적용]',
-    imgSrc: '/mou/mou-boseong-hemp-fabric-02-mubinso.webp',
-    alt: '사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 사전연명의료의향서 공식 업무협약 체결'
-  },
-  {
     orgName: '여의도순복음교회',
     desc: '교역자 및 성도 복지 지원 후불제 장례 의전 공식 업무협약',
     badge: '[공무원 협약 기준 의전 적용]',
-    imgSrc: '/mou/mou-yoido-church-support-mubinso.webp',
+    imgSrc: '/mou/mou-boseong-hemp-fabric-02-mubinso.webp',
     alt: '여의도순복음교회 공무원라이프 무빈소장례 장례지원협력 공식 업무협약식'
+  },
+  {
+    orgName: '사회적협동조합 멋진인생웰다잉',
+    desc: '사전연명의료의향서 연계 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
+    imgSrc: '/mou/mou-yoido-church-support-mubinso.webp',
+    alt: '사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 사전연명의료의향서 공식 업무협약 체결'
   },
   {
     orgName: '전국공무원노동조합 서울 양천구지부',
