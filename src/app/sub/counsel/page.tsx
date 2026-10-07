@@ -221,15 +221,15 @@ export default function CounselPage() {
           <div className="flex items-center gap-2 mb-2">
             <span className="px-2.5 py-0.5 bg-blue-700 text-white text-xs font-bold rounded-full">특별혜택</span>
             <h2 className="text-base md:text-lg font-bold text-gray-900 tracking-tight">
-              10만원 특별할인 적용! [무빈소 130] 안심 정찰 패키지 1:1 맞춤 상담
+              10만원 특별할인 적용! [무빈소 130] 1:1 맞춤 상담 신청
             </h2>
           </div>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed font-medium mb-3">
-            상담 접수 시 전문 장례지도사가 5분 이내 신속히 연락드려 관내 최적 안치실 배정 및 화장장 예약을 안내해 드립니다.
+            접수 즉시 전담 장례지도사가 5분 이내 신속히 연락드려 관내 최적 안치실 배정, 화장장 예약 안내 및 10만 원 즉시 할인 혜택(실결제 120만 원)을 안내해 드립니다.
           </p>
           <div className="pt-3 border-t border-blue-200/60 flex flex-wrap items-center justify-between gap-2 text-xs">
             <div className="flex items-center gap-1.5 text-gray-700">
-              <span className="font-semibold text-gray-600">무빈소 전담 직통상담:</span>
+              <span className="font-semibold text-gray-600">직통 상담전화:</span>
               <a href="tel:02-477-8379" className="text-blue-700 font-bold text-sm hover:underline">02-477-8379</a>
             </div>
             <div className="flex items-center gap-1.5 text-gray-600">

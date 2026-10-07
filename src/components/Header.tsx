@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,12 +42,20 @@ export default function Header() {
         {/* Right: Desktop Menu & Mobile Toggle */}
         <div className="flex items-center gap-6 relative z-20">
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex gap-8 text-sm font-bold text-gray-800">
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-bold text-gray-800">
             {navLinks.map((link, idx) => (
               <Link key={idx} href={link.href} className="hover:text-blue-600 transition-colors">
                 {link.label}
               </Link>
             ))}
+            <a
+              href="tel:02-477-8379"
+              className="flex items-center gap-1.5 text-xs font-bold text-red-600 bg-red-50 hover:bg-red-100 border border-red-200 px-3 py-1.5 rounded-full transition-colors ml-2 shadow-xs"
+              title="직통상담전화 02-477-8379"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>02-477-8379</span>
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -74,6 +82,15 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <div className="p-3 pt-4 border-t border-gray-100">
+            <a
+              href="tel:02-477-8379"
+              className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-xl text-sm shadow-sm transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span>직통 상담전화 02-477-8379</span>
+            </a>
+          </div>
         </div>
       </div>
     </header>

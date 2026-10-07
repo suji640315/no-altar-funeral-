@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { Building2, Users, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '브랜드 소개 | 공무원라이프 무빈소장례',
-  description: '공무원 노조 공식 협약의 신뢰를 바탕으로 거품 없는 100% 후불제 무빈소 장례 서비스를 제공하는 전문 브랜드 소개입니다.',
+  title: '브랜드 및 조직 소개 | 공무원라이프 무빈소장례',
+  description: '공무원 노조 협약 기준의 무빈소 전담 의전팀과 신속 배정 시스템을 갖춘 공무원라이프 무빈소장례사업부 소개입니다.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/company',
   },

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: '무빈소 130 안심 패키지 | 공무원라이프 무빈소장례',
-  description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 부당 추가금 0원 보증, 1급 장례지도사 정식 입관식 집도 및 화장장 동행.',
+  description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 부당 추가금 0원 보증, 1급 장례지도사 정식 입관식 및 화장장 동행.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/goods',
   },
@@ -45,9 +45,8 @@ export default function GoodsPage() {
               <h3 className="font-bold text-gray-900 text-sm md:text-base">공무원 협약 기준 기획 의도 및 안심 보증</h3>
             </div>
             <p className="text-gray-700 text-xs md:text-sm leading-relaxed break-keep font-medium">
-              불필요한 빈소 비용 거품은 걷어내고, 공무원 협약 기준의 품격만 정직하게 채웠습니다.<br className="hidden md:inline" />
-              공무원라이프 무빈소 130은 조문객 맞이 없이 직계가족 중심으로 경건하게 배웅하는 정찰제 패키지입니다. 1급 장례지도사의 정식 입관식(궁중대렴) 집도와 화장장 동행까지 모든 필수 절차가 포함되어 있으며, 현장 부당 추가금 0원을 보증합니다.
-            </p>
+              불필요한 빈소 대여료와 접객 비용 거품은 걷어내고, 공무원 협약 기준의 품격만 정직하게 채웠습니다.<br className="hidden md:inline" />
+              공무원라이프 무빈소 130은 직계가족 중심의 실속형 정찰제 상품으로, 1급 장례지도사의 궁중대렴 정식 입관식과 e하늘 화장장 예약·동행까지 전 과정을 책임 집도하며 사전 확정 130만 원(할인 적용 시 120만 원) 외 현장 부당 추가금 0원을 보증합니다.</p>
           </div>
         </div>
 
@@ -92,7 +91,7 @@ export default function GoodsPage() {
                   </div>
                   <div>
                     <span className="font-bold text-gray-900 block mb-0.5 text-sm">입관 의전</span>
-                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">1급 국가공인 장례지도사 2인 전담 집도 (궁중대렴 정식 입관 및 생화 꽃관 장식)</p>
+                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">1급 국가공인 장례지도사 2인 전담 집도 (궁중대렴 정식 입관 및 생화 꽃장식)</p>
                   </div>
                 </div>
 
@@ -103,7 +102,7 @@ export default function GoodsPage() {
                   </div>
                   <div>
                     <span className="font-bold text-gray-900 block mb-0.5 text-sm">입관 용품</span>
-                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">공무원 협약 규격 정품 오동나무 규격관 및 최고급 모시/위생 수의 일체</p>
+                    <p className="text-gray-700 whitespace-pre-line leading-relaxed font-medium">공무원 협약 규격 정품 오동나무 규격관 및 위생 수의 일체</p>
                   </div>
                 </div>
 

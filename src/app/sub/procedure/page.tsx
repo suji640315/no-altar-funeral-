@@ -5,7 +5,7 @@ import { Ambulance, Flower2, Wind, Home, ArrowRight, PhoneCall } from 'lucide-re
 
 export const metadata: Metadata = {
   title: '무빈소 장례 진행절차 (2일·3일 가족장 안내) | 공무원라이프 무빈소장례',
-  description: '임종 즉시 안치실 배정부터 정식 입관식, e하늘 화장장 동행까지. 무빈소 장례의 체계적인 진행 일정을 확인하세요.',
+  description: '임종 즉시 안치실 배정부터 1급 지도사의 정식 입관식, 화장장 예약 및 동행까지. 무빈소 장례의 투명한 진행 절차를 확인하세요.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
   },
@@ -15,33 +15,33 @@ export default function ProcedurePage() {
   const steps = [
     {
       id: 1,
-      title: 'STEP 01 (임종 및 안치)',
-      desc: '24시간 긴급상황실 접수, 고인 전용 운구차량 배차 및 안치실 안치, 화장장 예약 대행',
-      details: '24시간 긴급상황실(02-477-8379) 접수 → 고인 전용 운구차량 배차 → 관내 인근 장례식장 안치실 안치 및 화장장 예약 대행',
+      title: 'STEP 01 (임종 및 안치실 이송)',
+      desc: '24시간 긴급상황실 접수, 고인 전용 운구차량 즉시 배차 및 안치실 안치, 화장장 신속 예약 대행',
+      details: '24시간 긴급상황실(02-477-8379) 접수 → 고인 전용 운구차량 즉시 배차 → 유가족 관내 최적 장례식장 안치실 안치 → e하늘 화장장 신속 예약 대행',
       icon: <Ambulance className="w-8 h-8 text-[#00387f]" />,
       color: 'bg-blue-50 border-[#00387f]'
     },
     {
       id: 2,
-      title: 'STEP 02 (전문 입관식)',
-      desc: '1급 장례지도사 2인 전담 집도, 궁중대렴 정식 염습 및 생화 꽃관 장식 마지막 인사',
-      details: '1급 장례지도사 2인 전담 집도 → 궁중대렴 정식 염습 및 단정한 수의 착용 → 생화 꽃관 장식 후 유가족 참관 마지막 인사',
+      title: 'STEP 02 (전문 입관식 및 추모)',
+      desc: '1급 장례지도사 2인 전담 집도, 궁중대렴 정식 염습 및 수의 착용, 생화 꽃관 장식 마지막 추모 인사',
+      details: '1급 장례지도사 2인 전담 집도 → 궁중대렴 정식 염습 및 수의 착용 → 생화 꽃관 장식 후 유가족 참관 하에 마지막 추모 인사',
       icon: <Flower2 className="w-8 h-8 text-pink-600" />,
       color: 'bg-pink-50 border-pink-600'
     },
     {
       id: 3,
-      title: 'STEP 03 (발인 및 화장)',
-      desc: '고인 전용 운구차량 운행, 화장장 이동 및 접수 동행, 수골 참관',
-      details: '고인 전용 운구차량 운행 → 화장장 이동 및 접수 동행 → 화장 진행 및 수골 참관',
+      title: 'STEP 03 (발인 및 화장장 동행)',
+      desc: '고인 전용 운구차량 운행, 화장장 이동 및 접수 동행, 화장로 입로 및 수골 참관',
+      details: '고인 전용 운구차량 운행 → 화장장 이동 및 접수 동행 → 화장로 입로 및 수골 참관',
       icon: <Wind className="w-8 h-8 text-teal-600" />,
       color: 'bg-teal-50 border-teal-600'
     },
     {
       id: 4,
-      title: 'STEP 04 (안치 및 종료)',
-      desc: '봉안당/수목장/해양장 등 희망 장지 안치 안내 및 100% 후불 정산',
-      details: '봉안당/수목장/해양장 등 유가족 희망 장지 안치 안내 → 100% 후불 정산으로 일정 종료',
+      title: 'STEP 04 (봉안 및 후불 정산)',
+      desc: '유가족 희망 장지 안치 안내 및 100% 후불 정산',
+      details: '유가족 희망 장지(봉안당/수목장/해양장 등) 안치 안내 → 모든 일정 종료 후 만족도 확인 및 100% 후불 결제',
       icon: <Home className="w-8 h-8 text-amber-600" />,
       color: 'bg-amber-50 border-amber-600'
     }
