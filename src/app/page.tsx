@@ -110,12 +110,19 @@ export default function Home() {
 
       {/* SNS Section */}
       <section className="text-center mb-24 px-4">
-        <h3 className="text-xl text-gray-600 mb-8 font-medium">공무원라이프 SNS 바로가기</h3>
+        <h3 className="text-lg md:text-xl text-gray-700 font-bold mb-1.5 tracking-tight">
+          (주)공무원라이프 공식 SNS &amp; 소통 채널
+        </h3>
+        <p className="text-xs md:text-sm text-gray-500 mb-8 font-medium">
+          공무원라이프가 전하는 장례 정보와 실시간 상담 채널입니다.
+        </p>
         <div className="flex items-center justify-center gap-4">
           <a
             href="https://blog.naver.com/officialslife"
             target="_blank"
             rel="noopener noreferrer"
+            title="공무원라이프 공식 네이버 블로그 새창열림"
+            aria-label="공무원라이프 공식 네이버 블로그 새창열림"
             className="w-14 h-14 bg-[#03c75a] text-white rounded-2xl flex items-center justify-center font-bold text-xl hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
             blog
@@ -124,9 +131,11 @@ export default function Home() {
             href="https://pf.kakao.com/_NpBqxb"
             target="_blank"
             rel="noopener noreferrer"
+            title="공무원라이프 무빈소장례 카카오톡 상담 새창열림"
+            aria-label="공무원라이프 무빈소장례 카카오톡 상담 새창열림"
             className="w-14 h-14 bg-[#fae100] rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
-            <svg viewBox="0 0 100 100" className="w-9 h-9">
+            <svg viewBox="0 0 100 100" className="w-9 h-9" aria-hidden="true">
               <path
                 d="M50 15C25.147 15 5 31.701 5 52.308c0 13.385 8.528 25.107 21.684 31.966-.549 2.052-1.895 7.37-2.186 8.527-.372 1.487.525 1.47 1.134 1.06 4.795-3.238 13.435-9.155 18.57-12.753 1.896.549 3.822.662 5.792.662 24.853 0 45-16.701 45-37.308C95 31.701 74.853 15 50 15z"
                 fill="#3a1d1d"
@@ -140,9 +149,11 @@ export default function Home() {
             href="https://www.instagram.com/officialslife"
             target="_blank"
             rel="noopener noreferrer"
+            title="공무원라이프 공식 인스타그램 새창열림"
+            aria-label="공무원라이프 공식 인스타그램 새창열림"
             className="w-14 h-14 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
-            <div className="w-8 h-8 border-2 border-white rounded-lg relative flex items-center justify-center">
+            <div className="w-8 h-8 border-2 border-white rounded-lg relative flex items-center justify-center" aria-hidden="true">
               <div className="w-3 h-3 border-2 border-white rounded-full"></div>
               <div className="w-1 h-1 bg-white rounded-full absolute top-1 right-1"></div>
             </div>
@@ -151,6 +162,8 @@ export default function Home() {
             href="https://www.facebook.com/officialslife"
             target="_blank"
             rel="noopener noreferrer"
+            title="공무원라이프 공식 페이스북 새창열림"
+            aria-label="공무원라이프 공식 페이스북 새창열림"
             className="w-14 h-14 bg-[#1877f2] text-white rounded-2xl flex items-center justify-center font-bold text-3xl hover:-translate-y-1 transition-transform pb-1 pr-1 hover:shadow-lg"
           >
             f
