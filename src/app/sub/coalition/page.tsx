@@ -16,86 +16,111 @@ export const metadata: Metadata = {
 };
 
 interface MouItem {
-  title: string;
+  orgName: string;
+  desc: string;
+  badge: string;
   imgSrc: string;
   alt: string;
 }
 
 const mouData: MouItem[] = [
   {
-    title: '인천개인택시조합',
+    orgName: '인천광역시 개인택시운송사업조합',
+    desc: '후불제 장례 의전 및 상조 복지 서비스 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-taxi-transport-mubinso.webp',
-    alt: '인천개인택시조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '인천광역시 개인택시운송사업조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '부산광역시교육청공무원노동조합 후불제 상조 서비스 및 일회용품 제작 배송서비스 업무협약 체결',
+    orgName: '부산광역시교육청 공무원노동조합',
+    desc: '조합원 및 가족 후불제 장례 의전·장례위로금 지급 협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-busan-edu-officials-mubinso.webp',
-    alt: '부산광역시교육청공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '부산광역시교육청 공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '연제구청공무원노동조합 후불제 상조서비스 업무협약 체결',
+    orgName: '부산광역시 연제구청 공무원노동조합',
+    desc: '공무원 가족 100% 후불제 장례 의전 공식 업무제휴',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-yeonje-officials-mubinso.webp',
-    alt: '연제구청공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '부산광역시 연제구청 공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '고창군공무원노동조합',
+    orgName: '전북 고창군 공무원노동조합',
+    desc: '조합원 복지 후불제 상조서비스 공식 업무제휴 협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-gochang-officials-mubinso.webp',
-    alt: '고창군공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '전북 고창군 공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '익산시공무원노동조합 (한마음화합은잔치)',
-    imgSrc: '/mou/mou-iksan-festival-mubinso.webp',
-    alt: '익산시공무원노동조합 한마음화합은잔치 공무원라이프 무빈소장례 공식 업무협약식'
-  },
-  {
-    title: '익산시공무원노동조합',
+    orgName: '전북 익산시 공무원노동조합',
+    desc: '공무원 가족 장례복지 지원 및 상조서비스 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-iksan-officials-mubinso.webp',
-    alt: '익산시공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '전북 익산시 공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '구리시공무원노동조합',
+    orgName: '경기도 구리시청 공무원노동조합',
+    desc: '공직자 전담 후불제 장례 의전 공식 업무협약 체결',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-guri-officials-mubinso.webp',
-    alt: '구리시청공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+    alt: '경기도 구리시청 공무원노동조합 공무원라이프 무빈소장례 공식 업무협약 체결'
   },
   {
-    title: '보성삼베섬유(주) 공동협력계약 체결 및 업무제휴',
+    orgName: '보성삼베섬유(주)',
+    desc: '친환경 정품 수의 공급 및 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-boseong-hemp-fabric-01-mubinso.webp',
-    alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 공동협력계약 체결 및 공식 업무제휴식'
+    alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 공동협력 및 후불제 장례 의전 공식 업무협약식'
   },
   {
-    title: '보성삼베섬유(주) 공동협력계약 체결 및 업무제휴',
+    orgName: '사회적협동조합 멋진인생웰다잉',
+    desc: '사전연명의료의향서 연계 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-boseong-hemp-fabric-02-mubinso.webp',
-    alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 공동협력 및 업무제휴 협약식'
+    alt: '사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 사전연명의료의향서 공식 업무협약 체결'
   },
   {
-    title: '순복음여의도교회(여의도순복음교회 장례지원협력업체등록) MOU업무 협약',
+    orgName: '여의도순복음교회',
+    desc: '교역자 및 성도 복지 지원 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-yoido-church-support-mubinso.webp',
-    alt: '순복음여의도교회 공무원라이프 무빈소장례 장례지원협력 MOU 공식 업무협약식'
+    alt: '여의도순복음교회 공무원라이프 무빈소장례 장례지원협력 공식 업무협약식'
   },
   {
-    title: '사회적협동조합 멋진인생웰다잉(사전연명의료의향서 등록기관)과 MOU업무협약',
+    orgName: '전국공무원노동조합 서울 양천구지부',
+    desc: '공무원 가족 복지 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-welldying-coop-mubinso.webp',
-    alt: '사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 MOU 공식 업무협약 체결'
+    alt: '전국공무원노동조합 서울 양천구지부 공무원라이프 무빈소장례 공식 업무협약 체결'
   },
   {
-    title: '전국공무원노동조합함양군지부',
+    orgName: '대한민국퇴직공무원노동조합',
+    desc: '퇴직 공직자 및 가족 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
     imgSrc: '/mou/mou-hamyang-officials-mubinso.webp',
-    alt: '전국공무원노동조합함양군지부 공무원라이프 무빈소장례 공식 업무협약식'
-  },
-  {
-    title: '대한민국퇴직공무원노동조합 업무협약',
-    imgSrc: '/mou/mou-retired-officials-mubinso.webp',
     alt: '대한민국퇴직공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '공공운수노조 인천지역공공기관지부',
-    imgSrc: '/mou/mou-incheon-union-mubinso.webp',
-    alt: '인천광역시통합공무원노동조합 공공운수노조 무빈소장례 공식 업무협약 체결'
+    orgName: '전국공공운수노조 인천지역공공기관지부',
+    desc: '공공기관 임직원 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
+    imgSrc: '/mou/mou-retired-officials-mubinso.webp',
+    alt: '전국공공운수노조 인천지역공공기관지부 공무원라이프 무빈소장례 공식 업무협약식'
   },
   {
-    title: '인천환경공단 노동조합',
-    imgSrc: '/mou/mou-incheon-env-union-mubinso.webp',
+    orgName: '인천환경공단 노동조합',
+    desc: '공단 임직원 복지 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
+    imgSrc: '/mou/mou-incheon-union-mubinso.webp',
     alt: '인천환경공단 노동조합 공무원라이프 무빈소장례 공식 업무협약식'
+  },
+  {
+    orgName: '인천광역시통합공무원노동조합',
+    desc: '인천 공직자 및 가족 후불제 장례 의전 공식 업무협약',
+    badge: '[공무원 협약 기준 의전 적용]',
+    imgSrc: '/mou/mou-incheon-env-union-mubinso.webp',
+    alt: '인천광역시통합공무원노동조합 공무원라이프 무빈소장례 공식 업무협약 체결'
   }
 ];
 
@@ -119,7 +144,7 @@ export default function CoalitionPage() {
           <div className="w-10 h-[2px] bg-blue-600 mx-auto mt-3"></div>
         </div>
 
-        {/* 1. 갤러리 상단 인트로 텍스트 섹션 (SEO & 신뢰 강화 박스) */}
+        {/* 갤러리 상단 인트로 텍스트 섹션 (SEO & 신뢰 강화 박스) */}
         <div className="bg-gradient-to-br from-blue-50/90 via-slate-50 to-indigo-50/60 border border-blue-100/90 rounded-2xl p-6 md:p-8 mb-10 md:mb-12 shadow-sm">
           <div className="flex items-center gap-2 mb-3">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-600 text-white font-semibold text-xs shadow-sm">
@@ -143,7 +168,7 @@ export default function CoalitionPage() {
         </div>
 
         {/* 
-          Grid layout matching the established design: 
+          Grid layout: 
           1 column on mobile, 3 columns on desktop.
         */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
@@ -152,7 +177,7 @@ export default function CoalitionPage() {
               key={index} 
               className="w-full bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col justify-between h-full shadow-sm hover:shadow-lg transition-all duration-200 hover:-translate-y-0.5 group"
             >
-              {/* Photo section: Strict 4:3 Aspect Ratio Container with Guaranteed Containment */}
+              {/* Photo section: Strict 4:3 Aspect Ratio Container */}
               <div 
                 className="w-full relative bg-gray-100 border-b border-gray-100 overflow-hidden shrink-0"
                 style={{ aspectRatio: '4 / 3' }}
@@ -175,17 +200,24 @@ export default function CoalitionPage() {
                 />
               </div>
               
-              {/* Title & Caption section */}
+              {/* Title & Caption section with min-height for uniform alignment */}
               <div className="p-4 md:p-5 flex-1 flex flex-col justify-between bg-white">
-                {/* 기관명: 모바일 14px, 데스크톱 15px 고대비 텍스트, 균일한 행 높이(min-h) 확보 */}
-                <h3 className="text-[14px] md:text-[15px] font-bold text-gray-900 leading-snug break-keep mb-3 min-h-[2.75rem] flex items-center">
-                  {item.title}
-                </h3>
+                <div>
+                  {/* 1행 (기관/조합명): 볼드 처리, 지역명을 포함한 공식 명칭 표기 (폰트 크기: 15px) */}
+                  <h3 className="text-[15px] font-bold text-gray-900 leading-snug break-keep min-h-[44px] flex items-center">
+                    {item.orgName}
+                  </h3>
+                  
+                  {/* 2행 (협약 내용): 구체적인 의전 협약 성격 명시 (폰트 크기: 13px, 진한 회색) */}
+                  <p className="text-[13px] text-gray-600 font-medium leading-relaxed break-keep mt-1 min-h-[40px] flex items-center">
+                    {item.desc}
+                  </p>
+                </div>
                 
-                {/* 사진 하단 텍스트 캡션: 모바일 13px 이상, 진한 파랑 및 고명도 대비 */}
-                <div className="pt-2.5 border-t border-gray-100 flex items-center gap-1.5 text-[13px] font-bold text-[#004bb5]">
-                  <ShieldCheck className="w-4 h-4 text-[#004bb5] shrink-0" />
-                  <span>[공무원 협약 기준 의전 적용]</span>
+                {/* 3행 (신뢰 뱃지): [공무원 협약 기준 의전 적용] (폰트 크기: 12px, 포인트 컬러) */}
+                <div className="pt-2.5 mt-3 border-t border-gray-100 flex items-center gap-1.5 text-[12px] font-bold text-[#00387f]">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#00387f] shrink-0" />
+                  <span>{item.badge}</span>
                 </div>
               </div>
             </div>
