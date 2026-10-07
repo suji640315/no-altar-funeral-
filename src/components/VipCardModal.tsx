@@ -124,8 +124,11 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
               {/* Title */}
               <div className="text-center mt-2">
                 <h3 className="text-base sm:text-lg md:text-2xl lg:text-3xl font-black text-[#005b9f] tracking-tighter break-keep">
-                  대한민국 공무원 전용 특별 할인카드
+                  대한민국 공무원 협약 특별할인카드
                 </h3>
+                <p className="text-[11px] sm:text-xs md:text-sm font-semibold text-gray-500 mt-0.5">
+                  (일반 시민 동일 적용)
+                </p>
               </div>
 
               {/* Price */}
@@ -167,8 +170,8 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
 
             </div>
             
-            <p className="mt-6 text-sm text-gray-500 text-center">
-              해당 화면을 캡처하여 상담 시 제시해주시면 즉시 10만원 할인이 적용됩니다.
+            <p className="mt-6 text-xs sm:text-sm text-gray-600 text-center font-medium leading-relaxed break-keep max-w-lg">
+              해당 화면을 캡처하여 상담 시 제시해 주시면 [무빈소 130] 상품에서 즉시 10만 원이 할인되어 120만 원에 적용됩니다.
             </p>
           </div>
         )}

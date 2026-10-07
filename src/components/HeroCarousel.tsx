@@ -176,8 +176,10 @@ export default function HeroCarousel() {
               </svg>
             </div>
             <div>
-              <p className="text-xs md:text-sm font-medium text-blue-100 mb-1">일반 시민도 공무원 협약 할인 혜택 동일 적용</p>
-              <h3 className="text-lg md:text-xl font-bold">특별할인카드 신청하기</h3>
+              <p className="text-xs md:text-sm font-semibold text-blue-100 mb-1">[130만 → 120만] 즉시 차감 혜택</p>
+              <h3 className="text-lg md:text-xl font-bold">
+                <span className="text-[#ffe600] font-black mr-1">10만원</span> 특별할인카드 받기
+              </h3>
             </div>
           </div>
 
