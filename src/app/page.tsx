@@ -114,7 +114,7 @@ export default function Home() {
           (주)공무원라이프 공식 SNS &amp; 소통 채널
         </h3>
         <p className="text-xs md:text-sm text-gray-500 mb-8 font-medium">
-          공무원라이프가 전하는 장례 정보와 실시간 상담 채널입니다.
+          공무원 협약 의전 노하우로 전하는 무빈소 장례 정보와 1:1 실시간 상담 채널입니다.
         </p>
         <div className="flex items-center justify-center gap-4">
           <a
