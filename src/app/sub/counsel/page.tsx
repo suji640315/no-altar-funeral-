@@ -216,6 +216,29 @@ export default function CounselPage() {
       </div>
 
       <div className="max-w-2xl mx-auto px-4 relative">
+        {/* 상단 인트로 안내 박스 */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/90 rounded-2xl p-5 md:p-6 mb-6 shadow-xs">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="px-2.5 py-0.5 bg-blue-700 text-white text-xs font-bold rounded-full">특별혜택</span>
+            <h2 className="text-base md:text-lg font-bold text-gray-900 tracking-tight">
+              10만원 특별할인 적용! [무빈소 130] 안심 정찰 패키지 1:1 맞춤 상담
+            </h2>
+          </div>
+          <p className="text-xs md:text-sm text-gray-700 leading-relaxed font-medium mb-3">
+            상담 접수 시 전문 장례지도사가 5분 이내 신속히 연락드려 관내 최적 안치실 배정 및 화장장 예약을 안내해 드립니다.
+          </p>
+          <div className="pt-3 border-t border-blue-200/60 flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div className="flex items-center gap-1.5 text-gray-700">
+              <span className="font-semibold text-gray-600">무빈소 전담 직통상담:</span>
+              <a href="tel:02-477-8379" className="text-blue-700 font-bold text-sm hover:underline">02-477-8379</a>
+            </div>
+            <div className="flex items-center gap-1.5 text-gray-600">
+              <span>24시간 긴급상황실:</span>
+              <a href="tel:1599-8379" className="text-red-600 font-bold text-sm hover:underline">1599-8379</a>
+            </div>
+          </div>
+        </div>
+
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
           <div className="p-6 md:p-10">
             {success ? (
@@ -315,9 +338,9 @@ export default function CounselPage() {
                   </button>
                 </div>
                 
-                <p className="text-center text-xs text-gray-500 mt-4">
+                <p className="text-center text-xs text-gray-500 mt-4 leading-relaxed">
                   남겨주신 정보는 상담 목적으로만 사용되며, 안전하게 보호됩니다.<br/>
-                  긴급한 상황이실 경우 <strong>1599-8379</strong>로 전화주시면 즉시 연결됩니다.
+                  무빈소 직통상담 <strong><a href="tel:02-477-8379" className="text-blue-700 hover:underline">02-477-8379</a></strong> / 24시간 긴급상황실 <strong><a href="tel:1599-8379" className="text-red-600 hover:underline">1599-8379</a></strong>
                 </p>
 
               </form>

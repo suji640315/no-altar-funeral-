@@ -1,48 +1,47 @@
-'use client';
-
 import React from 'react';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import { Ambulance, CalendarDays, Flower2, Wind, Home, ArrowRight, PhoneCall } from 'lucide-react';
+import { Ambulance, Flower2, Wind, Home, ArrowRight, PhoneCall } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: '무빈소 장례 진행절차 (2일·3일 가족장 안내) | 공무원라이프 무빈소장례',
+  description: '임종 즉시 안치실 배정부터 정식 입관식, e하늘 화장장 동행까지. 무빈소 장례의 체계적인 진행 일정을 확인하세요.',
+  alternates: {
+    canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
+  },
+};
 
 export default function ProcedurePage() {
   const steps = [
     {
       id: 1,
-      title: '임종 및 이송',
-      desc: '장례지도사 긴급 출동 및 장례식장 앰뷸런스 이송',
-      details: '유가족의 연락을 받으면 24시간 언제든 전문 장례지도사가 신속하게 출동합니다. 관내/관외 상황에 맞춰 앰뷸런스를 배차하여 고인을 안전하고 정중하게 장례식장으로 이송합니다.',
+      title: 'STEP 01 (임종 및 안치)',
+      desc: '24시간 긴급상황실 접수, 고인 전용 운구차량 배차 및 안치실 안치, 화장장 예약 대행',
+      details: '24시간 긴급상황실(02-477-8379) 접수 → 고인 전용 운구차량 배차 → 관내 인근 장례식장 안치실 안치 및 화장장 예약 대행',
       icon: <Ambulance className="w-8 h-8 text-[#00387f]" />,
       color: 'bg-blue-50 border-[#00387f]'
     },
     {
       id: 2,
-      title: '안치 및 상담',
-      desc: '안치실 모심 및 화장장 예약, 장례일정 상담',
-      details: '고인을 장례식장 안치실에 정중히 모신 후, 담당 장례지도사가 유가족과 상의하여 신속하게 화장장(화장로)을 예약하고 2일장 또는 3일장 장례 일정 전반을 세심하게 상담해 드립니다.',
-      icon: <CalendarDays className="w-8 h-8 text-indigo-600" />,
-      color: 'bg-indigo-50 border-indigo-600'
-    },
-    {
-      id: 3,
-      title: '염습 및 입관',
-      desc: '고인을 씻기고 수의를 입혀 관에 모시는 절차',
-      details: '지정된 입관 시간에 유가족 참관 하에 경건하게 염습(고인을 목욕시키고 수의를 입히는 과정) 및 입관식을 진행합니다. 빈소를 차리지 않아도 고인과의 마지막 인사는 품격 있게 진행됩니다.',
+      title: 'STEP 02 (전문 입관식)',
+      desc: '1급 장례지도사 2인 전담 집도, 궁중대렴 정식 염습 및 생화 꽃관 장식 마지막 인사',
+      details: '1급 장례지도사 2인 전담 집도 → 궁중대렴 정식 염습 및 단정한 수의 착용 → 생화 꽃관 장식 후 유가족 참관 마지막 인사',
       icon: <Flower2 className="w-8 h-8 text-pink-600" />,
       color: 'bg-pink-50 border-pink-600'
     },
     {
-      id: 4,
-      title: '발인 및 화장',
-      desc: '장례식장을 떠나 화장장으로 이동하여 화장 진행',
-      details: '정해진 시간에 맞춰 장례식장을 떠나(발인), 예약된 화장장으로 고인전용 리무진이나 영구차를 이용해 이동합니다. 화장장에 도착하여 안내에 따라 엄숙하게 화장을 진행합니다.',
+      id: 3,
+      title: 'STEP 03 (발인 및 화장)',
+      desc: '고인 전용 운구차량 운행, 화장장 이동 및 접수 동행, 수골 참관',
+      details: '고인 전용 운구차량 운행 → 화장장 이동 및 접수 동행 → 화장 진행 및 수골 참관',
       icon: <Wind className="w-8 h-8 text-teal-600" />,
       color: 'bg-teal-50 border-teal-600'
     },
     {
-      id: 5,
-      title: '장지 안치',
-      desc: '유골함을 모시고 장지(수목장, 봉안당 등) 안치',
-      details: '화장이 끝난 후 유골함을 모시고 원하시는 장지(납골당, 수목장, 해양장 등)로 이동하여 안치합니다. 장지 안치가 마무리되면 모든 장례 절차가 종료되며, 안전하게 귀가하시게 됩니다.',
+      id: 4,
+      title: 'STEP 04 (안치 및 종료)',
+      desc: '봉안당/수목장/해양장 등 희망 장지 안치 안내 및 100% 후불 정산',
+      details: '봉안당/수목장/해양장 등 유가족 희망 장지 안치 안내 → 100% 후불 정산으로 일정 종료',
       icon: <Home className="w-8 h-8 text-amber-600" />,
       color: 'bg-amber-50 border-amber-600'
     }
@@ -63,8 +62,8 @@ export default function ProcedurePage() {
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-6 md:p-10">
           
           <div className="mb-10 text-center">
-            <h2 className="text-2xl font-bold text-gray-900">간소하지만 품격 있는 5단계 절차</h2>
-            <p className="text-gray-500 mt-2">유가족의 슬픔을 덜어드리기 위해 모든 복잡한 절차를 대행해 드립니다.</p>
+            <h2 className="text-2xl font-bold text-gray-900">간소하지만 품격 있는 무빈소 4단계 핵심 절차</h2>
+            <p className="text-gray-500 mt-2">불필요한 절차 거품은 빼고, 정직한 고인 예우에만 집중하는 무빈소 전용 일정입니다.</p>
           </div>
 
           <div className="relative">
@@ -72,7 +71,7 @@ export default function ProcedurePage() {
             <div className="hidden md:block absolute left-[39px] top-8 bottom-8 w-0.5 bg-gray-200"></div>
 
             <div className="space-y-8 md:space-y-12">
-              {steps.map((step, index) => (
+              {steps.map((step) => (
                 <div key={step.id} className="relative flex flex-col md:flex-row gap-4 md:gap-8 group">
                   
                   {/* Icon & Step Number */}
@@ -81,7 +80,7 @@ export default function ProcedurePage() {
                       {step.icon}
                     </div>
                     <div className="md:mt-3 md:text-center">
-                      <span className="text-sm font-bold text-gray-400">STEP {step.id}</span>
+                      <span className="text-sm font-bold text-gray-400">STEP 0{step.id}</span>
                     </div>
                   </div>
 
@@ -89,7 +88,7 @@ export default function ProcedurePage() {
                   <div className="flex-1 bg-white border border-gray-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow group-hover:border-gray-300">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
                     <h4 className="text-[#00387f] font-semibold text-sm mb-3">{step.desc}</h4>
-                    <p className="text-gray-600 leading-relaxed text-sm">
+                    <p className="text-gray-700 leading-relaxed text-sm font-medium bg-gray-50/70 p-3.5 rounded-xl border border-gray-100">
                       {step.details}
                     </p>
                   </div>
@@ -106,11 +105,15 @@ export default function ProcedurePage() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:1599-8379" className="flex items-center justify-center gap-2 bg-[#00387f] hover:bg-[#002f6c] text-white px-8 py-4 rounded-xl font-bold shadow-md transition-colors">
+              <a href="tel:02-477-8379" className="flex items-center justify-center gap-2 bg-[#00387f] hover:bg-[#002f6c] text-white px-8 py-4 rounded-xl font-bold shadow-md transition-colors text-base">
                 <PhoneCall className="w-5 h-5" />
-                1599-8379 바로 전화하기
+                02-477-8379 직통 전화하기
               </a>
-              <Link href="/sub/counsel" className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#00387f] border border-[#00387f] px-8 py-4 rounded-xl font-bold shadow-sm transition-colors">
+              <a href="tel:1599-8379" className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold shadow-md transition-colors text-base">
+                <PhoneCall className="w-5 h-5" />
+                1599-8379 (24시 상황실)
+              </a>
+              <Link href="/sub/counsel" className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#00387f] border border-[#00387f] px-8 py-4 rounded-xl font-bold shadow-sm transition-colors text-base">
                 온라인 무료 상담 신청 <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
