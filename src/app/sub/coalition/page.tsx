@@ -3,14 +3,14 @@ import Image from 'next/image';
 import { ShieldCheck, Award } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '제휴협약사 현황 | 공무원라이프 무빈소장례',
-  description: '구리시청, 연제구청, 인천공무원노조 등 공공기관 공식 업무협약(MOU) 체결 현황. 공직사회가 검증한 품격 있는 무빈소 장례 서비스를 약속합니다.',
+  title: '공공기관 및 공무원노조 제휴협약 현황 | 무빈소장례',
+  description: '구리시청, 연제구청, 인천공무원노조 등 공직사회가 공식 검증한 의전 기준을 일반 시민 유가족의 무빈소 장례에 동일 적용합니다.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/coalition',
   },
   openGraph: {
-    title: '공공기관 및 공무원노조 공식 제휴협약 현황 - 무빈소장례',
-    description: '공무원 협약 기준 그대로, 투명하고 정직한 무빈소 가족장을 모십니다.',
+    title: '공공기관 및 공무원노조 제휴협약 현황 | 무빈소장례',
+    description: '공직사회가 검증한 10년의 신뢰, 무빈소 장례에서도 그대로 이어집니다.',
     url: 'https://xn--9n2b17ct9ctte97j.net/sub/coalition',
   },
 };
