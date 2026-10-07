@@ -3,17 +3,15 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: '무빈소 130 안심 패키지 | 공무원라이프 무빈소장례',
-  description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 부당 추가금 0원 보증, 1급 장례지도사 정식 입관식 및 화장장 동행.',
+  title: '무빈소 130 안심 정찰 패키지 상세안내 | 무빈소장례',
+  description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 1급 장례지도사 궁중대렴 정식 입관식, e하늘 화장장 동행 및 현장 추가금 0원 보증.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/goods',
   },
   openGraph: {
-    title: '무빈소 130 안심 패키지 | 공무원라이프 무빈소장례',
-    description: '공무원 협약 기준 100% 후불제 무빈소 130만 원 정찰제. 부당 추가금 0원 보증, 1급 장례지도사 정식 입관식 및 화장장 동행.',
+    title: '무빈소 130 안심 정찰 패키지 | 무빈소장례',
+    description: '부당 추가금 0원 보증, 10만원 할인 적용 시 120만원 실결제 정찰제.',
     url: 'https://xn--9n2b17ct9ctte97j.net/sub/goods',
-    siteName: '무빈소장례',
-    type: 'website',
   },
 };
 
