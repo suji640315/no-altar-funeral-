@@ -2,17 +2,15 @@ import { Metadata } from 'next';
 import { Building2, Users, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '브랜드 및 조직 소개 | 공무원라이프 무빈소장례',
-  description: '공무원 노조 협약 기준의 무빈소 전담 의전팀과 신속 배정 시스템을 갖춘 공무원라이프 무빈소장례사업부 소개입니다.',
+  title: '브랜드 및 조직도 소개 | 공무원라이프 무빈소장례',
+  description: '공무원 노조 공식 협약 기준의 무빈소 전담 의전팀과 24시간 안치실 신속배정 시스템을 갖춘 무빈소장례사업부 조직 구성 안내.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/company',
   },
   openGraph: {
-    title: '브랜드 및 조직 소개 | 공무원라이프 무빈소장례',
-    description: '공무원 노조 협약 기준의 무빈소 전담 의전팀과 신속 배정 시스템을 갖춘 공무원라이프 무빈소장례사업부 소개입니다.',
+    title: '브랜드 및 조직도 소개 | 공무원라이프 무빈소장례',
+    description: '공직사회가 검증한 10년 의전 노하우, 정직한 무빈소 가족장으로 이어갑니다.',
     url: 'https://xn--9n2b17ct9ctte97j.net/sub/company',
-    siteName: '무빈소장례',
-    type: 'website',
   },
 };
 
