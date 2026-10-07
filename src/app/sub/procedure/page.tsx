@@ -4,17 +4,15 @@ import Link from 'next/link';
 import { Ambulance, Flower2, Wind, Home, ArrowRight, PhoneCall } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: '무빈소 장례 진행절차 (2일·3일 가족장 안내) | 공무원라이프 무빈소장례',
-  description: '임종 즉시 안치실 배정부터 1급 지도사의 정식 입관식, 화장장 예약 및 동행까지. 무빈소 장례의 투명한 진행 절차를 확인하세요.',
+  title: '무빈소 장례 진행절차 (2일·3일 가족장 타임라인) | 무빈소장례',
+  description: '임종 즉시 안치실 이송부터 1급 장례지도사의 정식 입관식, e하늘 화장장 동행 및 유골 안치까지 무빈소 전용 진행 절차 안내.',
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
   },
   openGraph: {
-    title: '무빈소 장례 진행절차 (2일·3일 가족장 안내) | 공무원라이프 무빈소장례',
-    description: '임종 즉시 안치실 배정부터 1급 지도사의 정식 입관식, 화장장 예약 및 동행까지. 무빈소 장례의 투명한 진행 절차를 확인하세요.',
+    title: '무빈소 장례 진행절차 안내 | 무빈소장례',
+    description: '조문객 접객 없는 경건한 가족장. 무빈소 2일/3일 표준 의전 일정.',
     url: 'https://xn--9n2b17ct9ctte97j.net/sub/procedure',
-    siteName: '무빈소장례',
-    type: 'website',
   },
 };
 
