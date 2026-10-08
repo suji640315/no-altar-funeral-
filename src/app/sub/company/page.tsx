@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Building2, Users, MapPin } from 'lucide-react';
+import { Building2, Users, MapPin, ExternalLink } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: '브랜드 및 조직도 소개 | 공무원라이프 무빈소장례',
@@ -152,6 +152,56 @@ export default function CompanyPage() {
             </h2>
             <div className="w-10 h-[2px] bg-gray-400 mx-auto mt-4 mb-4"></div>
             <p className="text-gray-500 text-sm">공무원라이프 본사 위치를 안내해 드립니다.</p>
+          </div>
+
+          {/* 지도 인터랙티브 뷰 & 바로가기 버튼 */}
+          <div className="mb-10">
+            <div className="relative w-full h-[360px] md:h-[460px] bg-gray-100 rounded-xl overflow-hidden border border-gray-300 shadow-sm">
+              <iframe
+                src="https://maps.google.com/maps?q=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%95%98%EB%82%A8%EC%8B%9C%20%ED%95%98%EB%82%A8%EB%8C%80%EB%A1%9C%20947&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                title="공무원라이프 본사 오시는 길 (하남테크노밸리 U1센터)"
+              />
+            </div>
+
+            {/* 네비게이션 및 길찾기 액션 바 */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mt-3 px-1 text-xs md:text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border border-gray-200">
+              <div className="flex items-center gap-1.5 font-medium text-gray-800">
+                <MapPin size={16} className="text-[#00387f] flex-shrink-0" />
+                <span>경기도 하남시 하남대로 947, A동 401호 (하남테크노밸리 U1센터)</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://map.naver.com/p/search/%ED%95%98%EB%82%A8%EB%8C%80%EB%A1%9C%20947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#03C75A] text-white rounded-md text-xs font-bold hover:bg-[#02b350] transition-colors shadow-sm"
+                >
+                  <span>네이버 지도</span>
+                  <ExternalLink size={12} />
+                </a>
+                <a
+                  href="https://map.kakao.com/link/search/하남대로947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#FEE500] text-[#191919] rounded-md text-xs font-bold hover:bg-[#ebd300] transition-colors shadow-sm"
+                >
+                  <span>카카오맵</span>
+                  <ExternalLink size={12} />
+                </a>
+                <a
+                  href="https://tmap.life/search?q=하남대로947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#1B64F2] text-white rounded-md text-xs font-bold hover:bg-[#1554cf] transition-colors shadow-sm"
+                >
+                  <span>티맵(TMAP)</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Detailed Info */}
