@@ -191,15 +191,7 @@ export default function CompanyPage() {
                   <span>카카오맵</span>
                   <ExternalLink size={12} />
                 </a>
-                <a
-                  href="https://tmap.life/search?q=하남대로947"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#1B64F2] text-white rounded-md text-xs font-bold hover:bg-[#1554cf] transition-colors shadow-sm"
-                >
-                  <span>티맵(TMAP)</span>
-                  <ExternalLink size={12} />
-                </a>
+                
               </div>
             </div>
           </div>
