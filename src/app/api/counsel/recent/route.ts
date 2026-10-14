@@ -186,7 +186,25 @@ export async function GET() {
       .limit(20);
 
     if (realRequests && realRequests.length > 0) {
+      const testNames = ['홍길동', '유츙현', '유충현', '김호진', '홍수지', '이현', '테스트'];
+      const testIds = [
+        '108d6eca-68d9-4214-8e3a-dac4c2f66aef',
+        '8688d589-6e33-4132-8361-08141973b5d3',
+        '29fcc632-5e09-4771-8aa7-750dfa2e8d7f',
+        'ed71e5d5-0790-4ac3-9021-74e5468ac67c',
+        'b50e2122-fab7-49e7-ad2c-cd1e7ab86f88',
+        'ec30bcd3-f2b5-483c-92ea-6d6e635f664b',
+        'f51deed2-8d38-4d21-b44d-54d26e821797',
+        '89c4cc21-a1fd-4abb-b052-a3896fce998b',
+        'b41907a0-7e2e-4228-9ec7-e6b82896f5d9',
+        '06fd12b4-f856-46da-8334-69d5f2f94747'
+      ];
+
       realRequests.forEach(req => {
+        // 개발/테스트용 데이터는 실시간 현황 롤링에서 제외
+        if (testIds.includes(req.id) || testNames.includes(req.name?.trim())) {
+          return;
+        }
         let region = req.region?.trim() || '';
         if (!region) {
           const loc = req.patient_location || req.funeral_home || '';
