@@ -7,7 +7,7 @@ export default function StickyBottomBar() {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white dark:bg-brand-950 border-t border-brand-200 dark:border-brand-800 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)]">
         <div className="flex h-16">
           <a 
-            href="http://pf.kakao.com/_Npbqxb/chat" 
+            href="https://pf.kakao.com/_NpBqxb/chat" 
             target="_blank" 
             rel="noopener noreferrer"
             title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
@@ -56,7 +56,7 @@ export default function StickyBottomBar() {
 
           {/* 카카오톡 상담 버튼 */}
           <a
-            href="http://pf.kakao.com/_Npbqxb/chat" 
+            href="https://pf.kakao.com/_NpBqxb/chat" 
             target="_blank" 
             rel="noopener noreferrer"
             title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"

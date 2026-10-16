@@ -57,7 +57,7 @@ export default function Header() {
               <span>02-477-8379</span>
             </a>
             <a
-              href="http://pf.kakao.com/_Npbqxb/friend"
+              href="https://pf.kakao.com/_NpBqxb/friend"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs font-bold text-[#381e1f] bg-[#fae100] hover:bg-[#ebd200] border border-[#e5cb00] px-3 py-1.5 rounded-full transition-colors ml-1 shadow-xs"
@@ -110,7 +110,7 @@ export default function Header() {
               <span>직통 상담전화 02-477-8379</span>
             </a>
             <a
-              href="http://pf.kakao.com/_Npbqxb/friend"
+              href="https://pf.kakao.com/_NpBqxb/friend"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#fae100] hover:bg-[#ebd200] text-[#381e1f] font-bold py-2.5 rounded-xl text-sm shadow-xs transition-colors mt-2"

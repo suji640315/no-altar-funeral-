@@ -25,7 +25,7 @@ export default function Footer() {
               </span>
               <span>FAX : 031-969-3522</span>
               <span>
-                공식 카카오톡 채널 : <a href="http://pf.kakao.com/_Npbqxb/friend" target="_blank" rel="noopener noreferrer" className="font-bold text-[#381e1f] hover:underline inline-flex items-center gap-1"><span className="bg-[#fae100] px-1 py-0.2 rounded text-[10px] font-black">TALK</span> 친구추가</a>
+                공식 카카오톡 채널 : <a href="https://pf.kakao.com/_NpBqxb/friend" target="_blank" rel="noopener noreferrer" className="font-bold text-[#381e1f] hover:underline inline-flex items-center gap-1"><span className="bg-[#fae100] px-1 py-0.2 rounded text-[10px] font-black">TALK</span> 친구추가</a>
               </span>
             </div>
             <div className="flex flex-wrap gap-x-4 mt-1">

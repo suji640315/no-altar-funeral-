@@ -145,7 +145,7 @@ export default function Home() {
             blog
           </a>
           <a
-            href="http://pf.kakao.com/_Npbqxb/friend"
+            href="https://pf.kakao.com/_NpBqxb/friend"
             target="_blank"
             rel="noopener noreferrer"
             title="공무원라이프 카카오톡 채널 친구추가 새창열림"

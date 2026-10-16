@@ -69,7 +69,7 @@ const localBusinessJsonLd = {
   ],
   "sameAs": [
     "https://blog.naver.com/officialslife",
-    "http://pf.kakao.com/_Npbqxb/friend",
+    "https://pf.kakao.com/_NpBqxb/friend",
     "https://www.instagram.com/officialslife",
     "https://www.facebook.com/officialslife"
   ]
