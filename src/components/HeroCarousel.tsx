@@ -210,11 +210,11 @@ export default function HeroCarousel() {
 
           {/* Button 3: 카카오톡 1:1 상담 */}
           <a
-            href="https://pf.kakao.com/_NpBqxb"
+            href="http://pf.kakao.com/_Npbqxb/chat"
             target="_blank"
             rel="noopener noreferrer"
-            title="공무원라이프 카카오톡 상담 새창열림"
-            aria-label="공무원라이프 카카오톡 1:1 상담 바로가기"
+            title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+            aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
           >
             <div className="text-left">

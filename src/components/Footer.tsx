@@ -16,7 +16,7 @@ export default function Footer() {
 
             <p>사업장 주소 : 경기도 하남시 하남대로 947, A동 401호(풍산동, 하남테크노밸리U1센터)</p>
             <p>업무시간 : 평일 09:00~18:00 (주말/공휴일 휴무)</p>
-            <div className="flex flex-wrap gap-x-4 mt-1">
+            <div className="flex flex-wrap items-center gap-x-4 mt-1">
               <span>
                 직통 상담전화 : <a href="tel:02-477-8379" className="font-bold text-gray-800 hover:text-blue-600">02-477-8379</a>
               </span>
@@ -24,6 +24,9 @@ export default function Footer() {
                 24시간 긴급상황실 : <a href="tel:1599-8379" className="font-bold text-red-600 hover:underline">1599-8379</a>
               </span>
               <span>FAX : 031-969-3522</span>
+              <span>
+                공식 카카오톡 채널 : <a href="http://pf.kakao.com/_Npbqxb/friend" target="_blank" rel="noopener noreferrer" className="font-bold text-[#381e1f] hover:underline inline-flex items-center gap-1"><span className="bg-[#fae100] px-1 py-0.2 rounded text-[10px] font-black">TALK</span> 친구추가</a>
+              </span>
             </div>
             <div className="flex flex-wrap gap-x-4 mt-1">
               <span>사업자등록번호 : 236-87-00779</span>

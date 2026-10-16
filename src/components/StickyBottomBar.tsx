@@ -7,11 +7,11 @@ export default function StickyBottomBar() {
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white dark:bg-brand-950 border-t border-brand-200 dark:border-brand-800 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)]">
         <div className="flex h-16">
           <a 
-            href="https://pf.kakao.com/_NpBqxb" 
+            href="http://pf.kakao.com/_Npbqxb/chat" 
             target="_blank" 
             rel="noopener noreferrer"
-            title="공무원라이프 카카오톡 상담 새창열림"
-            aria-label="공무원라이프 카카오톡 1:1 상담 바로가기"
+            title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+            aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             className="flex-1 flex flex-col items-center justify-center gap-1 bg-[#FEE500] text-[#000000] font-bold text-sm"
           >
             <MessageCircle className="w-5 h-5 fill-current" />
@@ -56,11 +56,11 @@ export default function StickyBottomBar() {
 
           {/* 카카오톡 상담 버튼 */}
           <a
-            href="https://pf.kakao.com/_NpBqxb" 
+            href="http://pf.kakao.com/_Npbqxb/chat" 
             target="_blank" 
             rel="noopener noreferrer"
-            title="공무원라이프 카카오톡 상담 새창열림"
-            aria-label="공무원라이프 카카오톡 1:1 상담 바로가기"
+            title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+            aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             className="flex items-center gap-2.5 bg-[#FEE500] hover:bg-[#ebd200] text-[#000000] px-4 py-2.5 rounded-xl font-bold shadow-xs transition-all text-sm group"
           >
             <div className="w-7 h-7 bg-black/10 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">

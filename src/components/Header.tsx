@@ -56,6 +56,25 @@ export default function Header() {
               <Phone className="w-3.5 h-3.5" />
               <span>02-477-8379</span>
             </a>
+            <a
+              href="http://pf.kakao.com/_Npbqxb/friend"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs font-bold text-[#381e1f] bg-[#fae100] hover:bg-[#ebd200] border border-[#e5cb00] px-3 py-1.5 rounded-full transition-colors ml-1 shadow-xs"
+              title="공무원라이프 카카오톡 채널 친구추가 새창열림"
+              aria-label="공무원라이프 카카오톡 채널 친구추가 바로가기"
+            >
+              <svg viewBox="0 0 100 100" className="w-3.5 h-3.5" aria-hidden="true">
+                <path
+                  d="M50 15C25.147 15 5 31.701 5 52.308c0 13.385 8.528 25.107 21.684 31.966-.549 2.052-1.895 7.37-2.186 8.527-.372 1.487.525 1.47 1.134 1.06 4.795-3.238 13.435-9.155 18.57-12.753 1.896.549 3.822.662 5.792.662 24.853 0 45-16.701 45-37.308C95 31.701 74.853 15 50 15z"
+                  fill="#3a1d1d"
+                />
+                <text x="50" y="61" fontFamily="Arial, sans-serif" fontWeight="900" fontSize="27" fill="#fae100" textAnchor="middle" letterSpacing="-1">
+                  TALK
+                </text>
+              </svg>
+              <span>카톡채널</span>
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle Button */}
@@ -89,6 +108,17 @@ export default function Header() {
             >
               <Phone className="w-4 h-4" />
               <span>직통 상담전화 02-477-8379</span>
+            </a>
+            <a
+              href="http://pf.kakao.com/_Npbqxb/friend"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#fae100] hover:bg-[#ebd200] text-[#381e1f] font-bold py-2.5 rounded-xl text-sm shadow-xs transition-colors mt-2"
+              title="공무원라이프 카카오톡 채널 친구추가 새창열림"
+              aria-label="공무원라이프 카카오톡 채널 친구추가 바로가기"
+            >
+              <span className="font-extrabold text-xs bg-[#3a1d1d] text-[#fae100] px-1.5 py-0.5 rounded">TALK</span>
+              <span>카카오톡 채널 친구추가</span>
             </a>
           </div>
         </div>
