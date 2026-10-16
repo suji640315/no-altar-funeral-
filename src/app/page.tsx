@@ -145,11 +145,11 @@ export default function Home() {
             blog
           </a>
           <a
-            href="https://pf.kakao.com/_NpBqxb/friend"
+            href="https://pf.kakao.com/_NpBqxb/chat"
             target="_blank"
             rel="noopener noreferrer"
-            title="공무원라이프 카카오톡 채널 친구추가 새창열림"
-            aria-label="공무원라이프 카카오톡 채널 친구추가 바로가기"
+            title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+            aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             className="w-14 h-14 bg-[#fae100] rounded-2xl flex items-center justify-center hover:-translate-y-1 transition-transform hover:shadow-lg"
           >
             <svg viewBox="0 0 100 100" className="w-9 h-9" aria-hidden="true">

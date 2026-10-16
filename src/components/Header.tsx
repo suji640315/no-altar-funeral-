@@ -57,12 +57,12 @@ export default function Header() {
               <span>02-477-8379</span>
             </a>
             <a
-              href="https://pf.kakao.com/_NpBqxb/friend"
+              href="https://pf.kakao.com/_NpBqxb/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs font-bold text-[#381e1f] bg-[#fae100] hover:bg-[#ebd200] border border-[#e5cb00] px-3 py-1.5 rounded-full transition-colors ml-1 shadow-xs"
-              title="공무원라이프 카카오톡 채널 친구추가 새창열림"
-              aria-label="공무원라이프 카카오톡 채널 친구추가 바로가기"
+              title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+              aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             >
               <svg viewBox="0 0 100 100" className="w-3.5 h-3.5" aria-hidden="true">
                 <path
@@ -73,7 +73,7 @@ export default function Header() {
                   TALK
                 </text>
               </svg>
-              <span>카톡채널</span>
+              <span>카톡상담</span>
             </a>
           </nav>
 
@@ -110,15 +110,15 @@ export default function Header() {
               <span>직통 상담전화 02-477-8379</span>
             </a>
             <a
-              href="https://pf.kakao.com/_NpBqxb/friend"
+              href="https://pf.kakao.com/_NpBqxb/chat"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-[#fae100] hover:bg-[#ebd200] text-[#381e1f] font-bold py-2.5 rounded-xl text-sm shadow-xs transition-colors mt-2"
-              title="공무원라이프 카카오톡 채널 친구추가 새창열림"
-              aria-label="공무원라이프 카카오톡 채널 친구추가 바로가기"
+              title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
+              aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
             >
               <span className="font-extrabold text-xs bg-[#3a1d1d] text-[#fae100] px-1.5 py-0.5 rounded">TALK</span>
-              <span>카카오톡 채널 친구추가</span>
+              <span>카카오톡 1:1 실시간 상담</span>
             </a>
           </div>
         </div>
