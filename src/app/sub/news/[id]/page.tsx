@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getNewsById } from '@/lib/news';
+import NewsCtaBanner from '@/components/NewsCtaBanner';
 import {
   Calendar,
   Eye,
@@ -9,8 +10,6 @@ import {
   ArrowLeft,
   ChevronLeft,
   ChevronRight,
-  Phone,
-  MessageSquare,
   Tag,
 } from 'lucide-react';
 
@@ -283,36 +282,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* 하단 상담 & 목록 버튼 */}
-        <div className="mt-8 bg-gradient-to-r from-[#00387f] to-blue-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-xs font-bold text-blue-200 mb-1">
-              공공기관 협약 기준 그대로 · 100% 후불제 정찰제
-            </p>
-            <h3 className="text-lg md:text-xl font-bold leading-snug break-keep">
-              무빈소 130 패키지 &amp; 10만원 즉시 할인카드 무료 발급
-            </h3>
-            <p className="text-xs md:text-sm text-blue-100 mt-1 break-keep">
-              사전 상담이나 긴급 장례 발생 시 24시간 언제든 연락 주시면 즉시 출동합니다.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto">
-            <a
-              href="tel:02-477-8379"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-sm shadow-sm transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>02-477-8379</span>
-            </a>
-            <Link
-              href="/sub/counsel"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-white text-[#00387f] hover:bg-blue-50 font-bold rounded-xl text-sm shadow-sm transition-colors"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>무료상담 신청</span>
-            </Link>
-          </div>
-        </div>
+        {/* 하단 상담 & 할인카드 발급 액션 배너 */}
+        <NewsCtaBanner />
 
         <div className="mt-8 text-center">
           <Link

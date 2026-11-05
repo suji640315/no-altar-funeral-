@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { getNewsList } from '@/lib/news';
 import NewsBoardClient from './NewsBoardClient';
-import { Newspaper, Phone, MessageSquare } from 'lucide-react';
+import NewsCtaBanner from '@/components/NewsCtaBanner';
+import { Newspaper } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -91,36 +91,8 @@ export default async function NewsBoardPage() {
         {/* 게시판 목록 및 카테고리 필터 */}
         <NewsBoardClient initialPosts={posts} />
 
-        {/* 하단 상담 안내 배너 */}
-        <div className="mt-14 bg-white border border-gray-200 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
-              24시간 장례 긴급출동 &amp; 사전 무료상담
-            </span>
-            <h3 className="text-lg md:text-xl font-bold text-gray-900 mt-2 break-keep">
-              무빈소장례 비용이나 절차가 궁금하신가요?
-            </h3>
-            <p className="text-sm text-gray-600 mt-1 break-keep">
-              전담 국가공인 장례지도사가 365일 24시간 친절하고 상세하게 안내해 드립니다.
-            </p>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto">
-            <a
-              href="tel:02-477-8379"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-sm shadow-sm transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>직통상담 02-477-8379</span>
-            </a>
-            <Link
-              href="/sub/counsel"
-              className="flex-1 md:flex-initial inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#00387f] hover:bg-[#002b63] text-white font-bold rounded-xl text-sm shadow-sm transition-colors"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>무료상담 및 할인카드 신청</span>
-            </Link>
-          </div>
-        </div>
+        {/* 하단 상담 & 할인카드 발급 액션 배너 */}
+        <NewsCtaBanner />
       </div>
     </div>
   );
