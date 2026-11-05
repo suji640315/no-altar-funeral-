@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Download, Users, RefreshCw, Trash2, Filter } from 'lucide-react';
+import Link from 'next/link';
+import { Download, Users, RefreshCw, Trash2, Filter, Newspaper } from 'lucide-react';
 
 const TEST_NAMES = ['홍길동', '유츙현', '유충현', '김호진', '홍수지', '이현'];
 const TEST_PHONES = ['01055172715', '010-5517-2715', '01056425388', '01038145052'];
@@ -135,6 +136,25 @@ export default function AdminCounselPage() {
   return (
     <div className="w-full min-h-screen bg-gray-50 pt-[100px] pb-20 font-sans text-gray-800">
       <div className="max-w-7xl mx-auto px-4">
+        {/* 관리자 상단 탭 네비게이션 */}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-gray-200">
+          <div className="flex items-center gap-2">
+            <Link
+              href="/admin/counsel"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-[#00387f] text-white shadow-sm"
+            >
+              <Users className="w-4 h-4" />
+              상담 신청 관리
+            </Link>
+            <Link
+              href="/admin/news"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white text-gray-600 border border-gray-200 hover:bg-gray-50 transition-colors"
+            >
+              <Newspaper className="w-4 h-4" />
+              상조·장례 뉴스 관리
+            </Link>
+          </div>
+        </div>
         
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>

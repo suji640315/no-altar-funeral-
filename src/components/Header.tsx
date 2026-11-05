@@ -12,7 +12,8 @@ export default function Header() {
     { href: '/sub/company', label: '회사소개' },
     { href: '/sub/goods', label: '상품소개' },
     { href: '/sub/counsel', label: '무료상담서비스' },
-    { href: '/sub/procedure', label: '장례절차' }
+    { href: '/sub/procedure', label: '장례절차' },
+    { href: '/sub/news', label: '상조·장례 뉴스' }
   ];
 
   return (
@@ -42,7 +43,7 @@ export default function Header() {
         {/* Right: Desktop Menu & Mobile Toggle */}
         <div className="flex items-center gap-6 relative z-20">
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-bold text-gray-800">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-bold text-gray-800 whitespace-nowrap">
             {navLinks.map((link, idx) => (
               <Link key={idx} href={link.href} className="hover:text-blue-600 transition-colors">
                 {link.label}

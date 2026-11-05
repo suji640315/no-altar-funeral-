@@ -19,7 +19,10 @@ import HeroCarousel from "@/components/HeroCarousel";
 import MouSection from "@/components/MouSection";
 import Link from "next/link";
 import RecentCounselsTicker from "@/components/RecentCounselsTicker";
+import LatestNewsSection from "@/components/LatestNewsSection";
 import { Handshake, Headset, BookOpen, Building2 } from "lucide-react";
+
+export const revalidate = 0;
 
 export default function Home() {
   return (
@@ -124,6 +127,9 @@ export default function Home() {
       </section>
 
       <RecentCounselsTicker />
+
+      {/* 상조·장례 뉴스 최신글 섹션 */}
+      <LatestNewsSection />
 
       {/* SNS Section */}
       <section className="text-center mb-24 px-4">
