@@ -1,16 +1,26 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '공무원 협약 무빈소장례 전문센터 | 100% 후불제 안심 정찰제',
-  description: '공직사회가 검증한 품격 그대로, 거품 없는 무빈소 130 안심 정찰 패키지. 10만원 할인카드 즉시발급, 직통상담전화 02-477-8379.',
+  title: '무빈소 장례 전문 공무원라이프 | 품격 있는 가족장·직장 정찰제 비용 안내',
+  description: '공공기관 공식 협약 기준 그대로, 빈소 비용 거품 없이 1급 장례지도사가 정성을 다하는 무빈소 장례 전문. 입관식, 화장, 안치까지 원스톱 지원.',
+  keywords: ['무빈소장례', '무빈소장례비용', '가족장', '공무원무빈소장례', '후불제상조', '공무원라이프', '화장장례'],
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net',
   },
   openGraph: {
-    title: '공무원 협약 무빈소장례 전문센터',
-    description: '거품 없는 100% 후불제 무빈소 130 패키지. 10만원 즉시 할인 혜택.',
+    title: '무빈소 장례 전문 공무원라이프 | 품격 있는 가족장·직장 정찰제 비용 안내',
+    description: '공공기관 공식 협약 기준 그대로, 빈소 비용 거품 없이 1급 장례지도사가 정성을 다하는 무빈소 장례 전문. 입관식, 화장, 안치까지 원스톱 지원.',
     url: 'https://xn--9n2b17ct9ctte97j.net',
-    siteName: '무빈소장례',
+    siteName: '무빈소 장례 전문 공무원라이프',
+    images: [
+      {
+        url: 'https://xn--9n2b17ct9ctte97j.net/images/og-mubinso.jpg',
+        width: 1200,
+        height: 630,
+        alt: '무빈소 장례 전문 공무원라이프 대표 썸네일 이미지',
+      },
+    ],
+    locale: 'ko_KR',
     type: 'website',
   },
 };
@@ -35,6 +45,9 @@ export default function Home() {
 
       {/* 2. 중간 슬로건 텍스트 바 */}
       <section className="py-12 md:py-16 text-center px-4 max-w-4xl mx-auto">
+        <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight">
+          공공기관 공식 협약 기준 무빈소 장례 핵심 안내
+        </h2>
         <p className="text-lg md:text-2xl text-gray-700 font-semibold leading-relaxed break-keep">
           구리시청, 연제구청, 인천공무원노조 등 공공기관 공식 협약 기준 그대로!<br className="hidden md:block" />
           까다로운 공직사회가 검증한 의전 품질로, 일반 시민 여러분의 무빈소 가족장을 거품 없는 정찰제로 모십니다.
@@ -133,9 +146,9 @@ export default function Home() {
 
       {/* SNS Section */}
       <section className="text-center mb-24 px-4">
-        <h3 className="text-lg md:text-xl text-gray-700 font-bold mb-1.5 tracking-tight">
+        <h2 className="text-lg md:text-xl text-gray-700 font-bold mb-1.5 tracking-tight">
           (주)공무원라이프 공식 SNS &amp; 소통 채널
-        </h3>
+        </h2>
         <p className="text-xs md:text-sm text-gray-500 mb-8 font-medium">
           공무원 협약 의전 노하우로 전하는 무빈소 장례 정보와 1:1 실시간 상담 채널입니다.
         </p>

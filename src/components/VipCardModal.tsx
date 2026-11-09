@@ -159,12 +159,12 @@ export default function VipCardModal({ isOpen, onClose }: VipCardModalProps) {
                 </div>
                 
                 <div className="flex flex-col items-center justify-center ml-2 sm:ml-8 md:ml-16 relative w-[100px] h-[30px] sm:w-[130px] sm:h-[40px] md:w-[220px] md:h-[60px]">
-                  <Image src="/logo.png" alt="(주)공무원라이프" fill className="object-contain" />
+                  <Image src="/logo.png" alt="무빈소 장례 전문 (주)공무원라이프 공식 로고" fill className="object-contain" />
                 </div>
 
                 {/* Stamp */}
                 <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 relative -mr-1 md:-mr-2 shrink-0">
-                  <Image src="/stamp.png" alt="대표인" fill className="object-contain" />
+                  <Image src="/stamp.png" alt="공무원라이프 무빈소장례 특별할인카드 대표 인증 직인" fill className="object-contain" />
                 </div>
               </div>
 

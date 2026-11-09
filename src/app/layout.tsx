@@ -7,23 +7,23 @@ import StickyBottomBar from "@/components/StickyBottomBar";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://xn--9n2b17ct9ctte97j.net'),
-  title: '공무원라이프 무빈소장례 | 공무원 협약 검증 100% 후불제 가족장·직장',
-  description: '공무원 노조 협약 기준 그대로! 단 1원의 부당 추가금 없는 정직한 무빈소 장례. 24시 긴급 접수 및 화장장 예약 대행, 1급 장례지도사 정식 입관식 집도.',
-  keywords: ['무빈소장례', '무빈소장례비용', '공무원상조무빈소', '무빈소가족장', '직장장례', '후불제장례'],
+  title: '무빈소 장례 전문 공무원라이프 | 품격 있는 가족장·직장 정찰제 비용 안내',
+  description: '공공기관 공식 협약 기준 그대로, 빈소 비용 거품 없이 1급 장례지도사가 정성을 다하는 무빈소 장례 전문. 입관식, 화장, 안치까지 원스톱 지원.',
+  keywords: ['무빈소장례', '무빈소장례비용', '가족장', '공무원무빈소장례', '후불제상조', '공무원라이프', '화장장례'],
   alternates: {
-    canonical: 'https://xn--9n2b17ct9ctte97j.net/',
+    canonical: 'https://xn--9n2b17ct9ctte97j.net',
   },
   openGraph: {
-    title: '공무원라이프 무빈소장례 | 공무원 협약 검증 100% 후불제 가족장',
-    description: '공직 사회가 신뢰한 의전 품질, 일반 시민 여러분께도 거품 없는 무빈소 정찰제로 모십니다.',
-    url: 'https://xn--9n2b17ct9ctte97j.net/',
-    siteName: '공무원라이프 무빈소장례',
+    title: '무빈소 장례 전문 공무원라이프 | 품격 있는 가족장·직장 정찰제 비용 안내',
+    description: '공공기관 공식 협약 기준 그대로, 빈소 비용 거품 없이 1급 장례지도사가 정성을 다하는 무빈소 장례 전문. 입관식, 화장, 안치까지 원스톱 지원.',
+    url: 'https://xn--9n2b17ct9ctte97j.net',
+    siteName: '무빈소 장례 전문 공무원라이프',
     images: [
       {
-        url: '/images/og-mubinso.jpg',
+        url: 'https://xn--9n2b17ct9ctte97j.net/images/og-mubinso.jpg',
         width: 1200,
         height: 630,
-        alt: '공무원라이프 무빈소장례',
+        alt: '무빈소 장례 전문 공무원라이프 대표 썸네일 이미지',
       },
     ],
     locale: 'ko_KR',

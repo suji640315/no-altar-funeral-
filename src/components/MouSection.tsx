@@ -23,7 +23,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '구리시청공무원노동조합',
     imgSrc: '/banner_15.jpg',
-    alt: '구리시청공무원노동조합 공식 로고',
+    alt: '구리시청공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 2. 연제구청공무원노동조합
@@ -37,7 +37,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '연제구청공무원노동조합',
     imgSrc: '/banner_16.jpg',
-    alt: '연제구청공무원노동조합 공식 로고',
+    alt: '연제구청공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 3. 인천광역시통합공무원노동조합
@@ -51,7 +51,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '인천광역시통합공무원노동조합',
     imgSrc: '/banner_02.jpg',
-    alt: '인천광역시통합공무원노동조합 공식 로고',
+    alt: '인천광역시통합공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 4. 인천광역시 개인택시운송사업조합
@@ -65,7 +65,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '인천광역시 개인택시운송사업조합',
     imgSrc: '/banner_17.jpg',
-    alt: '인천광역시 개인택시운송사업조합 공식 로고',
+    alt: '인천광역시 개인택시운송사업조합 공무원라이프 무빈소장례 협약 단체 로고',
   },
 
   // 5. 부산광역시교육청 공무원노동조합
@@ -79,7 +79,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '부산광역시교육청 공무원노동조합',
     imgSrc: '/banner_13.jpg',
-    alt: '부산광역시교육청 공무원노동조합 공식 로고',
+    alt: '부산광역시교육청 공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 6. 전북 고창군 공무원노동조합
@@ -93,7 +93,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '고창군공무원노동조합',
     imgSrc: '/banner_12.jpg',
-    alt: '전북 고창군공무원노동조합 공식 로고',
+    alt: '전북 고창군공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 7. 전북 익산시 공무원노동조합
@@ -107,7 +107,7 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '익산시공무원노동조합',
     imgSrc: '/banner_10.jpg',
-    alt: '전북 익산시공무원노동조합 공식 로고',
+    alt: '전북 익산시공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 8. 전국공무원노동조합 서울 양천구지부
@@ -115,13 +115,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '양천구공무원노조 협약식',
     imgSrc: '/mou/mou-welldying-coop-mubinso.webp',
-    alt: '전국공무원노동조합 서울 양천구지부 공식 업무제휴식',
+    alt: '전국공무원노동조합 서울 양천구지부 공무원라이프 무빈소장례 공식 업무제휴식',
   },
   {
     type: 'logo',
     title: '전국공무원노동조합 양천구지부',
     imgSrc: '/banner_14.jpg',
-    alt: '전국공무원노동조합 양천구지부 공식 로고',
+    alt: '전국공무원노동조합 양천구지부 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 9. 대한민국퇴직공무원노동조합
@@ -129,13 +129,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '퇴직공무원노조 협약식',
     imgSrc: '/mou/mou-hamyang-officials-mubinso.webp',
-    alt: '대한민국퇴직공무원노동조합 공식 업무협약식',
+    alt: '대한민국퇴직공무원노동조합 공무원라이프 무빈소장례 공식 업무협약식',
   },
   {
     type: 'logo',
     title: '대한민국 퇴직공무원 노동조합',
     imgSrc: '/banner_08.jpg',
-    alt: '대한민국 퇴직공무원 노동조합 공식 로고',
+    alt: '대한민국 퇴직공무원 노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 10. 민주노총 공공운수노조 인천지역공공기관지부
@@ -143,13 +143,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '공공운수노조 인천지부 협약식',
     imgSrc: '/mou/mou-retired-officials-mubinso.webp',
-    alt: '공공운수노조 인천지역공공기관지부 공식 업무협약식',
+    alt: '공공운수노조 인천지역공공기관지부 공무원라이프 무빈소장례 공식 업무협약식',
   },
   {
     type: 'logo',
     title: '공공운수노조 인천지역공공기관지부',
     imgSrc: '/banner_06.jpg',
-    alt: '공공운수노조 인천지역공공기관지부 공식 로고',
+    alt: '공공운수노조 인천지역공공기관지부 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 11. 인천환경공단 노동조합
@@ -157,13 +157,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '인천환경공단노조 협약식',
     imgSrc: '/mou/mou-incheon-union-mubinso.webp',
-    alt: '인천환경공단 노동조합 공식 업무협약식',
+    alt: '인천환경공단 노동조합 공무원라이프 무빈소장례 공식 업무협약식',
   },
   {
     type: 'logo',
     title: '인천환경공단 노동조합',
     imgSrc: '/banner_07.jpg',
-    alt: '인천환경공단 노동조합 공식 로고',
+    alt: '인천환경공단 노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 12. 보성삼베섬유(주)
@@ -171,13 +171,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '보성삼베섬유 협약식',
     imgSrc: '/mou/mou-boseong-hemp-fabric-01-mubinso.webp',
-    alt: '보성삼베섬유(주) 공동협력 및 업무제휴 협약식',
+    alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 공동협력 및 업무제휴 협약식',
   },
   {
     type: 'logo',
     title: '보성삼베섬유(주)',
     imgSrc: '/banner_03.jpg',
-    alt: '보성삼베섬유(주) 공식 로고',
+    alt: '보성삼베섬유(주) 공무원라이프 무빈소장례 협약 파트너 로고',
   },
 
   // 13. 사회적협동조합 멋진인생웰다잉
@@ -185,13 +185,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '멋진인생웰다잉 협약식',
     imgSrc: '/mou/mou-boseong-hemp-fabric-02-mubinso.webp',
-    alt: '사전연명의료의향서등록기관 사회적협동조합 멋진인생웰다잉 협약식',
+    alt: '사전연명의료의향서등록기관 사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 협약식',
   },
   {
     type: 'logo',
     title: '사회적협동조합 멋진인생웰다잉',
     imgSrc: '/banner_04.jpg',
-    alt: '사회적협동조합 멋진인생웰다잉 공식 로고',
+    alt: '사회적협동조합 멋진인생웰다잉 공무원라이프 무빈소장례 협약 기관 로고',
   },
 
   // 14. 여의도순복음교회
@@ -199,13 +199,13 @@ const mouItems: MouMarqueeItem[] = [
     type: 'ceremony',
     title: '여의도순복음교회 협약식',
     imgSrc: '/mou/mou-yoido-church-support-mubinso.webp',
-    alt: '여의도순복음교회 장례지원협력 공식 업무협약식',
+    alt: '여의도순복음교회 공무원라이프 무빈소장례 장례지원협력 공식 업무협약식',
   },
   {
     type: 'logo',
     title: '인천개인택시조합 다사모',
     imgSrc: '/banner_18.jpg',
-    alt: '인천개인택시조합 다사모 공식 로고',
+    alt: '인천개인택시조합 다사모 공무원라이프 무빈소장례 협약 단체 로고',
   },
 
   // 15. 추가 공무원노조 및 정부 공공기관 공식 로고
@@ -213,25 +213,25 @@ const mouItems: MouMarqueeItem[] = [
     type: 'logo',
     title: '담양군공무원노동조합',
     imgSrc: '/banner_11.jpg',
-    alt: '담양군공무원노동조합 공식 로고',
+    alt: '담양군공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
   {
     type: 'logo',
     title: '전라남도교육청공무원노동조합',
     imgSrc: '/banner_09.jpg',
-    alt: '전라남도교육청공무원노동조합 공식 로고',
+    alt: '전라남도교육청공무원노동조합 공무원라이프 무빈소장례 협약 기관 로고',
   },
   {
     type: 'logo',
     title: '보건복지부',
     imgSrc: '/banner_01.jpg',
-    alt: '보건복지부 공식 로고',
+    alt: '보건복지부 장사정보시스템 연계 안내 로고',
   },
   {
     type: 'logo',
     title: '국립연명의료관리기관',
     imgSrc: '/banner_05.jpg',
-    alt: '국립연명의료관리기관 공식 로고',
+    alt: '국립연명의료관리기관 사전연명의료의향서 안내 로고',
   },
 ];
 

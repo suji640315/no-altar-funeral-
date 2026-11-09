@@ -25,7 +25,7 @@ export default function Header() {
           <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 group">
             <Image 
               src="/logo.png" 
-              alt="공무원라이프 무빈소장례" 
+              alt="무빈소 장례 전문 공무원라이프 공식 로고" 
               width={220} 
               height={60} 
               className="h-9 md:h-11 w-auto object-contain" 

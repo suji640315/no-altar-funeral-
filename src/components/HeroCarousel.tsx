@@ -19,23 +19,23 @@ const SLIDES: SlideItem[] = [
   {
     id: 1,
     src: '/images/mubinso-trust-flag-banner.webp',
-    alt: '공무원 협약 검증 100% 후불제 무빈소장례',
-    subtitle: '대한민국 공직사회가 검증한 의전 기준 그대로',
-    title: '100% 후불제 무빈소장례',
+    alt: '무빈소 장례 전문 공무원라이프 품격 있는 가족장·직장 공식 협약 의전',
+    subtitle: '대한민국 공직사회가 검증한 100% 후불제 의전 기준 그대로',
+    title: '품격 있는 무빈소 가족장·직장',
     badge: '공무원 노조 공식 협약 의전팀 직접 진행 | 일반 시민 동일 혜택 적용',
   },
   {
     id: 2,
     src: '/images/mubinso-slide-respect.webp',
-    alt: '정직한 후불제 무빈소 가족장 입관 서비스',
+    alt: '공공기관 협약 무빈소 장례 전문 1급 장례지도사 정식 입관식 서비스',
     subtitle: '빈소 비용 거품은 덜고, 마지막 배웅의 정성은 온전히',
-    title: '품격 있는 무빈소 가족장·직장',
+    title: '100% 후불제 무빈소장례 전문',
     subtext: '1급 장례지도사의 궁중대렴 정식 입관식 거행',
   },
   {
     id: 3,
     src: '/images/mubinso-slide-safe.webp',
-    alt: '부당 추가금 없는 무빈소 정찰제 장례',
+    alt: '빈소 비용 거품 없는 무빈소 장례 정찰제 비용 안내 및 상담',
     subtitle: '사전 확정 견적 외 현장 바가지 0원 약속',
     title: '단 1원의 부당 추가금 없는 정찰제',
     subtext: '사전 확정 정찰 견적 외 현장 추가 비용 0원 보증',
@@ -105,12 +105,21 @@ export default function HeroCarousel() {
                 {slide.subtitle}
               </p>
 
-              <h1
-                className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
-                style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
-              >
-                {slide.title}
-              </h1>
+              {index === 0 ? (
+                <h1
+                  className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
+                  style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  {slide.title}
+                </h1>
+              ) : (
+                <h2
+                  className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-2 md:mb-3"
+                  style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.9)' }}
+                >
+                  {slide.title}
+                </h2>
+              )}
 
               {slide.subtext && (
                 <p
@@ -164,6 +173,7 @@ export default function HeroCarousel() {
 
       {/* Floating 3 Buttons (Quick Actions) */}
       <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4">
+        <h2 className="sr-only">무빈소 장례 특별할인 혜택 및 24시간 상담 안내</h2>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
           {/* Button 1: 특별할인카드 신청하기 */}
           <div
