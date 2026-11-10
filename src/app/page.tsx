@@ -45,8 +45,9 @@ export default function Home() {
 
       {/* 2. 중간 슬로건 텍스트 바 */}
       <section className="py-12 md:py-16 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight">
-          공공기관 공식 협약 기준 무빈소 장례 핵심 안내
+        <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight break-keep">
+          핵심만 봐도 압니다!
+          <span className="sr-only"> — 공공기관 공식 협약 기준 무빈소 장례 핵심 안내</span>
         </h2>
         <p className="text-lg md:text-2xl text-gray-700 font-semibold leading-relaxed break-keep">
           구리시청, 연제구청, 인천공무원노조 등 공공기관 공식 협약 기준 그대로!<br className="hidden md:block" />
