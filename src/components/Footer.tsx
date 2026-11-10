@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Footer() {
   return (
     <footer className="bg-[#f8f9fa] border-t border-gray-200 py-10 mt-auto">
@@ -32,9 +34,15 @@ export default function Footer() {
               <span>사업자등록번호 : 236-87-00779</span>
               <span>통신판매업신고 : 제2017-서울종로-1130호</span>
             </div>
-            <div className="mt-4 flex gap-4 text-gray-400 text-xs">
+            <div className="mt-4 flex flex-wrap items-center gap-4 text-gray-400 text-xs">
               <span>Copyright© (주)공무원라이프 무빈소장례. All rights reserved.</span>
               <span>관리자 : 김호진</span>
+              <Link href="/admin/news" className="text-gray-400 hover:text-gray-600 underline underline-offset-2">
+                [뉴스 관리자]
+              </Link>
+              <Link href="/admin" className="text-gray-400 hover:text-gray-600 underline underline-offset-2">
+                [상담내역 관리자]
+              </Link>
             </div>
           </div>
 
