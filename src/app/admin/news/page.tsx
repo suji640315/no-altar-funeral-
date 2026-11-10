@@ -24,6 +24,10 @@ import { NewsPost, NEWS_CATEGORIES } from '@/lib/news';
 const WRITE_CATEGORIES = NEWS_CATEGORIES.filter((c) => c !== '전체');
 
 export default function AdminNewsPage() {
+  const [isAuthorized, setIsAuthorized] = useState<boolean>(false);
+  const [passwordInput, setPasswordInput] = useState<string>('');
+  const [authChecked, setAuthChecked] = useState<boolean>(false);
+
   const [posts, setPosts] = useState<NewsPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [filterCategory, setFilterCategory] = useState<string>('전체');
@@ -62,8 +66,31 @@ export default function AdminNewsPage() {
   };
 
   useEffect(() => {
+    try {
+      if (localStorage.getItem('mubinso_admin_auth') === '1') {
+        setIsAuthorized(true);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+    setAuthChecked(true);
     fetchPosts();
   }, []);
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = passwordInput.trim();
+    if (trimmed === 'aA135246!!' || trimmed === 'life733@' || trimmed === '8379') {
+      try {
+        localStorage.setItem('mubinso_admin_auth', '1');
+      } catch (err) {
+        console.error(err);
+      }
+      setIsAuthorized(true);
+    } else {
+      alert('관리자 비밀번호가 일치하지 않습니다.');
+    }
+  };
 
   const openCreateModal = () => {
     setEditingId(null);
@@ -224,6 +251,42 @@ export default function AdminNewsPage() {
         (p.keywords || '').toLowerCase().includes(q))
     );
   });
+
+  if (!authChecked) {
+    return <div className="w-full min-h-screen bg-gray-50 pt-[120px] text-center text-gray-500">불러오는 중...</div>;
+  }
+
+  if (!isAuthorized) {
+    return (
+      <div className="w-full min-h-screen bg-gray-50 pt-[120px] pb-20 flex items-center justify-center px-4 font-sans">
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg max-w-md w-full p-8 text-center">
+          <div className="w-12 h-12 bg-blue-50 text-[#00387f] rounded-full flex items-center justify-center mx-auto mb-4">
+            <Newspaper className="w-6 h-6" />
+          </div>
+          <h1 className="text-xl font-bold text-gray-900 mb-2">상조·장례 뉴스 관리자 로그인</h1>
+          <p className="text-xs text-gray-500 mb-6">
+            게시글 작성·수정·삭제를 위해 관리자 비밀번호를 입력해 주세요.
+          </p>
+          <form onSubmit={handleLogin} className="space-y-4">
+            <input
+              type="password"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+              placeholder="관리자 비밀번호 입력"
+              autoFocus
+              className="w-full px-4 py-3 border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-[#00387f]"
+            />
+            <button
+              type="submit"
+              className="w-full py-3 bg-[#00387f] hover:bg-[#002b63] text-white font-bold rounded-xl text-sm transition-colors shadow-sm"
+            >
+              관리자 확인
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen bg-gray-50 pt-[100px] pb-20 font-sans text-gray-800">
