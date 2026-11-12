@@ -15,10 +15,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
       { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
     ],
-    shortcut: '/favicon.png',
+    shortcut: '/favicon.ico',
     apple: '/favicon.png',
   },
   openGraph: {
@@ -91,8 +92,10 @@ export default function RootLayout({
   return (
     <html lang="ko" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
-        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="512x512" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
