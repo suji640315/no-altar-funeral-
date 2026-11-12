@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://xn--9n2b17ct9ctte97j.net',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: '무빈소장례 전문 공무원라이프 | 품격 있는 가족장·직장 정찰제 비용안내',
     description: '공공기관 공식 협약 기준 그대로, 빈소 비용 거품 없이 1급 장례지도사가 정성을 다하는 무빈소장례 전문. 입관식·화장·안치까지 원스톱 지원',
@@ -83,6 +91,9 @@ export default function RootLayout({
   return (
     <html lang="ko" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
+        <link rel="shortcut icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

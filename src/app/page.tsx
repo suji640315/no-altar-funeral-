@@ -45,14 +45,14 @@ export default function Home() {
 
       {/* 2. 중간 슬로건 텍스트 바 */}
       <section className="py-12 md:py-16 text-center px-4 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight break-keep">
-          핵심만 봐도 압니다!
-          <span className="sr-only"> — 공공기관 공식 협약 기준 무빈소 장례 핵심 안내</span>
-        </h2>
-        <p className="text-lg md:text-2xl text-gray-700 font-semibold leading-relaxed break-keep">
-          구리시청, 연제구청, 인천공무원노조 등 공공기관 공식 협약 기준 그대로!<br className="hidden md:block" />
-          까다로운 공직사회가 검증한 의전 품질로, 일반 시민 여러분의 무빈소 가족장을 거품 없는 정찰제로 모십니다.
-        </p>
+          <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight break-keep">
+            핵심만 봐도 압니다!
+            <span className="sr-only"> — 공공기관 공식 협약 기준 무빈소 장례 핵심 안내</span>
+          </h2>
+          <p className="text-lg md:text-2xl text-gray-700 font-semibold leading-relaxed break-keep">
+            구리시청, 연제구청, 인천공무원노조 등 공공기관 공식 협약 기준 그대로!<br className="hidden md:block" />
+            까다로운 공직사회가 검증한 의전 품질로, 일반 시민 여러분의 무빈소 가족장을 거품 없는 정찰제로 모십니다.
+          </p>
       </section>
 
       {/* 3. 4대 테마별 서비스 카드 (기존 그리드 디자인 유지) */}
