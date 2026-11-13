@@ -39,6 +39,8 @@ export default function AdminNewsPage() {
   const [category, setCategory] = useState<string>('상조·장례 뉴스');
   const [title, setTitle] = useState<string>('');
   const [summary, setSummary] = useState<string>('');
+  const [metaDescription, setMetaDescription] = useState<string>('');
+  const [tags, setTags] = useState<string>('');
   const [content, setContent] = useState<string>('');
   const [keywords, setKeywords] = useState<string>('');
   const [author, setAuthor] = useState<string>('공무원라이프 무빈소장례');
@@ -97,6 +99,8 @@ export default function AdminNewsPage() {
     setCategory('상조·장례 뉴스');
     setTitle('');
     setSummary('');
+    setMetaDescription('');
+    setTags('');
     setContent('');
     setKeywords('무빈소장례, 상조뉴스, 장례정보, 후불제상조');
     setAuthor('공무원라이프 무빈소장례');
@@ -111,6 +115,8 @@ export default function AdminNewsPage() {
     setCategory(post.category || '상조·장례 뉴스');
     setTitle(post.title || '');
     setSummary(post.summary || '');
+    setMetaDescription(post.meta_description || '');
+    setTags(post.tags || post.keywords || '');
     setContent(post.content || '');
     setKeywords(post.keywords || '');
     setAuthor(post.author || '공무원라이프 무빈소장례');
@@ -169,8 +175,10 @@ export default function AdminNewsPage() {
         category,
         title: title.trim(),
         summary: summary.trim(),
+        meta_description: metaDescription.trim() || null,
+        tags: tags.trim() || null,
         content: content.trim(),
-        keywords: keywords.trim(),
+        keywords: (tags.trim() || keywords.trim()),
         author: author.trim() || '공무원라이프 무빈소장례',
         image_url: imageUrl.trim() || null,
         is_notice: isNotice ? 1 : 0,
@@ -648,18 +656,58 @@ export default function AdminNewsPage() {
                 />
               </div>
 
-              {/* 핵심 키워드 태그 */}
-              <div>
-                <label className="block text-xs font-bold text-gray-700 mb-1.5">
-                  검색 키워드 태그 (쉼표 , 로 구분)
-                </label>
-                <input
-                  type="text"
-                  value={keywords}
-                  onChange={(e) => setKeywords(e.target.value)}
-                  placeholder="예: 무빈소장례, 가족장비용, 상조뉴스, 화장장예약, 후불제상조"
-                  className="w-full px-4 py-2.5 bg-white border border-gray-300 rounded-xl text-sm focus:outline-none focus:border-[#00387f]"
-                />
+              {/* 검색엔진 최적화(SEO) 설정 섹션 */}
+              <div className="p-4 bg-blue-50/60 rounded-xl border border-blue-200/80 space-y-4">
+                <div className="flex items-center justify-between border-b border-blue-200/60 pb-2">
+                  <h3 className="text-xs font-extrabold text-[#00387f] flex items-center gap-1.5">
+                    <span>🔍</span> 검색엔진 최적화(SEO) 및 포털 노출 설정 (선택사항)
+                  </h3>
+                  <span className="text-[11px] font-semibold text-blue-600 bg-white px-2 py-0.5 rounded-full border border-blue-200">
+                    네이버 / 구글 검색 최적화
+                  </span>
+                </div>
+
+                {/* 1) 메타 설명 (Meta Description) */}
+                <div>
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-xs font-bold text-gray-800">
+                      검색 노출용 요약 설명 (Meta Description)
+                    </label>
+                    <span className={`text-[11px] font-semibold ${metaDescription.length > 120 ? 'text-amber-600 font-bold' : 'text-gray-500'}`}>
+                      {metaDescription.length} / 120자 {metaDescription.length >= 80 && metaDescription.length <= 110 && '(권장 길이)'}
+                    </span>
+                  </div>
+                  <textarea
+                    rows={2}
+                    value={metaDescription}
+                    onChange={(e) => setMetaDescription(e.target.value)}
+                    placeholder="구글·네이버 검색 결과 제목 아래 노출될 설명문 (80~110자 권장). 미입력 시 본문 앞부분이 자동 요약됩니다."
+                    className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
+                  />
+                  <p className="text-[11px] text-gray-500 mt-1">
+                    💡 미입력 시 본문 앞부분에서 불필요한 태그를 제거한 순수 텍스트 110자가 자동으로 요약 추출됩니다.
+                  </p>
+                </div>
+
+                {/* 2) 키워드 / 태그 (Meta Keywords & Tags) */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                    핵심 키워드 / 태그 (Meta Keywords &amp; Tags)
+                  </label>
+                  <input
+                    type="text"
+                    value={tags}
+                    onChange={(e) => {
+                      setTags(e.target.value);
+                      setKeywords(e.target.value);
+                    }}
+                    placeholder="쉼표(,)로 구분하여 입력 (예: 장례식장 조문 예절, 호상 뜻, 후불제 상조, 무빈소장례)"
+                    className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
+                  />
+                  <p className="text-[11px] text-gray-500 mt-1">
+                    💡 쉼표(,)로 구분해 입력하시면 검색엔진 키워드 메타태그와 게시글 본문 하단 해시태그(#) 배지로 자동 반영됩니다.
+                  </p>
+                </div>
               </div>
 
               {/* 대표 이미지 첨부 */}

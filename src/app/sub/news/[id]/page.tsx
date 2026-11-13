@@ -29,13 +29,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   }
 
+  // 1) description 우선순위: post.meta_description -> post.summary -> 본문 태그 제거 앞 110자
   const description =
-    post.summary ||
+    post.meta_description?.trim() ||
+    post.summary?.trim() ||
     post.content
       .replace(/<[^>]+>/g, ' ')
       .replace(/\s+/g, ' ')
       .trim()
-      .slice(0, 150);
+      .slice(0, 110);
 
   const canonicalUrl = `https://xn--9n2b17ct9ctte97j.net/sub/news/${post.id}`;
   const ogImageUrl = post.image_url
@@ -44,11 +46,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       : `https://xn--9n2b17ct9ctte97j.net${post.image_url}`
     : 'https://xn--9n2b17ct9ctte97j.net/logo.png';
 
-  const keywordList = post.keywords
-    ? post.keywords
-        .split(',')
-        .map((k) => k.trim())
-        .filter(Boolean)
+  // 2) keywords 우선순위: tags -> keywords -> 기본 추천 키워드
+  const rawTags = post.tags || post.keywords || '';
+  const keywordList = rawTags
+    ? rawTags
+      .split(',')
+      .map((k) => k.trim())
+      .filter(Boolean)
     : ['무빈소장례', '상조뉴스', '장례정보', '후불제상조', '공무원라이프'];
 
   return {
@@ -90,6 +94,23 @@ export default async function NewsDetailPage({ params }: PageProps) {
       : `https://xn--9n2b17ct9ctte97j.net${post.image_url}`
     : 'https://xn--9n2b17ct9ctte97j.net/logo.png';
 
+  const articleDescription =
+    post.meta_description?.trim() ||
+    post.summary?.trim() ||
+    post.content
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 110);
+
+  const rawTags = post.tags || post.keywords || '';
+  const tagList = rawTags
+    ? rawTags
+      .split(',')
+      .map((k) => k.trim())
+      .filter(Boolean)
+    : [];
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -98,13 +119,8 @@ export default async function NewsDetailPage({ params }: PageProps) {
       '@id': canonicalUrl,
     },
     headline: post.title,
-    description:
-      post.summary ||
-      post.content
-        .replace(/<[^>]+>/g, ' ')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .slice(0, 150),
+    description: articleDescription,
+    keywords: tagList.join(', '),
     image: [ogImageUrl],
     datePublished: post.created_at,
     dateModified: post.updated_at || post.created_at,
@@ -122,13 +138,6 @@ export default async function NewsDetailPage({ params }: PageProps) {
       },
     },
   };
-
-  const keywords = post.keywords
-    ? post.keywords
-        .split(',')
-        .map((k) => k.trim())
-        .filter(Boolean)
-    : [];
 
   const isHtmlContent = /<[a-z][\s\S]*>/i.test(post.content);
 
@@ -221,19 +230,19 @@ export default async function NewsDetailPage({ params }: PageProps) {
             )}
           </div>
 
-          {/* 키워드 태그 영역 */}
-          {keywords.length > 0 && (
-            <div className="px-6 md:px-10 pb-8 pt-4 border-t border-gray-100 flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1 text-xs font-bold text-gray-500 mr-1">
-                <Tag className="w-3.5 h-3.5" />
-                관련 키워드:
+          {/* 키워드 태그 영역 (해시태그 배지 UI) */}
+          {tagList.length > 0 && (
+            <div className="px-6 md:px-10 pb-8 pt-5 border-t border-gray-100 flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold text-gray-500 mr-1.5">
+                <Tag className="w-3.5 h-3.5 text-[#00387f]" />
+                핵심 키워드 태그:
               </span>
-              {keywords.map((kw, i) => (
+              {tagList.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-2.5 py-1 bg-gray-100 text-gray-700 rounded-lg text-xs font-medium"
+                  className="inline-flex items-center px-3 py-1 bg-blue-50/70 hover:bg-blue-100/70 text-[#00387f] border border-blue-200/60 rounded-full text-xs font-semibold transition-colors"
                 >
-                  #{kw}
+                  #{tag.startsWith('#') ? tag.slice(1) : tag}
                 </span>
               ))}
             </div>

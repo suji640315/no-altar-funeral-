@@ -7,6 +7,8 @@ export interface NewsPost {
   author: string;
   image_url: string | null;
   keywords: string;
+  meta_description?: string | null;
+  tags?: string | null;
   views: number | string;
   is_notice: number | string;
   is_public: number | string;
@@ -22,7 +24,7 @@ export const NEWS_CATEGORIES = [
   '공지사항',
 ] as const;
 
-export const REMOTE_NEWS_API = 'http://www.xn--ob0br3ru1cxypqxah90d.com/api/mubinso_news.php';
+export const REMOTE_NEWS_API = 'https://www.xn--ob0br3ru1cxypqxah90d.com/api/mubinso_news.php';
 
 export async function getNewsList(options?: {
   category?: string;
