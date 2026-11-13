@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next';
 import { getNewsList } from '@/lib/news';
 
 export const dynamic = 'force-dynamic';
-export const revalidate = 0;
+export const revalidate = 60; // 60초 캐시 주기 또는 즉시 revalidatePath 대응
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://xn--9n2b17ct9ctte97j.net';
+  const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://xn--9n2b17ct9ctte97j.net').replace(/\/$/, '');
   const now = new Date();
 
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -55,16 +55,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   try {
     const posts = await getNewsList({ limit: 500 });
-    const newsRoutes: MetadataRoute.Sitemap = posts.map((post) => {
-      const dateStr = post.updated_at || post.created_at;
-      const modDate = dateStr ? new Date(dateStr.replace(' ', 'T')) : now;
-      return {
-        url: `${baseUrl}/sub/news/${post.id}`,
-        lastModified: isNaN(modDate.getTime()) ? now : modDate,
-        changeFrequency: 'weekly',
-        priority: 0.8,
-      };
-    });
+    const newsRoutes: MetadataRoute.Sitemap = posts
+      .filter((post) => post.is_public !== 0 && post.is_public !== false)
+      .map((post) => {
+        const dateStr = post.updated_at || post.created_at;
+        const modDate = dateStr ? new Date(dateStr.replace(' ', 'T')) : now;
+        return {
+          url: `${baseUrl}/sub/news/${post.id}`,
+          lastModified: isNaN(modDate.getTime()) ? now : modDate,
+          changeFrequency: 'weekly',
+          priority: 0.7,
+        };
+      });
 
     return [...staticRoutes, ...newsRoutes];
   } catch (err) {

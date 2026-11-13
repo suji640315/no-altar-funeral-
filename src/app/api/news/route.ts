@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { REMOTE_NEWS_API } from '@/lib/news';
+import { submitToIndexNow, SITE_HOST } from '@/lib/indexnow';
 
 export const dynamic = 'force-dynamic';
 
@@ -48,6 +50,28 @@ export async function POST(request: Request) {
       body,
     });
     const data = await res.json();
+
+    if (data.success) {
+      // 1. 실시간 캐시 무효화 (Revalidation)
+      try {
+        revalidatePath('/sitemap.xml');
+        revalidatePath('/sub/news');
+        if (data.id) {
+          revalidatePath(`/sub/news/${data.id}`);
+        }
+      } catch (revErr) {
+        console.error('Revalidation error:', revErr);
+      }
+
+      // 2. IndexNow API를 통해 검색엔진(네이버/빙)에 즉시 수집 요청
+      if (data.id) {
+        const postUrl = `https://${SITE_HOST}/sub/news/${data.id}`;
+        submitToIndexNow([postUrl, `https://${SITE_HOST}/sub/news`]).catch((e) =>
+          console.error('IndexNow post error:', e)
+        );
+      }
+    }
+
     return NextResponse.json(data, { status: res.status });
   } catch (err: any) {
     console.error('POST /api/news error:', err);
@@ -67,6 +91,31 @@ export async function PUT(request: Request) {
       body,
     });
     const data = await res.json();
+
+    if (data.success) {
+      const parsed = JSON.parse(body || '{}');
+      const postId = data.id || parsed.id;
+
+      // 1. 실시간 캐시 무효화 (Revalidation)
+      try {
+        revalidatePath('/sitemap.xml');
+        revalidatePath('/sub/news');
+        if (postId) {
+          revalidatePath(`/sub/news/${postId}`);
+        }
+      } catch (revErr) {
+        console.error('Revalidation error:', revErr);
+      }
+
+      // 2. IndexNow API 즉시 수집 요청
+      if (postId) {
+        const postUrl = `https://${SITE_HOST}/sub/news/${postId}`;
+        submitToIndexNow([postUrl, `https://${SITE_HOST}/sub/news`]).catch((e) =>
+          console.error('IndexNow put error:', e)
+        );
+      }
+    }
+
     return NextResponse.json(data, { status: res.status });
   } catch (err: any) {
     console.error('PUT /api/news error:', err);
@@ -93,6 +142,19 @@ export async function DELETE(request: Request) {
       body: bodyText || JSON.stringify({ id }),
     });
     const data = await res.json();
+
+    if (data.success) {
+      try {
+        revalidatePath('/sitemap.xml');
+        revalidatePath('/sub/news');
+        if (id) {
+          revalidatePath(`/sub/news/${id}`);
+        }
+      } catch (revErr) {
+        console.error('Revalidation error:', revErr);
+      }
+    }
+
     return NextResponse.json(data, { status: res.status });
   } catch (err: any) {
     console.error('DELETE /api/news error:', err);
