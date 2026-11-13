@@ -56,7 +56,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const posts = await getNewsList({ limit: 500 });
     const newsRoutes: MetadataRoute.Sitemap = posts
-      .filter((post) => post.is_public !== 0 && post.is_public !== false)
+      .filter((post) => post.is_public !== 0 && String(post.is_public) !== '0')
       .map((post) => {
         const dateStr = post.updated_at || post.created_at;
         const modDate = dateStr ? new Date(dateStr.replace(' ', 'T')) : now;

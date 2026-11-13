@@ -37,3 +37,4 @@ export async function submitToIndexNow(urls: string[]): Promise<{ success: boole
     return { success: false, error: err?.message };
   }
 }
+
