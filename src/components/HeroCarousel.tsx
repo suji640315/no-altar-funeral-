@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
-import VipCardModal from './VipCardModal';
 
 interface SlideItem {
   id: number;
@@ -47,7 +46,6 @@ const SLIDES: SlideItem[] = [
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVipModalOpen, setIsVipModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -175,75 +173,6 @@ export default function HeroCarousel() {
           />
         ))}
       </div>
-
-      {/* Floating 3 Buttons (Quick Actions) */}
-      <div className="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4">
-        <h2 className="sr-only">무빈소 장례 특별할인 혜택 및 24시간 상담 안내</h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-          {/* Button 1: 특별할인카드 신청하기 */}
-          <div
-            onClick={() => setIsVipModalOpen(true)}
-            className="bg-[#1a5eff] text-white rounded-2xl shadow-xl flex items-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
-          >
-            <div className="w-12 h-12 mr-4 bg-white/20 rounded-full flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-              </svg>
-            </div>
-            <div className="min-w-0">
-              <p className="text-xs md:text-sm font-semibold text-blue-100 mb-0.5 tracking-tight">
-                [130만 → 120만] 즉시 차감 혜택
-              </p>
-              <h3 className="flex items-baseline gap-1.5 flex-wrap">
-                <span className="text-2xl md:text-[26px] lg:text-3xl font-black text-[#ffe600] tracking-tight drop-shadow-sm">
-                  10만원
-                </span>
-                <span className="text-base md:text-lg lg:text-xl font-bold text-white tracking-tight">
-                  특별할인카드 받기
-                </span>
-              </h3>
-            </div>
-          </div>
-
-          {/* Button 2: 무빈소 장례 전담 직통상담 02-477-8379 */}
-          <a
-            href="tel:02-477-8379"
-            title="무빈소 장례 전담 직통상담 전화 연결"
-            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex flex-col items-center justify-center p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-              <p className="text-xs md:text-sm font-semibold text-gray-700">무빈소 장례 전담 직통상담</p>
-            </div>
-            <h3 className="text-2xl md:text-3xl font-black text-[#e3000f] tracking-tight group-hover:scale-105 transition-transform">
-              02-477-8379
-            </h3>
-            <p className="text-[11px] md:text-xs text-gray-500 mt-1 font-medium">
-              (24시간 상황실: 1599-8379)
-            </p>
-          </a>
-
-          {/* Button 3: 카카오톡 1:1 상담 */}
-          <a
-            href="https://pf.kakao.com/_NpBqxb/chat"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="공무원라이프 카카오톡 1:1 채팅상담 새창열림"
-            aria-label="공무원라이프 카카오톡 1:1 채팅상담 바로가기"
-            className="bg-white rounded-2xl shadow-xl border border-gray-100 flex items-center justify-center gap-4 p-4 md:p-6 hover:-translate-y-1 transition-transform cursor-pointer group"
-          >
-            <div className="text-left">
-              <p className="text-xs md:text-sm font-medium text-gray-500 mb-0.5">실시간 1:1 채팅 문의</p>
-              <h3 className="text-xl md:text-2xl font-bold text-gray-800">카카오톡 1:1 상담</h3>
-            </div>
-            <div className="w-12 h-12 bg-[#fae100] rounded-full flex items-center justify-center text-black font-black text-xl shrink-0 group-hover:scale-105 transition-transform">
-              Ch
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <VipCardModal isOpen={isVipModalOpen} onClose={() => setIsVipModalOpen(false)} />
     </section>
   );
 }

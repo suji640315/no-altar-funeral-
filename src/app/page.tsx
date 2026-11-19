@@ -31,6 +31,7 @@ import Link from "next/link";
 import RecentCounselsTicker from "@/components/RecentCounselsTicker";
 import LatestNewsSection from "@/components/LatestNewsSection";
 import LiveTrafficBanner from "@/components/LiveTrafficBanner";
+import QuickActionBoxes from "@/components/QuickActionBoxes";
 import { Handshake, Headset, BookOpen, Building2 } from "lucide-react";
 
 export const revalidate = 0;
@@ -41,15 +42,15 @@ export default function Home() {
       {/* 1. 메인 슬라이드 */}
       <HeroCarousel />
 
-      {/* Spacer for floating buttons from Hero (모바일 세로 적층 높이 대응) */}
-      <div className="h-[270px] sm:h-[220px] md:h-24"></div>
+      {/* 2. 중앙 3대 퀵메뉴 (공무원라이프 규격 100% 동일화) */}
+      <QuickActionBoxes />
 
-      {/* 실시간 서비스 이용 현황 띠배너 */}
-      <div className="w-full relative z-20">
+      {/* 3. 실시간 서비스 이용 현황 띠배너 (박스 바로 아래 공백 없이 균형 있게 연결) */}
+      <div className="w-full mt-6 md:mt-8">
         <LiveTrafficBanner />
       </div>
 
-      {/* 2. 중간 슬로건 텍스트 바 */}
+      {/* 4. 중간 슬로건 텍스트 바 */}
       <section className="py-12 md:py-16 text-center px-4 max-w-4xl mx-auto">
           <h2 className="text-xl md:text-2xl font-bold text-[#00387f] mb-3 tracking-tight break-keep">
             핵심만 봐도 압니다!
