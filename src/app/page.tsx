@@ -41,11 +41,11 @@ export default function Home() {
       {/* 1. 메인 슬라이드 */}
       <HeroCarousel />
 
-      {/* Spacer for floating buttons from Hero */}
-      <div className="h-32 md:h-24"></div>
+      {/* Spacer for floating buttons from Hero (모바일 세로 적층 높이 대응) */}
+      <div className="h-[270px] sm:h-[220px] md:h-24"></div>
 
       {/* 실시간 서비스 이용 현황 띠배너 */}
-      <div className="w-full">
+      <div className="w-full relative z-20">
         <LiveTrafficBanner />
       </div>
 
