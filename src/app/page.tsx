@@ -30,6 +30,7 @@ import MouSection from "@/components/MouSection";
 import Link from "next/link";
 import RecentCounselsTicker from "@/components/RecentCounselsTicker";
 import LatestNewsSection from "@/components/LatestNewsSection";
+import LiveTrafficBanner from "@/components/LiveTrafficBanner";
 import { Handshake, Headset, BookOpen, Building2 } from "lucide-react";
 
 export const revalidate = 0;
@@ -42,6 +43,11 @@ export default function Home() {
 
       {/* Spacer for floating buttons from Hero */}
       <div className="h-32 md:h-24"></div>
+
+      {/* 실시간 서비스 이용 현황 띠배너 */}
+      <div className="w-full">
+        <LiveTrafficBanner />
+      </div>
 
       {/* 2. 중간 슬로건 텍스트 바 */}
       <section className="py-12 md:py-16 text-center px-4 max-w-4xl mx-auto">

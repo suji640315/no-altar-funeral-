@@ -1,10 +1,27 @@
+"use client";
+
 import { Phone, MessageCircle } from 'lucide-react';
+import { useLiveTraffic } from '@/lib/useLiveTraffic';
 
 export default function StickyBottomBar() {
+  const { liveUsers, isMounted } = useLiveTraffic();
+
   return (
     <>
       {/* Mobile Sticky Bottom Bar (모바일 하단 고정 바) */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white dark:bg-brand-950 border-t border-brand-200 dark:border-brand-800 shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)]">
+        {/* 모바일 상단 실시간 접속자 미니 안내 */}
+        {isMounted && (
+          <div className="bg-slate-900 text-white text-[11px] py-1 px-3 flex items-center justify-center gap-1.5 font-medium border-b border-slate-800">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-80"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="text-gray-300">
+              현재 <strong className="text-emerald-400 font-black">{liveUsers}명</strong> 실시간 상담 확인 중
+            </span>
+          </div>
+        )}
         <div className="flex h-16">
           <a 
             href="https://pf.kakao.com/_NpBqxb/chat" 
@@ -36,7 +53,12 @@ export default function StickyBottomBar() {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 p-3.5 flex flex-col gap-2 transition-all hover:shadow-2xl">
           <div className="text-[11px] font-semibold text-gray-500 px-1 flex items-center justify-between gap-2">
             <span>실시간 빠른 문의</span>
-            <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            {isMounted && (
+              <span className="flex items-center gap-1 font-bold text-emerald-600">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>{liveUsers}명 접속 중</span>
+              </span>
+            )}
           </div>
 
           {/* 직통전화 버튼 */}
@@ -68,14 +90,9 @@ export default function StickyBottomBar() {
             </div>
             <div className="text-left">
               <div className="text-[10px] font-medium text-gray-700 leading-tight">1:1 채팅 문의</div>
-              <div className="text-sm font-bold">카카오톡 실시간 상담</div>
+              <div className="text-sm font-black tracking-tight text-[#000000]">카카오톡 실시간 상담</div>
             </div>
           </a>
-
-          {/* 24시 긴급상황실 서브 안내 */}
-          <div className="text-[11px] text-gray-500 text-center pt-1 border-t border-gray-100">
-            24시간 상황실 <a href="tel:1599-8379" className="font-bold text-red-600 hover:underline">1599-8379</a>
-          </div>
         </div>
       </aside>
     </>
