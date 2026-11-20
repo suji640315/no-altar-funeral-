@@ -374,8 +374,8 @@ export default function AdminNewsPage() {
                 key={cat}
                 onClick={() => setFilterCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-bold border transition-colors ${filterCategory === cat
-                    ? 'bg-[#00387f] text-white border-[#00387f]'
-                    : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                  ? 'bg-[#00387f] text-white border-[#00387f]'
+                  : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
                   }`}
               >
                 {cat}
@@ -475,8 +475,8 @@ export default function AdminNewsPage() {
                             type="button"
                             onClick={() => handleTogglePublic(post)}
                             className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold border transition-colors ${isPublicRow
-                                ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
-                                : 'bg-gray-100 text-gray-500 border-gray-300 hover:bg-gray-200'
+                              ? 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100'
+                              : 'bg-gray-100 text-gray-500 border-gray-300 hover:bg-gray-200'
                               }`}
                             title="클릭하여 공개/비공개 전환"
                           >
@@ -652,127 +652,127 @@ export default function AdminNewsPage() {
                 />
               </div>
 
-                {/* 검색엔진 최적화(SEO) 설정 섹션 */}
-                <div className="p-4 bg-blue-50/60 rounded-xl border border-blue-200/80 space-y-4">
-                  <div className="flex items-center justify-between border-b border-blue-200/60 pb-2">
-                    <h3 className="text-xs font-extrabold text-[#00387f] flex items-center gap-1.5">
-                      <span>🔍</span> 검색엔진 최적화(SEO) 및 포털 노출 설정 (선택사항)
-                    </h3>
-                    <span className="text-[11px] font-semibold text-blue-600 bg-white px-2 py-0.5 rounded-full border border-blue-200">
-                      네이버 / 구글 검색 최적화
-                    </span>
-                  </div>
-
-                  {/* 1) 메타 설명 (Meta Description) */}
-                  <div>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <label className="text-xs font-bold text-gray-800">
-                        검색 노출용 요약 설명 (Meta Description)
-                      </label>
-                      <span className={`text-[11px] font-semibold ${metaDescription.length > 120 ? 'text-amber-600 font-bold' : 'text-gray-500'}`}>
-                        {metaDescription.length} / 120자 {metaDescription.length >= 80 && metaDescription.length <= 110 && '(권장 길이)'}
-                      </span>
-                    </div>
-                    <textarea
-                      rows={2}
-                      value={metaDescription}
-                      onChange={(e) => setMetaDescription(e.target.value)}
-                      placeholder="구글·네이버 검색 결과 제목 아래 노출될 설명문 (80~110자 권장). 미입력 시 본문 앞부분이 자동 요약됩니다."
-                      className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
-                    />
-                    <p className="text-[11px] text-gray-500 mt-1">
-                      💡 미입력 시 본문 앞부분에서 불필요한 태그를 제거한 순수 텍스트 110자가 자동으로 요약 추출됩니다.
-                    </p>
-                  </div>
-
-                  {/* 2) 키워드 / 태그 (Meta Keywords & Tags) */}
-                  <div>
-                    <label className="block text-xs font-bold text-gray-800 mb-1.5">
-                      핵심 키워드 / 태그 (Meta Keywords &amp; Tags)
-                    </label>
-                    <input
-                      type="text"
-                      value={tags}
-                      onChange={(e) => {
-                        setTags(e.target.value);
-                        setKeywords(e.target.value);
-                      }}
-                      placeholder="쉼표(,)로 구분하여 입력 (예: 장례식장 조문 예절, 호상 뜻, 후불제 상조, 무빈소장례)"
-                      className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
-                    />
-                    <p className="text-[11px] text-gray-500 mt-1">
-                      💡 쉼표(,)로 구분해 입력하시면 검색엔진 키워드 메타태그와 게시글 본문 하단 해시태그(#) 배지로 자동 반영됩니다.
-                    </p>
-                  </div>
+              {/* 검색엔진 최적화(SEO) 설정 섹션 */}
+              <div className="p-4 bg-blue-50/60 rounded-xl border border-blue-200/80 space-y-4">
+                <div className="flex items-center justify-between border-b border-blue-200/60 pb-2">
+                  <h3 className="text-xs font-extrabold text-[#00387f] flex items-center gap-1.5">
+                    <span>🔍</span> 검색엔진 최적화(SEO) 및 포털 노출 설정 (선택사항)
+                  </h3>
+                  <span className="text-[11px] font-semibold text-blue-600 bg-white px-2 py-0.5 rounded-full border border-blue-200">
+                    네이버 / 구글 검색 최적화
+                  </span>
                 </div>
 
-                {/* 대표 이미지 첨부 */}
+                {/* 1) 메타 설명 (Meta Description) */}
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 mb-1.5">
-                    대표 이미지 첨부 (선택)
+                  <div className="flex items-center justify-between mb-1.5">
+                    <label className="text-xs font-bold text-gray-800">
+                      검색 노출용 요약 설명 (Meta Description)
+                    </label>
+                    <span className={`text-[11px] font-semibold ${metaDescription.length > 120 ? 'text-amber-600 font-bold' : 'text-gray-500'}`}>
+                      {metaDescription.length} / 120자 {metaDescription.length >= 80 && metaDescription.length <= 110 && '(권장 길이)'}
+                    </span>
+                  </div>
+                  <textarea
+                    rows={2}
+                    value={metaDescription}
+                    onChange={(e) => setMetaDescription(e.target.value)}
+                    placeholder="구글·네이버 검색 결과 제목 아래 노출될 설명문 (80~110자 권장). 미입력 시 본문 앞부분이 자동 요약됩니다."
+                    className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
+                  />
+                  <p className="text-[11px] text-gray-500 mt-1">
+                    💡 미입력 시 본문 앞부분에서 불필요한 태그를 제거한 순수 텍스트 110자가 자동으로 요약 추출됩니다.
+                  </p>
+                </div>
+
+                {/* 2) 키워드 / 태그 (Meta Keywords & Tags) */}
+                <div>
+                  <label className="block text-xs font-bold text-gray-800 mb-1.5">
+                    핵심 키워드 / 태그 (Meta Keywords &amp; Tags)
                   </label>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <input
-                      ref={fileInputRef}
-                      type="file"
-                      accept="image/*"
-                      onChange={handleImageUpload}
-                      className="hidden"
-                    />
+                  <input
+                    type="text"
+                    value={tags}
+                    onChange={(e) => {
+                      setTags(e.target.value);
+                      setKeywords(e.target.value);
+                    }}
+                    placeholder="쉼표(,)로 구분하여 입력 (예: 장례식장 조문 예절, 호상 뜻, 후불제 상조, 무빈소장례)"
+                    className="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-xs sm:text-sm focus:outline-none focus:border-[#00387f]"
+                  />
+                  <p className="text-[11px] text-gray-500 mt-1">
+                    💡 쉼표(,)로 구분해 입력하시면 검색엔진 키워드 메타태그와 게시글 본문 하단 해시태그(#) 배지로 자동 반영됩니다.
+                  </p>
+                </div>
+              </div>
+
+              {/* 대표 이미지 첨부 */}
+              <div>
+                <label className="block text-xs font-bold text-gray-700 mb-1.5">
+                  대표 이미지 첨부 (선택)
+                </label>
+                <div className="flex flex-wrap items-center gap-3">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={isUploadingImage}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl text-xs font-bold transition-colors"
+                  >
+                    <Upload className="w-4 h-4" />
+                    {isUploadingImage ? '업로드 중...' : '컴퓨터에서 사진 선택'}
+                  </button>
+                  {imageUrl && (
                     <button
                       type="button"
-                      onClick={() => fileInputRef.current?.click()}
-                      disabled={isUploadingImage}
-                      className="inline-flex items-center gap-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-xl text-xs font-bold transition-colors"
+                      onClick={() => setImageUrl('')}
+                      className="text-xs font-bold text-red-600 hover:underline"
                     >
-                      <Upload className="w-4 h-4" />
-                      {isUploadingImage ? '업로드 중...' : '컴퓨터에서 사진 선택'}
+                      이미지 제거
                     </button>
-                    {imageUrl && (
-                      <button
-                        type="button"
-                        onClick={() => setImageUrl('')}
-                        className="text-xs font-bold text-red-600 hover:underline"
-                      >
-                        이미지 제거
-                      </button>
-                    )}
-                  </div>
-
-                  {imageUrl && (
-                    <div className="mt-3 p-3 bg-gray-50 border border-gray-200 rounded-xl inline-block">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={imageUrl}
-                        alt="미리보기"
-                        className="max-h-40 rounded-lg object-contain"
-                      />
-                    </div>
                   )}
                 </div>
 
-                {/* 하단 저장 / 취소 버튼 */}
-                <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
-                  <button
-                    type="button"
-                    onClick={() => setIsModalOpen(false)}
-                    className="px-5 py-2.5 bg-white border border-gray-300 rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50"
-                  >
-                    취소
-                  </button>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#00387f] hover:bg-[#002b63] text-white rounded-xl text-sm font-bold shadow-sm disabled:opacity-50"
-                  >
-                    <Check className="w-4 h-4" />
-                    {isSubmitting
-                      ? '저장 중...'
-                      : editingId
-                        ? '수정 내용 저장'
-                        : '게시물 등록하기'}
-                  </button>
-                </div>
+                {imageUrl && (
+                  <div className="mt-3 p-3 bg-gray-50 border border-gray-200 rounded-xl inline-block">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={imageUrl}
+                      alt="미리보기"
+                      className="max-h-40 rounded-lg object-contain"
+                    />
+                  </div>
+                )}
+              </div>
+
+              {/* 하단 저장 / 취소 버튼 */}
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-200">
+                <button
+                  type="button"
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-5 py-2.5 bg-white border border-gray-300 rounded-xl text-sm font-bold text-gray-700 hover:bg-gray-50"
+                >
+                  취소
+                </button>
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#00387f] hover:bg-[#002b63] text-white rounded-xl text-sm font-bold shadow-sm disabled:opacity-50"
+                >
+                  <Check className="w-4 h-4" />
+                  {isSubmitting
+                    ? '저장 중...'
+                    : editingId
+                      ? '수정 내용 저장'
+                      : '게시물 등록하기'}
+                </button>
+              </div>
             </form>
           </div>
         </div>
